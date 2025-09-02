@@ -1,0 +1,3947 @@
+{
+	"info": {
+		"_postman_id": "379034fa-6c41-44ce-8ef1-8a1f62804097",
+		"name": "E-KLAIM IDRG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22242844"
+	},
+	"item": [
+		{
+			"name": "#00 NEW CLAIM",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"new_claim\"\n    },\n    \"data\": {\n        \"nomor_kartu\": \"0000097208276\",\n        \"nomor_sep\": \"UJICOBA6\",\n        \"nomor_rm\": \"A002122\",\n        \"nama_pasien\": \"PASIEN UJICOBA IDRG 2\",\n        \"tgl_lahir\": \"2000-01-01 02:00:00\",\n        \"gender\": \"2\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#00 NEW CLAIM - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"new_claim\"\n    },\n    \"data\": {\n        \"nomor_kartu\": \"0000097208276\",\n        \"nomor_sep\": \"UJICOBA6\",\n        \"nomor_rm\": \"A002122\",\n        \"nama_pasien\": \"PASIEN UJICOBA IDRG 2\",\n        \"tgl_lahir\": \"2000-01-01 02:00:00\",\n        \"gender\": \"2\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:13:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "192"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\"\n    },\n    \"response\": {\n        \"patient_id\": \"877\",\n        \"admission_id\": 2,\n        \"hospital_admission_id\": 1136\n    }\n}"
+				},
+				{
+					"name": "#00 NEW CLAIM - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"new_claim\"\n    },\n    \"data\": {\n        \"nomor_kartu\": \"0000097208276\",\n        \"nomor_sep\": \"UJICOBA5\",\n        \"nomor_rm\": \"A002119\",\n        \"nama_pasien\": \"PASIEN UJICOBA IDRG\",\n        \"tgl_lahir\": \"1940-01-01 02:00:00\",\n        \"gender\": \"1\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:12:02 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "299"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"Duplikasi nomor SEP\",\n        \"error_no\": \"E2007\"\n    },\n    \"duplicate\": [\n        {\n            \"nama_pasien\": \"PASIEN UJICOBA IDRG 2\",\n            \"nomor_rm\": \"A002122\",\n            \"tgl_masuk\": \"2025-04-15 08:55:00\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "#01 SET CLAIM DATA",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"set_claim_data\",\n        \"nomor_sep\": \"UJICOBA1\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA1\",\n        \"nomor_kartu\": \"0000097208276\",\n        \"tgl_masuk\": \"2024-11-09 08:55:00\",\n        \"tgl_pulang\": \"2024-11-09 09:55:00\",\n        \"cara_masuk\": \"gp\",\n        \"jenis_rawat\": \"2\",\n        \"kelas_rawat\": \"3\",\n        \"adl_sub_acute\": \"15\",\n        \"adl_chronic\": \"12\",\n        \"icu_indikator\": \"0\",\n        \"icu_los\": \"0\",\n        \"upgrade_class_ind\": \"0\",\n        \"add_payment_pct\": \"10\",\n        \"birth_weight\": \"0\",\n        \"sistole\": 110,\n        \"diastole\": 60,\n        \"discharge_status\": \"1\",\n        \"tarif_rs\": {\n            \"prosedur_non_bedah\": \"300000\",\n            \"prosedur_bedah\": \"20000000\",\n            \"konsultasi\": \"300000\",\n            \"tenaga_ahli\": \"200000\",\n            \"keperawatan\": \"80000\",\n            \"penunjang\": \"1000000\",\n            \"radiologi\": \"500000\",\n            \"laboratorium\": \"600000\",\n            \"pelayanan_darah\": \"150000\",\n            \"rehabilitasi\": \"100000\",\n            \"kamar\": \"6000000\",\n            \"rawat_intensif\": \"2500000\",\n            \"obat\": \"100000\",\n            \"obat_kronis\": \"1000000\",\n            \"obat_kemoterapi\": \"5000000\",\n            \"alkes\": \"500000\",\n            \"bmhp\": \"400000\",\n            \"sewa_alat\": \"210000\"\n        },\n        \"pemulasaraan_jenazah\": \"1\",\n        \"kantong_jenazah\": \"1\",\n        \"peti_jenazah\": \"1\",\n        \"plastik_erat\": \"1\",\n        \"desinfektan_jenazah\": \"1\",\n        \"mobil_jenazah\": \"0\",\n        \"desinfektan_mobil_jenazah\": \"0\",\n        \"covid19_status_cd\": \"1\",\n        \"nomor_kartu_t\": \"nik\",\n        \"episodes\": \"1;12#2;3#6;5\",\n        \"akses_naat\": \"C\",\n        \"isoman_ind\": \"0\",\n        \"bayi_lahir_status_cd\": 1,\n        \"dializer_single_use\": \"1\",\n        \"kantong_darah\": 1,\n        \"alteplase_ind\": 1,\n        \"tarif_poli_eks\": \"100000\",\n        \"nama_dokter\": \"BAMBANG, DR\",\n        \"kode_tarif\": \"AP\",\n        \"payor_id\": \"3\",\n        \"payor_cd\": \"JKN\",\n        \"cob_cd\": 0,\n        \"coder_nik\": \"123123123123\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#01 SET CLAIM DATA - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"set_claim_data\",\n        \"nomor_sep\": \"UJICOBA1\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA1\",\n        \"nomor_kartu\": \"0000097208276\",\n        \"tgl_masuk\": \"2024-11-09 08:55:00\",\n        \"tgl_pulang\": \"2024-11-09 09:55:00\",\n        \"cara_masuk\": \"gp\",\n        \"jenis_rawat\": \"2\",\n        \"kelas_rawat\": \"3\",\n        \"adl_sub_acute\": \"15\",\n        \"adl_chronic\": \"12\",\n        \"icu_indikator\": \"0\",\n        \"icu_los\": \"0\",\n        \"upgrade_class_ind\": \"0\",\n        \"add_payment_pct\": \"10\",\n        \"birth_weight\": \"0\",\n        \"sistole\": 110,\n        \"diastole\": 60,\n        \"discharge_status\": \"1\",\n        \"tarif_rs\": {\n            \"prosedur_non_bedah\": \"300000\",\n            \"prosedur_bedah\": \"20000000\",\n            \"konsultasi\": \"300000\",\n            \"tenaga_ahli\": \"200000\",\n            \"keperawatan\": \"80000\",\n            \"penunjang\": \"1000000\",\n            \"radiologi\": \"500000\",\n            \"laboratorium\": \"600000\",\n            \"pelayanan_darah\": \"150000\",\n            \"rehabilitasi\": \"100000\",\n            \"kamar\": \"6000000\",\n            \"rawat_intensif\": \"2500000\",\n            \"obat\": \"100000\",\n            \"obat_kronis\": \"1000000\",\n            \"obat_kemoterapi\": \"5000000\",\n            \"alkes\": \"500000\",\n            \"bmhp\": \"400000\",\n            \"sewa_alat\": \"210000\"\n        },\n        \"pemulasaraan_jenazah\": \"1\",\n        \"kantong_jenazah\": \"1\",\n        \"peti_jenazah\": \"1\",\n        \"plastik_erat\": \"1\",\n        \"desinfektan_jenazah\": \"1\",\n        \"mobil_jenazah\": \"0\",\n        \"desinfektan_mobil_jenazah\": \"0\",\n        \"covid19_status_cd\": \"1\",\n        \"nomor_kartu_t\": \"nik\",\n        \"episodes\": \"1;12#2;3#6;5\",\n        \"akses_naat\": \"C\",\n        \"isoman_ind\": \"0\",\n        \"bayi_lahir_status_cd\": 1,\n        \"dializer_single_use\": \"1\",\n        \"kantong_darah\": 1,\n        \"alteplase_ind\": 1,\n        \"tarif_poli_eks\": \"100000\",\n        \"nama_dokter\": \"BAMBANG, DR\",\n        \"kode_tarif\": \"AP\",\n        \"payor_id\": \"3\",\n        \"payor_cd\": \"JKN\",\n        \"cob_cd\": 0,\n        \"coder_nik\": \"123123123123\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 01:14:11 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\"\n    }\n}"
+				},
+				{
+					"name": "#01 SET CLAIM DATA - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"set_claim_data\",\n        \"nomor_sep\": \"UJICOBA1\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA1\",\n        \"nomor_kartu\": \"0000097208276\",\n        \"tgl_masuk\": \"2024-11-09 08:55:00\",\n        \"tgl_pulang\": \"2024-11-09 09:55:00\",\n        \"cara_masuk\": \"gp\",\n        \"jenis_rawat\": \"2\",\n        \"kelas_rawat\": \"3\",\n        \"adl_sub_acute\": \"15\",\n        \"adl_chronic\": \"12\",\n        \"icu_indikator\": \"0\",\n        \"icu_los\": \"0\",\n        \"upgrade_class_ind\": \"0\",\n        \"add_payment_pct\": \"10\",\n        \"birth_weight\": \"0\",\n        \"sistole\": 110,\n        \"diastole\": 60,\n        \"discharge_status\": \"1\",\n        \"diagnosa\": \"S71.0#A00.1\",\n        \"procedure\": \"81.52#88.38#86.22\",\n        \"diagnosa_inagrouper\": \"S71.0#A00.1\",\n        \"procedure_inagrouper\": \"81.52#88.38#86.22+3#86.22\",\n        \"tarif_rs\": {\n            \"prosedur_non_bedah\": \"300000\",\n            \"prosedur_bedah\": \"20000000\",\n            \"konsultasi\": \"300000\",\n            \"tenaga_ahli\": \"200000\",\n            \"keperawatan\": \"80000\",\n            \"penunjang\": \"1000000\",\n            \"radiologi\": \"500000\",\n            \"laboratorium\": \"600000\",\n            \"pelayanan_darah\": \"150000\",\n            \"rehabilitasi\": \"100000\",\n            \"kamar\": \"6000000\",\n            \"rawat_intensif\": \"2500000\",\n            \"obat\": \"100000\",\n            \"obat_kronis\": \"1000000\",\n            \"obat_kemoterapi\": \"5000000\",\n            \"alkes\": \"500000\",\n            \"bmhp\": \"400000\",\n            \"sewa_alat\": \"210000\"\n        },\n        \"pemulasaraan_jenazah\": \"1\",\n        \"kantong_jenazah\": \"1\",\n        \"peti_jenazah\": \"1\",\n        \"plastik_erat\": \"1\",\n        \"desinfektan_jenazah\": \"1\",\n        \"mobil_jenazah\": \"0\",\n        \"desinfektan_mobil_jenazah\": \"0\",\n        \"covid19_status_cd\": \"1\",\n        \"nomor_kartu_t\": \"nik\",\n        \"episodes\": \"1;12#2;3#6;5\",\n        \"akses_naat\": \"C\",\n        \"isoman_ind\": \"0\",\n        \"bayi_lahir_status_cd\": 1,\n        \"dializer_single_use\": \"1\",\n        \"kantong_darah\": 1,\n        \"alteplase_ind\": 1,\n        \"tarif_poli_eks\": \"100000\",\n        \"nama_dokter\": \"BAMBANG, DR\",\n        \"kode_tarif\": \"AP\",\n        \"payor_id\": \"3\",\n        \"payor_cd\": \"JKN\",\n        \"cob_cd\": 0,\n        \"coder_nik\": \"123123123123\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:14:56 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"Parameter tidak berlaku: diagnosa, procedure, diagnosa_inagrouper, procedure_inagrouper\",\n        \"error_no\": \"E2044\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#02 IDRG DIAGNOSA SET",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_diagnosa_set\",\n        \"nomor_sep\": \"UJICOBA5\"\n    },\n    \"data\": {\n        \"diagnosa\": \"S71.0#A00.1\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#02 IDRG DIAGNOSA SET - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_diagnosa_set\",\n        \"nomor_sep\": \"UJICOBA3\"\n    },\n    \"data\": {\n        \"diagnosa\": \"A00.1#A15.00\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 14 Apr 2025 22:16:53 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "897"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\",\n        \"method\": \"idrg_diagnosa_set\"\n    },\n    \"data\": {\n        \"string\": \"A00.1#A15.00\",\n        \"expanded\": [\n            {\n                \"code\": \"A00.1\",\n                \"display\": \"Cholera due to vibrio cholerae 01, biovar eltor\",\n                \"no\": \"1\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            },\n            {\n                \"code\": \"A15.00\",\n                \"display\": \"Tuberculosis of lung, with previously treated confirmation sputum microscopy with or without culture (IM)\",\n                \"no\": \"2\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "#02 IDRG DIAGNOSA SET - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_diagnosa_set\",\n        \"nomor_sep\": \"UJICOBA5\"\n    },\n    \"data\": {\n        \"diagnosa\": \"S71.0#A00.1\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 00:57:16 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "123"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"iDRG coding sudah final\",\n        \"error_no\": \"E2102\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#03 IDRG DIAGNOSA GET",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_diagnosa_get\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA3\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#03 IDRG DIAGNOSA GET - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_diagnosa_get\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA3\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 14 Apr 2025 21:31:11 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "897"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\",\n        \"method\": \"idrg_diagnosa_get\"\n    },\n    \"data\": {\n        \"string\": \"A00.1#A15.00\",\n        \"expanded\": [\n            {\n                \"code\": \"A00.1\",\n                \"display\": \"Cholera due to vibrio cholerae 01, biovar eltor\",\n                \"no\": \"1\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            },\n            {\n                \"code\": \"A15.00\",\n                \"display\": \"Tuberculosis of lung, with previously treated confirmation sputum microscopy with or without culture (IM)\",\n                \"no\": \"2\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "#03 IDRG DIAGNOSA GET - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_diagnosa_get\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA3xx\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 01:16:10 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"Nomor SEP tidak ditemukan\",\n        \"error_no\": \"E2004\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#04 IDRG PROCEDURE SET",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_procedure_set\",\n        \"nomor_sep\": \"UJICOBA3\"\n    },\n    \"data\": {\n        \"procedure\": \"88.01#90.090+2#90.090\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#04 IDRG PROCEDURE SET - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_procedure_set\",\n        \"nomor_sep\": \"UJICOBA3\"\n    },\n    \"data\": {\n        \"procedure\": \"88.01#86.22+2#86.22\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 14 Apr 2025 22:20:16 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1272"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\",\n        \"method\": \"idrg_procedure_set\"\n    },\n    \"data\": {\n        \"string\": \"88.01#86.22+2#86.22\",\n        \"expanded\": [\n            {\n                \"code\": \"88.01\",\n                \"display\": \"Computerized axial tomography of abdomen\",\n                \"multiplicity\": 1,\n                \"no\": \"1\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            },\n            {\n                \"code\": \"86.22\",\n                \"display\": \"Excisional debridement of wound, infection, or burn\",\n                \"multiplicity\": 2,\n                \"no\": \"2\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            },\n            {\n                \"code\": \"86.22\",\n                \"display\": \"Excisional debridement of wound, infection, or burn\",\n                \"multiplicity\": 1,\n                \"no\": \"3\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "#04 IDRG PROCEDURE SET - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_procedure_set\",\n        \"nomor_sep\": \"UJICOBA5\"\n    },\n    \"data\": {\n        \"procedure\": \"81.52#88.38#86.22#90.090\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 00:57:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "123"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=99"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"iDRG coding sudah final\",\n        \"error_no\": \"E2102\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#05 IDRG PROCEDURE GET",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_procedure_get\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA3\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#05 IDRG PROCEDURE GET - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_procedure_get\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA3\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 14 Apr 2025 19:01:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1366"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\",\n        \"method\": \"idrg_procedure_get\"\n    },\n    \"data\": {\n        \"string\": \"88.01#90.090+2#90.090\",\n        \"expanded\": [\n            {\n                \"code\": \"88.01\",\n                \"display\": \"Computerized axial tomography of abdomen\",\n                \"multiply\": 1,\n                \"no\": \"1\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            },\n            {\n                \"code\": \"90.090\",\n                \"display\": \"Microscopic Histophatology examination of specimen from biopsy nervous system and of spina fluid, (IM)\",\n                \"multiply\": 2,\n                \"no\": \"2\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            },\n            {\n                \"code\": \"90.090\",\n                \"display\": \"Microscopic Histophatology examination of specimen from biopsy nervous system and of spina fluid, (IM)\",\n                \"multiply\": 1,\n                \"no\": \"3\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "#05 IDRG PROCEDURE GET - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_procedure_get\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA3s\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 01:18:43 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"Nomor SEP tidak ditemukan\",\n        \"error_no\": \"E2004\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#06 GROUPING IDRG",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"grouper\",\n        \"stage\": \"1\",\n        \"grouper\": \"idrg\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#06 GROUPING IDRG - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"grouper\",\n        \"stage\": \"1\",\n        \"grouper\": \"idrg\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 19:41:29 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "296"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\"\n    },\n    \"response_idrg\": {\n        \"mdc_number\": \"31\",\n        \"mdc_description\": \"Multiple Significant Trauma\",\n        \"drg_code\": \"3109119\",\n        \"drg_description\": \"Multiple Significant Trauma w/ Other OR Proc.\"\n    }\n}"
+				},
+				{
+					"name": "#06 GROUPING IDRG - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"grouper\",\n        \"stage\": \"1\",\n        \"grouper\": \"idrg\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 19:39:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "123"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"iDRG coding sudah final\",\n        \"error_no\": \"E2102\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#07 FINAL IDRG",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_grouper_final\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#07 FINAL IDRG - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_grouper_final\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 19:50:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\"\n    }\n}"
+				},
+				{
+					"name": "#07 FINAL IDRG - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_grouper_final\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 19:49:14 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "122"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"iDRG error ungroupable\",\n        \"error_no\": \"E2105\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#08 RE-EDIT IDRG",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_grouper_reedit\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#08 RE-EDIT IDRG - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_grouper_reedit\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 19:39:40 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\"\n    }\n}"
+				},
+				{
+					"name": "#08 RE-EDIT IDRG - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_grouper_reedit\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 19:50:44 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "123"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=99"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"iDRG coding belum final\",\n        \"error_no\": \"E2103\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#09 IDRG TO INACBG IMPORT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_to_inacbg_import\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#09 IDRG TO INACBG IMPORT - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_to_inacbg_import\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 19:55:51 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2227"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\",\n        \"method\": \"idrg_to_inacbg_import\"\n    },\n    \"data\": {\n        \"diagnosa\": {\n            \"string\": \"S71.0#A00.1\",\n            \"expanded\": [\n                {\n                    \"code\": \"S71.0\",\n                    \"display\": \"Open wound of hip\",\n                    \"no\": \"1\",\n                    \"validcode\": \"1\",\n                    \"metadata\": {\n                        \"code\": \"200\",\n                        \"message\": \"Ok\"\n                    }\n                },\n                {\n                    \"code\": \"A00.1\",\n                    \"display\": \"Cholera due to vibrio cholerae 01, biovar eltor\",\n                    \"no\": \"2\",\n                    \"validcode\": \"1\",\n                    \"metadata\": {\n                        \"code\": \"200\",\n                        \"message\": \"Ok\"\n                    }\n                }\n            ]\n        },\n        \"procedure\": {\n            \"string\": \"81.52#86.22#90.090\",\n            \"expanded\": [\n                {\n                    \"code\": \"81.52\",\n                    \"display\": \"Partial hip replacement\",\n                    \"no\": \"1\",\n                    \"validcode\": \"1\",\n                    \"metadata\": {\n                        \"code\": \"200\",\n                        \"message\": \"Ok\"\n                    }\n                },\n                {\n                    \"code\": \"86.22\",\n                    \"display\": \"Excisional debridement of wound, infection, or burn\",\n                    \"no\": \"2\",\n                    \"validcode\": \"1\",\n                    \"metadata\": {\n                        \"code\": \"200\",\n                        \"message\": \"Ok\"\n                    }\n                },\n                {\n                    \"code\": \"90.090\",\n                    \"display\": \"Microscopic Histophatology examination of specimen from biopsy nervous system and of spina fluid, (IM)\",\n                    \"no\": \"4\",\n                    \"validcode\": \"0\",\n                    \"metadata\": {\n                        \"code\": \"400\",\n                        \"error_no\": \"E2101\",\n                        \"message\": \"IM tidak berlaku\"\n                    }\n                }\n            ]\n        }\n    }\n}"
+				},
+				{
+					"name": "#09 IDRG TO INACBG IMPORT - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"idrg_to_inacbg_import\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 19:55:23 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "123"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"iDRG coding belum final\",\n        \"error_no\": \"E2103\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#10 INACBG DIAGNOSA GET",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"inacbg_diagnosa_get\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA3\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#10 INACBG DIAGNOSA GET - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"inacbg_diagnosa_get\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA3\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 14 Apr 2025 22:55:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "958"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\",\n        \"method\": \"inacbg_diagnosa_get\"\n    },\n    \"data\": {\n        \"string\": \"A15.00\",\n        \"expanded\": {\n            \"1\": {\n                \"code\": \"A00.1\",\n                \"display\": \"Cholera due to vibrio cholerae 01, biovar eltor\",\n                \"no\": \"1\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            },\n            \"2\": {\n                \"code\": \"A15.00\",\n                \"display\": \"Tuberculosis of lung, with previously treated confirmation sputum microscopy with or without culture (IM)\",\n                \"no\": \"2\",\n                \"validcode\": \"0\",\n                \"metadata\": {\n                    \"code\": \"400\",\n                    \"error_no\": \"E2101\",\n                    \"message\": \"IM tidak berlaku\"\n                }\n            }\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#11 INACBG DIAGNOSA SET",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"inacbg_diagnosa_set\",\n        \"nomor_sep\": \"UJICOBA5\"\n    },\n    \"data\": {\n        \"diagnosa\": \"S71.0#A00.1\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#11 INACBG DIAGNOSA SET - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"inacbg_diagnosa_set\",\n        \"nomor_sep\": \"UJICOBA5\"\n    },\n    \"data\": {\n        \"diagnosa\": \"S71.0#A00.1\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 19:58:30 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "809"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\",\n        \"method\": \"inacbg_diagnosa_set\"\n    },\n    \"data\": {\n        \"string\": \"S71.0#A00.1\",\n        \"expanded\": [\n            {\n                \"code\": \"S71.0\",\n                \"display\": \"Open wound of hip\",\n                \"no\": \"1\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            },\n            {\n                \"code\": \"A00.1\",\n                \"display\": \"Cholera due to vibrio cholerae 01, biovar eltor\",\n                \"no\": \"2\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "#11 INACBG DIAGNOSA SET - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"inacbg_diagnosa_set\",\n        \"nomor_sep\": \"UJICOBA5\"\n    },\n    \"data\": {\n        \"diagnosa\": \"S71.0#A00.1\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:04:32 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"INACBG coding sudah final\",\n        \"error_no\": \"E2102\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#12 INACBG PROCEDURE SET",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"inacbg_procedure_set\",\n        \"nomor_sep\": \"UJICOBA5\"\n    },\n    \"data\": {\n        \"procedure\": \"81.52#86.22#90.09\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#12 INACBG PROCEDURE SET - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"inacbg_procedure_set\",\n        \"nomor_sep\": \"UJICOBA5\"\n    },\n    \"data\": {\n        \"procedure\": \"81.52#86.22#90.09\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 19:59:55 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1204"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\",\n        \"method\": \"inacbg_procedure_set\"\n    },\n    \"data\": {\n        \"string\": \"81.52#86.22#90.09\",\n        \"expanded\": [\n            {\n                \"code\": \"81.52\",\n                \"display\": \"Partial hip replacement\",\n                \"no\": \"1\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            },\n            {\n                \"code\": \"86.22\",\n                \"display\": \"Excisional debridement of wound, infection, or burn\",\n                \"no\": \"2\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            },\n            {\n                \"code\": \"90.09\",\n                \"display\": \"Microscopic examination of specimen from nervous system and of spina fluid, Other microscopic examination\",\n                \"no\": \"3\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "#12 INACBG PROCEDURE SET - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"inacbg_procedure_set\",\n        \"nomor_sep\": \"UJICOBA5\"\n    },\n    \"data\": {\n        \"procedure\": \"81.52#86.22#90.09\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:04:09 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"INACBG coding sudah final\",\n        \"error_no\": \"E2102\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#13 INACBG PROCEDURE GET",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"inacbg_procedure_get\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#13 INACBG PROCEDURE GET - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"inacbg_procedure_get\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:00:29 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1204"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\",\n        \"method\": \"inacbg_procedure_get\"\n    },\n    \"data\": {\n        \"string\": \"81.52#86.22#90.09\",\n        \"expanded\": [\n            {\n                \"code\": \"81.52\",\n                \"display\": \"Partial hip replacement\",\n                \"no\": \"1\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            },\n            {\n                \"code\": \"86.22\",\n                \"display\": \"Excisional debridement of wound, infection, or burn\",\n                \"no\": \"2\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            },\n            {\n                \"code\": \"90.09\",\n                \"display\": \"Microscopic examination of specimen from nervous system and of spina fluid, Other microscopic examination\",\n                \"no\": \"3\",\n                \"validcode\": \"1\",\n                \"metadata\": {\n                    \"code\": \"200\",\n                    \"message\": \"Ok\"\n                }\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#14 GROUPING INACBG STAGE 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"grouper\",\n        \"stage\": \"1\",\n        \"grouper\": \"inacbg\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#14 GROUPING INACBG STAGE 1 - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"grouper\",\n        \"stage\": \"1\",\n        \"grouper\": \"inacbg\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:01:49 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "840"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\"\n    },\n    \"response_inacbg\": {\n        \"cbg\": {\n            \"code\": \"M-1-04-II\",\n            \"description\": \"PROSEDUR PADA SENDI TUNGKAI BAWAH (SEDANG)\"\n        },\n        \"base_tariff\": \"38971000\",\n        \"tariff\": \"38971000\",\n        \"kelas\": \"kelas_3\",\n        \"inacbg_version\": \"5.10.0.202504170625\"\n    },\n    \"special_cmg_option\": [\n        {\n            \"code\": \"RR04Hip\",\n            \"description\": \"Hip Implant\",\n            \"type\": \"Special Prosthesis\"\n        },\n        {\n            \"code\": \"RR04Knee\",\n            \"description\": \"Knee Implant\",\n            \"type\": \"Special Prosthesis\"\n        },\n        {\n            \"code\": \"YY01\",\n            \"description\": \"Hip Replacement / Knee Replacement\",\n            \"type\": \"Special Procedure\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "#14 GROUPING INACBG STAGE 1 - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"grouper\",\n        \"stage\": \"1\",\n        \"grouper\": \"inacbg\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:03:37 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"INACBG coding sudah final\",\n        \"error_no\": \"E2102\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#15 GROUPING INACBG STAGE 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"grouper\",\n        \"stage\": \"2\",\n        \"grouper\": \"inacbg\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\",\n        \"special_cmg\": \"RR04Knee#YY01\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#15 GROUPING INACBG STAGE 2 - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"grouper\",\n        \"stage\": \"2\",\n        \"grouper\": \"inacbg\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\",\n        \"special_cmg\": \"RR04Knee#YY01\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:02:23 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1277"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\"\n    },\n    \"response_inacbg\": {\n        \"cbg\": {\n            \"code\": \"M-1-04-II\",\n            \"description\": \"PROSEDUR PADA SENDI TUNGKAI BAWAH (SEDANG)\"\n        },\n        \"base_tariff\": \"38971000\",\n        \"tariff\": \"65070000\",\n        \"special_cmg\": [\n            {\n                \"code\": \"YY-01-II\",\n                \"description\": \"HIP REPLACEMENT / KNEE REPLACEMENT\",\n                \"tariff\": 13099000,\n                \"type\": \"Special Procedure\"\n            },\n            {\n                \"code\": \"RR-04-III-Knee\",\n                \"description\": \"\",\n                \"tariff\": 13000000,\n                \"type\": \"Special Prosthesis\"\n            }\n        ],\n        \"kelas\": \"kelas_3\",\n        \"inacbg_version\": \"5.10.0.202504170625\"\n    },\n    \"special_cmg_option\": [\n        {\n            \"code\": \"RR04Hip\",\n            \"description\": \"Hip Implant\",\n            \"type\": \"Special Prosthesis\"\n        },\n        {\n            \"code\": \"RR04Knee\",\n            \"description\": \"Knee Implant\",\n            \"type\": \"Special Prosthesis\"\n        },\n        {\n            \"code\": \"YY01\",\n            \"description\": \"Hip Replacement / Knee Replacement\",\n            \"type\": \"Special Procedure\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "#15 GROUPING INACBG STAGE 2 - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"grouper\",\n        \"stage\": \"2\",\n        \"grouper\": \"inacbg\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\",\n        \"special_cmg\": \"RR04Knee#YY01\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:03:19 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"INACBG coding sudah final\",\n        \"error_no\": \"E2102\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#16 FINAL INACBG",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"inacbg_grouper_final\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#16 FINAL INACBG - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"inacbg_grouper_final\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:02:49 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#17 RE-EDIT INACBG",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"inacbg_grouper_reedit\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#17 RE-EDIT INACBG - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"inacbg_grouper_reedit\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:05:08 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#18 CLAIM FINAL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"claim_final\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\",\n        \"coder_nik\": \"123123123123\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#18 CLAIM FINAL - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"claim_final\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\",\n        \"coder_nik\": \"123123123123\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:06:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\"\n    }\n}"
+				},
+				{
+					"name": "#18 CLAIM FINAL - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"claim_final\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\",\n        \"coder_nik\": \"123123123123\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:05:28 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"INACBG coding belum final\",\n        \"error_no\": \"E2104\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#19 CLAIM RE-EDIT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"reedit_claim\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#19 CLAIM RE-EDIT - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"reedit_claim\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:08:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\"\n    }\n}"
+				},
+				{
+					"name": "#19 CLAIM RE-EDIT - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"reedit_claim\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"0201RRR11118V000016x\",\n        \"coder_nik\": \"123123123123\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:06:58 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"Nomor SEP tidak ditemukan\",\n        \"error_no\": \"E2004\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#20 CLAIM SEND",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"send_claim_individual\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#20 CLAIM SEND - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"send_claim_individual\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:09:56 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "335"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\"\n    },\n    \"response\": {\n        \"data\": [\n            {\n                \"nomor_sep\": \"UJICOBA5\",\n                \"tgl_pulang\": \"2025-04-15 08:55:00\",\n                \"kemkes_dc_status\": \"sent\",\n                \"bpjs_dc_status\": \"unsent\"\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "#20 CLAIM SEND - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"send_claim_individual\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:09:26 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "123"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"Klaim masih belum final\",\n        \"error_no\": \"E2018\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "#21 GET CLAIM DATA",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metadata\": {\n        \"method\": \"get_claim_data\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"E-Klaim",
+						"ws.php"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "#21 GET CLAIM DATA - FAILED",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"get_claim_data\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5x\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:10:41 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 400,\n        \"message\": \"Nomor SEP tidak ditemukan\",\n        \"error_no\": \"E2004\"\n    }\n}"
+				},
+				{
+					"name": "#21 GET CLAIM DATA - SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"metadata\": {\n        \"method\": \"get_claim_data\"\n    },\n    \"data\": {\n        \"nomor_sep\": \"UJICOBA5\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/E-Klaim/ws.php?mode=debug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"E-Klaim",
+								"ws.php"
+							],
+							"query": [
+								{
+									"key": "mode",
+									"value": "debug"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 04 May 2025 20:10:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.17 (Win32) OpenSSL/1.0.2d PHP/5.6.19"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.19"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "4252"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"metadata\": {\n        \"code\": 200,\n        \"message\": \"Ok\"\n    },\n    \"response\": {\n        \"data\": {\n            \"kode_rs\": \"0000003\",\n            \"kelas_rs\": \"A\",\n            \"kelas_rawat\": 3,\n            \"kode_tarif\": \"AP\",\n            \"jenis_rawat\": 1,\n            \"tgl_masuk\": \"15/04/2025\",\n            \"tgl_pulang\": \"15/04/2025\",\n            \"cara_masuk\": \"gp\",\n            \"tgl_lahir\": \"01/01/2000\",\n            \"berat_lahir\": \"0\",\n            \"gender\": 2,\n            \"discharge_status\": 1,\n            \"diagnosa\": \"S71.0#A00.1\",\n            \"procedure\": \"81.52#86.22#90.09\",\n            \"diagnosa_inagrouper\": \"S71.0#A00.1\",\n            \"procedure_inagrouper\": \"81.52#86.22+5#86.22+3#90.090\",\n            \"adl_sub_acute\": 0,\n            \"adl_chronic\": 0,\n            \"tarif_rs\": {\n                \"prosedur_non_bedah\": 300000,\n                \"prosedur_bedah\": 20000000,\n                \"konsultasi\": 300000,\n                \"tenaga_ahli\": 200000,\n                \"keperawatan\": 80000,\n                \"penunjang\": 1000000,\n                \"radiologi\": 500000,\n                \"laboratorium\": 600000,\n                \"pelayanan_darah\": 150000,\n                \"rehabilitasi\": 100000,\n                \"kamar\": 6000000,\n                \"rawat_intensif\": 2500000,\n                \"obat\": 100000,\n                \"obat_kronis\": 1000000,\n                \"obat_kemoterapi\": 5000000,\n                \"alkes\": 500000,\n                \"bmhp\": 400000,\n                \"sewa_alat\": 210000\n            },\n            \"sistole\": \"110\",\n            \"diastole\": \"60\",\n            \"los\": \"1\",\n            \"icu_indikator\": 0,\n            \"icu_los\": \"0\",\n            \"ventilator_hour\": \"0\",\n            \"upgrade_class_ind\": \"0\",\n            \"upgrade_class_class\": \"\",\n            \"upgrade_class_los\": \"0\",\n            \"add_payment_pct\": \"0.0\",\n            \"add_payment_amt\": \"0\",\n            \"upgrade_class_payor\": null,\n            \"nama_pasien\": \"PASIEN UJICOBA IDRG 2\",\n            \"nomor_rm\": \"A002122\",\n            \"umur_tahun\": 25,\n            \"umur_hari\": \"9236\",\n            \"tarif_poli_eks\": \"0\",\n            \"dializer_single_use\": \"1\",\n            \"nama_dokter\": \"BAMBANG, DR\",\n            \"nomor_sep\": \"UJICOBA5\",\n            \"nomor_kartu\": \"0000097208276\",\n            \"payor_id\": \"3\",\n            \"payor_nm\": \"JKN\",\n            \"coder_nm\": \"INACBG\",\n            \"coder_nik\": \"00001\",\n            \"patient_id\": \"877\",\n            \"admission_id\": \"1\",\n            \"hospital_admission_id\": \"1135\",\n            \"grouping_count\": \"7\",\n            \"grouper\": {\n                \"response_inacbg\": {\n                    \"cbg\": {\n                        \"code\": \"M-1-04-II\",\n                        \"description\": \"PROSEDUR PADA SENDI TUNGKAI BAWAH (SEDANG)\"\n                    },\n                    \"base_tariff\": \"38971000\",\n                    \"tariff\": \"65070000\",\n                    \"special_cmg\": [\n                        {\n                            \"code\": \"YY-01-II\",\n                            \"description\": \"HIP REPLACEMENT / KNEE REPLACEMENT\",\n                            \"tariff\": 13099000,\n                            \"type\": \"Special Procedure\"\n                        },\n                        {\n                            \"code\": \"RR-04-III-Knee\",\n                            \"description\": \"\",\n                            \"tariff\": 13000000,\n                            \"type\": \"Special Prosthesis\"\n                        }\n                    ],\n                    \"kelas\": \"kelas_3\",\n                    \"inacbg_version\": \"5.10.0.202504170625\"\n                },\n                \"response_idrg\": {\n                    \"mdc_number\": \"31\",\n                    \"mdc_description\": \"Multiple Significant Trauma\",\n                    \"drg_code\": \"3109119\",\n                    \"drg_description\": \"Multiple Significant Trauma w/ Other OR Proc.\"\n                }\n            },\n            \"kemenkes_dc_status_cd\": \"sent\",\n            \"kemenkes_dc_sent_dttm\": \"2025-05-05 03:09:57\",\n            \"bpjs_dc_status_cd\": \"sent\",\n            \"bpjs_dc_sent_dttm\": \"2025-05-05 03:09:57\",\n            \"klaim_status_cd\": \"final\",\n            \"bpjs_klaim_status_cd\": \"-\",\n            \"bpjs_klaim_status_nm\": \"-\"\n        }\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://10.211.55.3",
+			"type": "string"
+		}
+	]
+}
