@@ -193,11 +193,6 @@ php contoh_penggunaan_eklaim.php
 4. Contoh penggunaan fungsi utilitas
 5. Jalankan semua contoh
 
-## 📚 Dokumentasi Lengkap
-
-- **EKLAIM_FUNCTIONS_GUIDE.md**: Panduan detail penggunaan setiap fungsi
-- **contoh_penggunaan_eklaim.php**: Contoh penggunaan lengkap dengan menu interaktif
-
 ## 🔧 Requirements
 
 - PHP 7.0+
@@ -212,3 +207,4 @@ Proyek ini dibuat berdasarkan koleksi Postman E-KLAIM IDRG untuk integrasi siste
 ## 🤝 Support
 
 Untuk pertanyaan atau dukungan, silakan merujuk ke dokumentasi atau file contoh yang disediakan.
+
