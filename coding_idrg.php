@@ -1701,10 +1701,10 @@ require_once 'config/eklaim_config.php';
              );
              
             // Cek kondisi khusus untuk MDC 21/31 dan DRG yang dimulai dengan 21/31 (valid)
-            const validMdcCodes = ['21', '31'];
-            const isValidResult = validMdcCodes.includes(mdcNumber) && drgCode && validMdcCodes.some(code => drgCode.startsWith(code));
+            const validMdcCodes = 36;
+            const isValidResult = mdcNumber !== invalidMdcCode && drgCode;
              
-            // Return true jika ada error dan bukan kondisi valid MDC 21/31
+            // Return true jika ada error dan bukan kondisi valid (MDC bukan 36)
             return (isMdcError || isDrgError) && !isValidResult;
          }
          
@@ -2263,8 +2263,8 @@ require_once 'config/eklaim_config.php';
                             
                             console.log('MDC Number:', mdcNumber, 'DRG Code:', drgCode);
                             
-                            const validMdcCodes = ['21', '31'];
-                            const isValidResult = validMdcCodes.includes(mdcNumber) && drgCode && validMdcCodes.some(code => drgCode.startsWith(code));
+                            const invalidMdcCode = '36';
+                            const isValidResult = mdcNumber !== invalidMdcCode && drgCode;
                             
                             if (isValidResult) {
                                 console.log('Valid grouping result found, but final_idrg not completed - NOT showing Final iDRG button');
@@ -3015,8 +3015,8 @@ require_once 'config/eklaim_config.php';
                         // Show Final iDRG button if result is valid
                         const mdcNumber = response.data?.response_idrg?.mdc_number;
                         const drgCode = response.data?.response_idrg?.drg_code;
-                        const validMdcCodes = ['21', '31'];
-                        const isValidResult = validMdcCodes.includes(mdcNumber) && drgCode && validMdcCodes.some(code => drgCode.startsWith(code));
+                        const invalidMdcCode = '36';
+                        const isValidResult = mdcNumber !== invalidMdcCode && drgCode;
                         
                         if (isValidResult) {
                             $('#finalDrgSection').show();
@@ -3798,8 +3798,8 @@ require_once 'config/eklaim_config.php';
             applyErrorStyling(mdcElement, drgElement, mdcNumberElement, drgCodeElement, isError);
             
             // Tentukan section yang akan ditampilkan berdasarkan validitas hasil
-            const validMdcCodes = ['21', '31'];
-            const isValidResult = validMdcCodes.includes(mdcNumber) && drgCode && validMdcCodes.some(code => drgCode.startsWith(code));
+            const invalidMdcCode = '36';
+            const isValidResult = mdcNumber !== invalidMdcCode && drgCode;
             const showErrorSection = !isValidResult;
             const showFinalDrgButton = isValidResult;
             
