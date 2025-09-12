@@ -26,7 +26,7 @@ define('KODE_TARIF_MAPPING', [
  * @return string
  */
 function getKodeTarifDescription($code) {
-    return KODE_TARIF_MAPPING[$code] ?? 'TARIF RS KELAS C PEMERINTAH';
+    return KODE_TARIF_MAPPING[$code] ?? 'TARIF RS KELAS D SWASTA';
 }
 
 /**
@@ -36,7 +36,7 @@ function getKodeTarifDescription($code) {
  */
 function getKodeTarifCode($description) {
     $codeMap = array_flip(KODE_TARIF_MAPPING);
-    return $codeMap[$description] ?? 'CP';
+    return $codeMap[$description] ?? 'DS';
 }
 
 /**
@@ -68,7 +68,7 @@ function isValidKodeTarif($code) {
  * @return string
  */
 function getDefaultKodeTarif() {
-    return 'CP'; // Default to TARIF RS KELAS C PEMERINTAH
+    return 'DS'; // Default to TARIF RS KELAS D SWASTA
 }
 
 /**
@@ -109,7 +109,7 @@ function getKodeTarifByKelasKepemilikan($kelas, $kepemilikan) {
  */
 function getKelasKepemilikanFromKodeTarif($code) {
     if (!isValidKodeTarif($code)) {
-        return ['kelas' => 'C', 'kepemilikan' => 'PEMERINTAH'];
+        return ['kelas' => 'D', 'kepemilikan' => 'SWASTA'];
     }
     
     $kelas = substr($code, 0, 1);

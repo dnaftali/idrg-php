@@ -49,6 +49,7 @@ try {
                         kp.bpjs_dc_status_cd,
                         kp.cara_masuk,
                         kp.kode_tarif,
+                        kp.covid19_status_cd,
                         kp.created_at,
                         -- Detail tarif fields
                         dt.prosedur_non_bedah,
@@ -116,6 +117,7 @@ try {
                 'bpjs_dc_status_cd' => $patient['bpjs_dc_status_cd'] ?: null,
                 'cara_masuk' => $patient['cara_masuk'] ?: 'gp',
                 'kode_tarif' => $patient['kode_tarif'] ?: 'CP',
+                'covid19_status_cd' => $patient['covid19_status_cd'] ?: '0',
                 'created_at' => $patient['created_at'] ?: null,
                 // Detail tarif data
                 'detail_tarif' => [
@@ -188,6 +190,7 @@ try {
                         kp.kemenkes_dc_status_cd,
                         kp.bpjs_dc_status_cd,
                         kp.kode_tarif,
+                        kp.covid19_status_cd,
                         kp.created_at
                     FROM kunjungan_pasien kp
                     ORDER BY kp.tgl_masuk DESC";
@@ -209,7 +212,7 @@ try {
                 'gender' => $patient['gender'] ?: null,
                 'tgl_masuk' => $patient['tgl_masuk'] ?: null,
                 'tgl_pulang' => $patient['tgl_pulang'] ?: null,
-                'jenis_rawat' => $patient['jenis_rawat'] ?: '2', // Default to rawat jalan
+                'jenis_rawat' => $patient['jenis_rawat'] ?: null, // Jangan set default, biarkan null jika kosong
                 'kelas_rawat' => $patient['kelas_rawat'] ?: '3', // Default to kelas 3
                 'discharge_status' => $patient['discharge_status'] ?: '1', // Default to atas persetujuan dokter
                 'jaminan_cara_bayar' => $patient['jaminan_cara_bayar'] ?: 'JKN',
@@ -231,6 +234,7 @@ try {
                 'kemenkes_dc_status_cd' => $patient['kemenkes_dc_status_cd'] ?: null,
                 'bpjs_dc_status_cd' => $patient['bpjs_dc_status_cd'] ?: null,
                 'kode_tarif' => $patient['kode_tarif'] ?: 'CP',
+                'covid19_status_cd' => $patient['covid19_status_cd'] ?: '0',
                 'created_at' => $patient['created_at'] ?: null
             ];
         }

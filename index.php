@@ -220,6 +220,61 @@
         .modal-body table {
             font-size: 0.85rem;
         }
+        
+        /* Tab Styling */
+        .nav-tabs {
+            border-bottom: 2px solid #dee2e6;
+            margin-bottom: 0;
+        }
+        
+        .nav-tabs .nav-link {
+            border: none;
+            border-radius: 0;
+            padding: 12px 20px;
+            font-weight: 500;
+            color: #6c757d;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-tabs .nav-link:hover {
+            border-color: transparent;
+            color: #495057;
+            background-color: #f8f9fa;
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: #495057;
+            background-color: #fff;
+            border-color: #dee2e6 #dee2e6 #fff;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .nav-tabs .nav-link .badge {
+            font-size: 0.7rem;
+            padding: 0.25em 0.5em;
+        }
+        
+        .tab-content {
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 0;
+        }
+        
+        .tab-pane {
+            padding: 0;
+        }
+        
+        .tab-pane .table-responsive {
+            margin: 0;
+            border-radius: 0;
+        }
+        
+        .tab-pane .table {
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -234,25 +289,94 @@
         </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container">
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="coding_idrg.php">
-                    <i class="fas fa-hospital me-1"></i>
-                    CODING iDRG
-                </a>
-                <a class="nav-link" href="admin/manage.php">
-                    <i class="fas fa-cogs me-1"></i>
-                    Panel Admin
-                </a>
+    <div class="container">
+        <!-- Tab Navigation -->
+        <div class="section-container">
+            <ul class="nav nav-tabs" id="patientTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="inpatient-tab" data-bs-toggle="tab" data-bs-target="#inpatient" type="button" role="tab" aria-controls="inpatient" aria-selected="true">
+                        <i class="fas fa-bed text-primary me-2"></i>
+                        Pasien Rawat Inap
+                        <span class="badge bg-primary ms-2" id="inpatientBadge">0</span>
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="outpatient-tab" data-bs-toggle="tab" data-bs-target="#outpatient" type="button" role="tab" aria-controls="outpatient" aria-selected="false">
+                        <i class="fas fa-walking text-success me-2"></i>
+                        Pasien Rawat Jalan
+                        <span class="badge bg-success ms-2" id="outpatientBadge">0</span>
+                    </button>
+                </li>
+            </ul>
+            
+            <!-- Tab Content -->
+            <div class="tab-content" id="patientTabsContent">
+                <!-- Rawat Inap Tab -->
+                <div class="tab-pane fade show active" id="inpatient" role="tabpanel" aria-labelledby="inpatient-tab">
+                    <div class="table-responsive mt-3">
+                        <table class="table" id="inpatientTable">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>SEP</th>
+                                    <th>Nama Pasien</th>
+                                    <th>Jaminan</th>
+                                    <th>Kelas</th>
+                                    <th>DPJP</th>
+                                    <th>Tanggal Masuk</th>
+                                    <th>Tanggal Pulang</th>
+                                    <th>LOS</th>
+                                    <th>Umur</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inpatientContainer">
+                                <tr>
+                                    <td colspan="11" class="text-center text-muted py-4">
+                                        <i class="fas fa-bed fa-2x mb-2"></i>
+                                        <p>Memuat data pasien rawat inap...</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Rawat Jalan Tab -->
+                <div class="tab-pane fade" id="outpatient" role="tabpanel" aria-labelledby="outpatient-tab">
+                    <div class="table-responsive mt-3">
+                        <table class="table" id="outpatientTable">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>SEP</th>
+                                    <th>Nama Pasien</th>
+                                    <th>Jaminan</th>
+                                    <th>Kelas</th>
+                                    <th>DPJP</th>
+                                    <th>Tanggal Masuk</th>
+                                    <th>Tanggal Pulang</th>
+                                    <th>LOS</th>
+                                    <th>Umur</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="outpatientContainer">
+                                <tr>
+                                    <td colspan="11" class="text-center text-muted py-4">
+                                        <i class="fas fa-walking fa-2x mb-2"></i>
+                                        <p>Memuat data pasien rawat jalan...</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-
-    <div class="container">
-        <!-- Statistics Summary -->
-        <div class="stats-summary">
+    
+                <!-- Statistics Summary -->
+                <div class="stats-summary">
             <div class="row">
                 <div class="col-md-3">
                     <div class="stats-item">
@@ -281,75 +405,6 @@
             </div>
         </div>
 
-        <!-- Rawat Inap Section -->
-        <div class="section-container">
-            <h3 class="section-title">
-                <i class="fas fa-bed text-primary"></i>
-                Pasien Rawat Inap
-            </h3>
-            <div class="table-responsive">
-                <table class="table" id="inpatientTable">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>SEP</th>
-                            <th>Nama Pasien</th>
-                            <th>Jaminan</th>
-                            <th>Kelas</th>
-                            <th>DPJP</th>
-                            <th>Tanggal Masuk</th>
-                            <th>Tanggal Pulang</th>
-                            <th>LOS</th>
-                            <th>Umur</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody id="inpatientContainer">
-                        <tr>
-                            <td colspan="11" class="text-center text-muted py-4">
-                                <i class="fas fa-bed fa-2x mb-2"></i>
-                                <p>Memuat data pasien rawat inap...</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Rawat Jalan Section -->
-        <div class="section-container">
-            <h3 class="section-title">
-                <i class="fas fa-walking text-success"></i>
-                Pasien Rawat Jalan
-            </h3>
-            <div class="table-responsive">
-                <table class="table" id="outpatientTable">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>SEP</th>
-                            <th>Nama Pasien</th>
-                            <th>Jaminan</th>
-                            <th>Kelas</th>
-                            <th>DPJP</th>
-                            <th>Tanggal Masuk</th>
-                            <th>Tanggal Pulang</th>
-                            <th>LOS</th>
-                            <th>Umur</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody id="outpatientContainer">
-                        <tr>
-                            <td colspan="11" class="text-center text-muted py-4">
-                                <i class="fas fa-walking fa-2x mb-2"></i>
-                                <p>Memuat data pasien rawat jalan...</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </div>
 
     <!-- Modal Detail Pasien -->
@@ -434,8 +489,17 @@
             // Store patients data globally for other functions to use
             window.currentPatients = patients;
             
-            const inpatients = patients.filter(p => p.jenis_rawat === '1');
-            const outpatients = patients.filter(p => p.jenis_rawat === '2');
+            // Filter pasien dengan jenis_rawat yang valid (1 atau 2)
+            const validPatients = patients.filter(p => p.jenis_rawat === '1' || p.jenis_rawat === '2');
+            
+            const inpatients = validPatients.filter(p => p.jenis_rawat === '1');
+            const outpatients = validPatients.filter(p => p.jenis_rawat === '2');
+            
+            // Log untuk debugging
+            console.log('Total patients:', patients.length);
+            console.log('Valid patients:', validPatients.length);
+            console.log('Inpatients:', inpatients.length);
+            console.log('Outpatients:', outpatients.length);
             
             displayPatientList('inpatientContainer', inpatients, 'inpatient');
             displayPatientList('outpatientContainer', outpatients, 'outpatient');
@@ -556,15 +620,22 @@
         }
         
         function updateStats(patients) {
-            const total = patients.length;
-            const inpatient = patients.filter(p => p.jenis_rawat === '1').length;
-            const outpatient = patients.filter(p => p.jenis_rawat === '2').length;
-            const jknBpjs = patients.filter(p => ['JKN', 'BPJS'].includes(p.jaminan_cara_bayar)).length;
+            // Filter hanya pasien dengan jenis_rawat yang valid
+            const validPatients = patients.filter(p => p.jenis_rawat === '1' || p.jenis_rawat === '2');
+            
+            const total = validPatients.length;
+            const inpatient = validPatients.filter(p => p.jenis_rawat === '1').length;
+            const outpatient = validPatients.filter(p => p.jenis_rawat === '2').length;
+            const jknBpjs = validPatients.filter(p => ['JKN', 'BPJS'].includes(p.jaminan_cara_bayar)).length;
             
             $('#totalPatients').text(total);
             $('#totalInpatient').text(inpatient);
             $('#totalOutpatient').text(outpatient);
             $('#totalJKN').text(jknBpjs);
+            
+            // Update tab badges
+            $('#inpatientBadge').text(inpatient);
+            $('#outpatientBadge').text(outpatient);
         }
         
         function viewPatient(patientId) {
@@ -747,33 +818,34 @@
             // Show loading state
             const btn = $('#goToCodingBtn');
             const originalText = btn.html();
-            btn.html('<i class="fas fa-spinner fa-spin me-1"></i>Membuat Klaim E-Klaim...');
+            btn.html('<i class="fas fa-spinner fa-spin me-1"></i>Mendaftarkan SEP ke E-Klaim...');
             btn.prop('disabled', true);
             
-            // Create new claim in E-Klaim first
+            // Register new claim in E-Klaim first
             $.ajax({
                 url: 'api/eklaim_new_claim.php',
                 method: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify({
+                    action: 'new_claim',
                     patient_id: patientId
                 }),
                 success: function(response) {
                     if (response.success) {
-                        console.log('E-Klaim new claim created successfully:', response);
+                        console.log('E-Klaim SEP registered successfully:', response);
                         
                         // Show success message
-                        showSuccess('Klaim E-Klaim berhasil dibuat!');
+                        showSuccess('SEP berhasil didaftarkan ke E-Klaim!');
                         
                         // Redirect to coding page after short delay
                         setTimeout(() => {
                             window.location.href = `coding_idrg.php?patient_id=${patientId}`;
                         }, 1500);
                     } else {
-                        console.error('E-Klaim new claim failed:', response);
+                        console.error('E-Klaim SEP registration failed:', response);
                         
                         // Show error but still allow to proceed
-                        showWarning('Gagal membuat klaim E-Klaim: ' + (response.error || 'Unknown error') + 
+                        showWarning('Gagal mendaftarkan SEP ke E-Klaim: ' + (response.error || 'Unknown error') + 
                                    '<br><br>Anda tetap dapat melanjutkan ke halaman coding.');
                         
                         // Reset button
