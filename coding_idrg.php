@@ -1700,8 +1700,8 @@ require_once 'config/eklaim_config.php';
                  drgDescription.toLowerCase().includes(keyword.toLowerCase())
              );
              
-            // Cek kondisi khusus untuk MDC 21/31 dan DRG yang dimulai dengan 21/31 (valid)
-            const validMdcCodes = 36;
+            // Cek kondisi khusus untuk MDC 36 (invalid) dan selain itu valid
+            const invalidMdcCode = '36';
             const isValidResult = mdcNumber !== invalidMdcCode && drgCode;
              
             // Return true jika ada error dan bukan kondisi valid (MDC bukan 36)
@@ -2257,7 +2257,7 @@ require_once 'config/eklaim_config.php';
                             const result = JSON.parse(status.grouping_result);
                             console.log('Parsed grouping result from kunjungan_pasien:', result);
                             
-                            // Check if grouping result is valid (MDC=31 and DRG starts with 31)
+                            // Check if grouping result is valid (MDC bukan 36)
                             const mdcNumber = result.data?.response_idrg?.mdc_number;
                             const drgCode = result.data?.response_idrg?.drg_code;
                             
