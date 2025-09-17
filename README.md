@@ -1,38 +1,42 @@
 # IDRG PHP - Sistem Pengelolaan Pasien dan Coding E-Klaim
 
-Sistem web berbasis PHP untuk pengelolaan pasien rawat inap/jalan dan integrasi lengkap dengan E-Klaim IDRG/INACBG menggunakan API eksternal.
+Sistem web berbasis PHP untuk pengelolaan pasien rawat inap/jalan dan integrasi lengkap dengan E-Klaim IDRG/INACBG menggunakan API eksternal. Sistem ini mendukung workflow lengkap dari pembuatan klaim hingga finalisasi dengan tracking dan logging yang komprehensif.
 
 ## 📁 Struktur File
 
 ```
-├── api/                              # API Endpoints
-│   ├── eklaim_new_claim.php         # Endpoint utama E-Klaim integration
+├── api/                              # API Endpoints (10 files)
+│   ├── eklaim_new_claim.php         # Endpoint utama E-Klaim integration (1975+ lines)
 │   ├── patients.php                 # API untuk data pasien
-│   ├── search.php                   # API pencarian kode ICD
-│   ├── get_diagnosis.php            # API untuk mendapatkan diagnosa
-│   ├── get_procedure.php            # API untuk mendapatkan prosedur
-│   ├── get_inacbg_codes.php         # API untuk kode INACBG
+│   ├── search.php                   # API pencarian kode ICD dengan autocomplete
+│   ├── get_diagnosis.php            # API untuk mendapatkan diagnosa tersimpan
+│   ├── get_procedure.php            # API untuk mendapatkan prosedur tersimpan
+│   ├── get_inacbg_codes.php         # API untuk kode INACBG autocomplete
 │   ├── save_all_coding_data.php     # API untuk menyimpan data coding
-│   ├── check_eklaim_tracking.php    # API untuk tracking E-Klaim
-│   └── check_grouping_status.php    # API untuk status grouping
+│   ├── check_eklaim_tracking.php    # API untuk tracking E-Klaim method
+│   ├── check_grouping_status.php    # API untuk status grouping
+│   └── check_inacbg_codes.php       # API untuk validasi kode INACBG
 ├── assets/                          # Assets statis
 │   ├── coding-idrg.css             # Stylesheet utama
 │   └── dody.ico                    # Favicon
 ├── config/                          # Konfigurasi
 │   ├── database.php                # Konfigurasi database
-│   ├── eklaim_config.php           # Konfigurasi E-Klaim API
+│   ├── eklaim_config.php           # Konfigurasi E-Klaim API (1592 lines)
 │   ├── cara_masuk_mapping.php      # Mapping cara masuk
-│   └── kode_tarif_mapping.php      # Mapping kode tarif
+│   └── kode_tarif_mapping.php      # Mapping kode tarif (default: AP)
 ├── database/                        # Database schema
 │   └── import_coding_tables.sql    # Schema tabel import coding
 ├── functions/                       # Fungsi utilitas
 │   └── eklaim_method_tracking.php  # Tracking method E-Klaim
 ├── includes/                        # Include files
 │   ├── import_coding_db.php        # Fungsi database import coding
-│   └── logging_functions.php       # Fungsi logging
+│   └── logging_functions.php       # Fungsi logging (315 lines)
 ├── logs/                           # Direktori log (auto-generated)
+│   ├── eklaim_YYYY-MM-DD.log      # Log E-Klaim harian
+│   ├── web_service_requests.log   # Log request web service
+│   └── web_service_responses.log  # Log response web service
 ├── index.php                       # Halaman utama daftar pasien
-├── coding_idrg.php                 # Interface coding IDRG/INACBG
+├── coding_idrg.php                 # Interface coding IDRG/INACBG (5741 lines)
 └── E-KLAIM IDRG.postman_collection.json # Koleksi Postman untuk referensi API
 ```
 
@@ -43,26 +47,33 @@ Sistem web berbasis PHP untuk pengelolaan pasien rawat inap/jalan dan integrasi 
 - Informasi lengkap pasien (SEP, kartu BPJS, RM, dll)
 - Status kunjungan dan discharge
 
-### 2. **Interface Coding IDRG**
-- **Diagnosa ICD-10-IM**: Pencarian dan pemilihan diagnosa dengan validasi
+### 2. **Interface Coding IDRG/INACBG**
+- **Diagnosa ICD-10-IM**: Pencarian dan pemilihan diagnosa dengan autocomplete
 - **Prosedur ICD-9**: Pencarian dan pemilihan prosedur dengan quantity
 - **Validasi Real-time**: Validasi kode terhadap database `idr_codes` dan `inacbg_codes`
 - **Import Coding**: Transfer data dari IDRG ke INACBG dengan delete-insert operation
+- **Special CMG Options**: Dropdown untuk Special Procedure, Prosthesis, Investigation, Drug
+- **Real-time Tariff Update**: Update tarif berdasarkan pilihan Special CMG
 
 ### 3. **Workflow E-Klaim Lengkap**
 - **IDRG Process**: New Claim → Set Data → Coding → Grouping → Final
-- **INACBG Process**: Import → Coding → Grouping Stage 1 → Stage 2 → Final
+- **INACBG Process**: Import → Coding → Grouping Stage 1 → Stage 2 (Special CMG) → Final
 - **Claim Management**: Final Claim → Send Online → Print → Re-edit
+- **Method Tracking**: Tracking semua method E-Klaim dengan status success/error
 
 ### 4. **Sistem Tracking dan Logging**
 - **Method Tracking**: Log semua method E-Klaim di `eklaim_method_tracking`
 - **Import Logging**: Log operasi import di `import_coding_log`
 - **Error Logging**: Log error dan response di `logs/`
+- **Execution Time Tracking**: Tracking waktu eksekusi setiap method
+- **Response Caching**: Cache response untuk menghindari API call berulang
 
 ### 5. **Validasi dan Error Handling**
 - Validasi MDC/DRG dengan logika khusus (MDC 36 = invalid)
 - Fallback description dari `idr_codes` jika tidak ditemukan di `inacbg_codes`
 - Error handling lengkap dengan pesan yang informatif
+- **Kode Tarif Default**: AP (TARIF RS KELAS A PEMERINTAH)
+- **Auto-calculation**: Total klaim otomatis dihitung dari base tariff + special CMG
 
 ## 🔧 API Endpoints
 
@@ -74,7 +85,7 @@ Sistem web berbasis PHP untuk pengelolaan pasien rawat inap/jalan dan integrasi 
 - setIdrgProcedure      // Set prosedur IDRG
 - setInacbgDiagnosa     // Set diagnosa INACBG
 - setInacbgProcedure    // Set prosedur INACBG
-- grouper               // Grouping IDRG/INACBG
+- grouper               // Grouping IDRG/INACBG (stage 1 & 2)
 - idrg_grouper_final    // Finalisasi IDRG
 - inacbg_grouper_final  // Finalisasi INACBG
 - idrg_grouper_reedit   // Re-edit IDRG
@@ -84,21 +95,39 @@ Sistem web berbasis PHP untuk pengelolaan pasien rawat inap/jalan dan integrasi 
 - idrg_to_inacbg_import // Import IDRG ke INACBG
 - checkGroupingStatus   // Cek status grouping
 - createNewClaim        // Buat klaim baru
+- getClaimData          // Ambil data klaim
+- claim_final           // Finalisasi klaim dengan coder NIK
 ```
 
 ### Utility APIs
 ```php
-// api/search.php - Pencarian kode ICD
+// api/search.php - Pencarian kode ICD dengan autocomplete
 GET ?system=idrg&search=term&limit=20
 
 // api/patients.php - Data pasien
 GET ?action=get_patients&type=inpatient|outpatient
+GET ?id=patient_id
 
-// api/get_diagnosis.php - Data diagnosa
-GET ?nomor_sep=xxx
+// api/get_diagnosis.php - Data diagnosa tersimpan
+GET ?kunjungan_id=xxx
 
-// api/get_procedure.php - Data prosedur  
-GET ?nomor_sep=xxx
+// api/get_procedure.php - Data prosedur tersimpan
+GET ?kunjungan_id=xxx
+
+// api/get_inacbg_codes.php - Kode INACBG untuk autocomplete
+GET ?search=term&limit=20
+
+// api/check_inacbg_codes.php - Validasi kode INACBG
+POST { "codes": ["code1", "code2"] }
+
+// api/check_eklaim_tracking.php - Status tracking E-Klaim
+POST { "nomor_sep": "xxx" }
+
+// api/check_grouping_status.php - Status grouping
+POST { "nomor_sep": "xxx" }
+
+// api/save_all_coding_data.php - Simpan data coding
+POST { "kunjungan_id": xxx, "diagnosis": [...], "procedures": [...] }
 ```
 
 ## 🗄️ Struktur Database
@@ -131,6 +160,7 @@ define('EKLAIM_BASE_URL', 'http://10.10.11.173');
 define('EKLAIM_ENDPOINT', '/E-Klaim/ws.php');
 define('EKLAIM_DEBUG_MODE', true);
 define('EKLAIM_CODER_NIK', '123123123123');
+define('EKLAIM_TIMEOUT', 30);
 ```
 
 ## 🔄 Workflow Sistem
@@ -155,8 +185,9 @@ define('EKLAIM_CODER_NIK', '123123123123');
 1. **Diagnosa**: Set diagnosa INACBG
 2. **Prosedur**: Set prosedur INACBG
 3. **Grouping Stage 1**: Klik "Grouping INACBG"
-4. **Grouping Stage 2**: Pilih Special CMG options
-5. **Final**: Klik "Final INACBG"
+4. **Grouping Stage 2**: Pilih Special CMG options (Procedure, Prosthesis, Investigation, Drug)
+5. **Real-time Update**: Tarif otomatis terupdate berdasarkan pilihan Special CMG
+6. **Final**: Klik "Final INACBG"
 
 ### 5. **Finalisasi Klaim**
 1. **Final Klaim**: Klik "Final Klaim"
@@ -180,7 +211,9 @@ const isValidResult = mdcNumber !== invalidMdcCode && drgCode;
 
 ### Method Tracking
 - Setiap method E-Klaim di-track dengan status success/failed
-- Method codes: 22 (INACBG Stage 1), 23 (INACBG Stage 2), 11 (Re-edit IDRG)
+- Method codes: 02 (Set Claim Data), 03 (Set IDRG Diagnosa), 05 (Set IDRG Procedure), 07 (Grouping IDRG), 08 (Final IDRG), 11 (Re-edit IDRG), 22 (INACBG Stage 1), 23 (INACBG Stage 2)
+- Execution time tracking untuk setiap method
+- Response caching untuk menghindari API call berulang
 
 ### Import Operation
 - Delete-insert operation berdasarkan `nomor_sep`
@@ -220,7 +253,14 @@ const isValidResult = mdcNumber !== invalidMdcCode && drgCode;
 2. Lakukan coding IDRG lengkap
 3. Test import ke INACBG
 4. Lakukan coding INACBG lengkap
-5. Test finalisasi klaim
+5. Test Special CMG options dan real-time tariff update
+6. Test finalisasi klaim
+
+### Testing Special CMG
+1. Setelah INACBG Stage 1, pilih Special CMG dari dropdown
+2. Perhatikan tarif otomatis terupdate
+3. Total klaim otomatis terhitung (base tariff + special CMG)
+4. Test dengan multiple Special CMG selection
 
 ## 🔧 Requirements
 
@@ -237,11 +277,30 @@ const isValidResult = mdcNumber !== invalidMdcCode && drgCode;
 3. **Permissions**: Set write permission untuk direktori `logs/`
 4. **Testing**: Akses `index.php` untuk memulai
 
+## 📈 Recent Updates
+
+### v2.0 (Current)
+- ✅ **Special CMG Integration**: Dropdown untuk Special Procedure, Prosthesis, Investigation, Drug
+- ✅ **Real-time Tariff Update**: Update tarif otomatis berdasarkan pilihan Special CMG
+- ✅ **Auto-calculation**: Total klaim otomatis dihitung dari base tariff + special CMG
+- ✅ **Response Caching**: Cache response untuk menghindari API call berulang
+- ✅ **Execution Time Tracking**: Tracking waktu eksekusi setiap method E-Klaim
+- ✅ **Code Cleanup**: Menghapus function duplikat dan tidak terpakai
+- ✅ **Default Kode Tarif**: AP (TARIF RS KELAS A PEMERINTAH)
+- ✅ **Enhanced Error Handling**: Error handling yang lebih informatif
+
+### v1.0 (Previous)
+- Basic IDRG/INACBG workflow
+- Import coding functionality
+- Method tracking system
+- Logging system
+
 ## 🤝 Support
 
 Sistem ini dikembangkan berdasarkan koleksi Postman E-KLAIM IDRG untuk integrasi sistem klaim rumah sakit dengan BPJS Kesehatan.
 
-Untuk pertanyaan teknis, silakan merujuk ke:
-- Log file di direktori `logs/`
-- Database tracking di `eklaim_method_tracking`
-- Postman collection untuk referensi API eksternal
+Diskusi dan Saran:
+
+email: dodynaftali@gmail.com 
+whatsapp: 08170214602
+telegram: @dodynaftali
