@@ -1,0 +1,6397 @@
+{
+    "timestamp": "2025-09-11 03:18:08",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 03:19:14",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870006",
+            "nomor_sep": "0001R0016120507427",
+            "nomor_rm": "123-45-72",
+            "nama_pasien": "NAMA TEST PASIEN 6",
+            "tgl_lahir": "1980-11-30 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 6",
+                    "nomor_rm": "123-45-72",
+                    "tgl_masuk": "2024-01-20 13:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 03:34:18",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 03:40:02",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 03:41:24",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870006",
+            "nomor_sep": "0001R0016120507427",
+            "nomor_rm": "123-45-72",
+            "nama_pasien": "NAMA TEST PASIEN 6",
+            "tgl_lahir": "1980-11-30 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 6",
+                    "nomor_rm": "123-45-72",
+                    "tgl_masuk": "2024-01-20 13:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 03:45:14",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870006",
+            "nomor_sep": "0001R0016120507427",
+            "nomor_rm": "123-45-72",
+            "nama_pasien": "NAMA TEST PASIEN 6",
+            "tgl_lahir": "1980-11-30 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 6",
+                    "nomor_rm": "123-45-72",
+                    "tgl_masuk": "2024-01-20 13:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 03:57:16",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870006",
+            "nomor_sep": "0001R0016120507427",
+            "nomor_rm": "123-45-72",
+            "nama_pasien": "NAMA TEST PASIEN 6",
+            "tgl_lahir": "1980-11-30 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 6",
+                    "nomor_rm": "123-45-72",
+                    "tgl_masuk": "2024-01-20 13:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 03:58:27",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870006",
+            "nomor_sep": "0001R0016120507427",
+            "nomor_rm": "123-45-72",
+            "nama_pasien": "NAMA TEST PASIEN 6",
+            "tgl_lahir": "1980-11-30 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 6",
+                    "nomor_rm": "123-45-72",
+                    "tgl_masuk": "2024-01-20 13:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 04:01:06",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 04:06:21",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 04:08:28",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 04:11:45",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 04:14:17",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 04:22:53",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:02:58",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:03:30",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:16:16",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:16:26",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:17:28",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870006",
+            "nomor_sep": "0001R0016120507427",
+            "nomor_rm": "123-45-72",
+            "nama_pasien": "NAMA TEST PASIEN 6",
+            "tgl_lahir": "1980-11-30 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 6",
+                    "nomor_rm": "123-45-72",
+                    "tgl_masuk": "2024-01-20 13:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:17:46",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507427"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507427",
+            "nomor_kartu": "0000668870006",
+            "tgl_masuk": "2024-01-20 13:00:00",
+            "tgl_pulang": "2024-01-20 13:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "2",
+            "kelas_rawat": "3",
+            "discharge_status": "1",
+            "adl_sub_acute": "0",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Radiologi",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "AP",
+            "cob_cd": "#",
+            "tarif_rs": {
+                "prosedur_non_bedah": "0",
+                "prosedur_bedah": "0",
+                "konsultasi": "200000",
+                "tenaga_ahli": "100000",
+                "keperawatan": "0",
+                "penunjang": "0",
+                "radiologi": "300000",
+                "laboratorium": "0",
+                "pelayanan_darah": "0",
+                "rehabilitasi": "0",
+                "kamar": "0",
+                "rawat_intensif": "0",
+                "obat": "0",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "0",
+                "bmhp": "200000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Kode tarif invalid",
+                "error_no": "E2014"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:17:48",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507427"
+        },
+        "data": {
+            "diagnosa": "Z09.8#N13.2"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "Z09.8#N13.2",
+                "expanded": [
+                    {
+                        "code": "Z09.8",
+                        "display": "Follow-up exam after other treatment for other conditions",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "N13.2",
+                        "display": "Hydronephrosis with renal and ureteral calculous obstruction",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:17:48",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507427"
+        },
+        "data": {
+            "procedure": "#"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "",
+                "expanded": []
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:17:50",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507427"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "21",
+                "mdc_description": "Diseases and Disorders of the the Kidney and Urinary Tract",
+                "drg_code": "2160220",
+                "drg_description": "Chronic Kidney and Urinary Tract Disorders - Follow Up"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:18:01",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870006",
+            "nomor_sep": "0001R0016120507427",
+            "nomor_rm": "123-45-72",
+            "nama_pasien": "NAMA TEST PASIEN 6",
+            "tgl_lahir": "1980-11-30 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 6",
+                    "nomor_rm": "123-45-72",
+                    "tgl_masuk": "2024-01-20 13:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:37:47",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:38:00",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:38:17",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870006",
+            "nomor_sep": "0001R0016120507427",
+            "nomor_rm": "123-45-72",
+            "nama_pasien": "NAMA TEST PASIEN 6",
+            "tgl_lahir": "1980-11-30 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 6",
+                    "nomor_rm": "123-45-72",
+                    "tgl_masuk": "2024-01-20 13:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:38:27",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507427"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507427",
+            "nomor_kartu": "0000668870006",
+            "tgl_masuk": "2024-01-20 13:00:00",
+            "tgl_pulang": "2024-01-20 13:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "2",
+            "kelas_rawat": "3",
+            "discharge_status": "1",
+            "adl_sub_acute": "0",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Radiologi",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "AP",
+            "cob_cd": "#",
+            "tarif_rs": {
+                "prosedur_non_bedah": "0",
+                "prosedur_bedah": "0",
+                "konsultasi": "200000",
+                "tenaga_ahli": "100000",
+                "keperawatan": "0",
+                "penunjang": "0",
+                "radiologi": "300000",
+                "laboratorium": "0",
+                "pelayanan_darah": "0",
+                "rehabilitasi": "0",
+                "kamar": "0",
+                "rawat_intensif": "0",
+                "obat": "0",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "0",
+                "bmhp": "200000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Kode tarif invalid",
+                "error_no": "E2014"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:38:28",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507427"
+        },
+        "data": {
+            "diagnosa": "Z09.8#N13.2"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "Z09.8#N13.2",
+                "expanded": [
+                    {
+                        "code": "Z09.8",
+                        "display": "Follow-up exam after other treatment for other conditions",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "N13.2",
+                        "display": "Hydronephrosis with renal and ureteral calculous obstruction",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:38:28",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507427"
+        },
+        "data": {
+            "procedure": "#"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "",
+                "expanded": []
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:38:29",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507427"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "21",
+                "mdc_description": "Diseases and Disorders of the the Kidney and Urinary Tract",
+                "drg_code": "2160220",
+                "drg_description": "Chronic Kidney and Urinary Tract Disorders - Follow Up"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:38:50",
+    "method": "idrg_grouper_final",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_final"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507427"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:38:56",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507427"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "Z09.8#N13.2",
+                    "expanded": [
+                        {
+                            "code": "Z09.8",
+                            "display": "Follow-up exam after other treatment for other conditions",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "N13.2",
+                            "display": "Hydronephrosis with renal and ureteral calculous obstruction",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "",
+                    "expanded": []
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:47:58",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 05:48:06",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 08:53:05",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870006",
+            "nomor_sep": "0001R0016120507427",
+            "nomor_rm": "123-45-72",
+            "nama_pasien": "NAMA TEST PASIEN 6",
+            "tgl_lahir": "1980-11-30 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 6",
+                    "nomor_rm": "123-45-72",
+                    "tgl_masuk": "2024-01-20 13:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 08:53:26",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870006",
+            "nomor_sep": "0001R0016120507427",
+            "nomor_rm": "123-45-72",
+            "nama_pasien": "NAMA TEST PASIEN 6",
+            "tgl_lahir": "1980-11-30 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 6",
+                    "nomor_rm": "123-45-72",
+                    "tgl_masuk": "2024-01-20 13:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 08:53:38",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507427"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "Z09.8#N13.2",
+                    "expanded": [
+                        {
+                            "code": "Z09.8",
+                            "display": "Follow-up exam after other treatment for other conditions",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "N13.2",
+                            "display": "Hydronephrosis with renal and ureteral calculous obstruction",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "",
+                    "expanded": []
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 09:03:00",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507427"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "Z09.8#N13.2",
+                    "expanded": [
+                        {
+                            "code": "Z09.8",
+                            "display": "Follow-up exam after other treatment for other conditions",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "N13.2",
+                            "display": "Hydronephrosis with renal and ureteral calculous obstruction",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "",
+                    "expanded": []
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 09:19:15",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 09:19:23",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 09:19:56",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870006",
+            "nomor_sep": "0001R0016120507427",
+            "nomor_rm": "123-45-72",
+            "nama_pasien": "NAMA TEST PASIEN 6",
+            "tgl_lahir": "1980-11-30 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 6",
+                    "nomor_rm": "123-45-72",
+                    "tgl_masuk": "2024-01-20 13:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 09:20:07",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507427"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "Z09.8#N13.2",
+                    "expanded": [
+                        {
+                            "code": "Z09.8",
+                            "display": "Follow-up exam after other treatment for other conditions",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "N13.2",
+                            "display": "Hydronephrosis with renal and ureteral calculous obstruction",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "",
+                    "expanded": []
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 09:30:59",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870006",
+            "nomor_sep": "0001R0016120507427",
+            "nomor_rm": "123-45-72",
+            "nama_pasien": "NAMA TEST PASIEN 6",
+            "tgl_lahir": "1980-11-30 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 6",
+                    "nomor_rm": "123-45-72",
+                    "tgl_masuk": "2024-01-20 13:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 09:31:07",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507427"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "Z09.8#N13.2",
+                    "expanded": [
+                        {
+                            "code": "Z09.8",
+                            "display": "Follow-up exam after other treatment for other conditions",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "N13.2",
+                            "display": "Hydronephrosis with renal and ureteral calculous obstruction",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "",
+                    "expanded": []
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 09:31:46",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870006",
+            "nomor_sep": "0001R0016120507427",
+            "nomor_rm": "123-45-72",
+            "nama_pasien": "NAMA TEST PASIEN 6",
+            "tgl_lahir": "1980-11-30 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 6",
+                    "nomor_rm": "123-45-72",
+                    "tgl_masuk": "2024-01-20 13:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 09:38:07",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 09:38:38",
+    "method": "idrg_grouper_reedit",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_reedit"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "iDRG coding belum final",
+                "error_no": "E2103"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 09:38:59",
+    "method": "idrg_grouper_reedit",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_reedit"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 10:31:36",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 10:32:14",
+    "method": "idrg_grouper_reedit",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_reedit"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 10:32:49",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "3",
+            "discharge_status": "1",
+            "adl_sub_acute": "0",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "#",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 10:32:49",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 10:32:50",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#88.380#86.22+2#86.22"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#88.380#86.22+2#86.22",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.380",
+                        "display": "CT simulator 3D (IM)",
+                        "multiplicity": 1,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 2,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 10:32:52",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 10:33:52",
+    "method": "idrg_grouper_final",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_final"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 10:34:10",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 10:38:29",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 10:39:04",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 10:39:19",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:29:17",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Failed to connect to 10.10.1.63 port 80 after 10010 ms: Timeout was reached",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-11 15:29:28",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:29:42",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:37:17",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:37:27",
+    "method": "idrg_grouper_reedit",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_reedit"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:38:19",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:40:38",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:40:44",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "3",
+            "discharge_status": "1",
+            "adl_sub_acute": "0",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "#",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:40:45",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:40:46",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#88.380#86.22+2#86.22"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#88.380#86.22+2#86.22",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.380",
+                        "display": "CT simulator 3D (IM)",
+                        "multiplicity": 1,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 2,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:40:48",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:49:18",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:49:30",
+    "method": "idrg_grouper_final",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_final"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:49:36",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:49:41",
+    "method": "idrg_grouper_reedit",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_reedit"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:52:23",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:52:33",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "3",
+            "discharge_status": "1",
+            "adl_sub_acute": "0",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "#",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:52:34",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:52:35",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#88.380#86.22+2#86.22"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#88.380#86.22+2#86.22",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.380",
+                        "display": "CT simulator 3D (IM)",
+                        "multiplicity": 1,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 2,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:52:36",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:52:37",
+    "method": "idrg_grouper_final",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_final"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:52:41",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 15:52:47",
+    "method": "idrg_grouper_reedit",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_reedit"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:20:14",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Failed to connect to 10.10.1.63 port 80 after 10008 ms: Timeout was reached",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-11 16:22:54",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "3",
+            "discharge_status": "1",
+            "adl_sub_acute": "0",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "#",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:22:55",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:22:55",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#88.380#86.22+2#86.22"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#88.380#86.22+2#86.22",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.380",
+                        "display": "CT simulator 3D (IM)",
+                        "multiplicity": 1,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 2,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:22:57",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:22:58",
+    "method": "idrg_grouper_final",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_final"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:23:02",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:42:21",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:42:49",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:50:44",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:58:12",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:58:35",
+    "method": "idrg_grouper_reedit",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_reedit"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:58:40",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "3",
+            "discharge_status": "1",
+            "adl_sub_acute": "0",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "#",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:58:42",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:58:43",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#88.380#86.22+2#86.22"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#88.380#86.22+2#86.22",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.380",
+                        "display": "CT simulator 3D (IM)",
+                        "multiplicity": 1,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 2,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:58:44",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:58:49",
+    "method": "idrg_grouper_final",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_final"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 16:58:54",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:17:01",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:21:48",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Failed to connect to 10.10.1.63 port 80 after 10025 ms: Timeout was reached",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-11 17:21:55",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Failed to connect to 10.10.1.63 port 80 after 10014 ms: Timeout was reached",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-11 17:24:57",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Failed to connect to 10.10.1.63 port 80 after 10006 ms: Timeout was reached",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-11 17:32:00",
+    "method": "idrg_grouper_reedit",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_reedit"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:32:17",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "3",
+            "discharge_status": "1",
+            "adl_sub_acute": "0",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "#",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:32:18",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:32:20",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#88.380#86.22+2#86.22"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#88.380#86.22+2#86.22",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.380",
+                        "display": "CT simulator 3D (IM)",
+                        "multiplicity": 1,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 2,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:32:25",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:32:26",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "3",
+            "discharge_status": "1",
+            "adl_sub_acute": "0",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "#",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Recv failure: Connection was reset",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-11 17:32:33",
+    "method": "idrg_grouper_final",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_final"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:36:05",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Failed to connect to 10.10.1.63 port 80 after 10005 ms: Timeout was reached",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-11 17:36:17",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:36:25",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:36:36",
+    "method": "inacbg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:36:36",
+    "method": "inacbg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#88.380#86.22#86.22"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#88.380#86.22",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.380",
+                        "display": "CT simulator 3D (IM)",
+                        "no": "2",
+                        "validcode": "0",
+                        "metadata": {
+                            "code": "400",
+                            "error_no": "E2101",
+                            "message": "IM tidak berlaku"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:36:37",
+    "method": "grouper_inacbg_stage1",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "inacbg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_inacbg": {
+                "cbg": {
+                    "code": "X-0-96-X",
+                    "description": "GAGAL: KODE PROSEDUR TIDAK BERLAKU"
+                },
+                "kelas": "kelas_3",
+                "inacbg_version": "5.10.3.202506290741"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:37:02",
+    "method": "inacbg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:37:03",
+    "method": "inacbg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#88.380#86.22#86.22"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#88.380#86.22",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.380",
+                        "display": "CT simulator 3D (IM)",
+                        "no": "2",
+                        "validcode": "0",
+                        "metadata": {
+                            "code": "400",
+                            "error_no": "E2101",
+                            "message": "IM tidak berlaku"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:37:04",
+    "method": "grouper_inacbg_stage1",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "inacbg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_inacbg": {
+                "cbg": {
+                    "code": "X-0-96-X",
+                    "description": "GAGAL: KODE PROSEDUR TIDAK BERLAKU"
+                },
+                "kelas": "kelas_3",
+                "inacbg_version": "5.10.3.202506290741"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:40:54",
+    "method": "inacbg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:40:55",
+    "method": "inacbg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#88.380#86.22#86.22"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#88.380#86.22",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.380",
+                        "display": "CT simulator 3D (IM)",
+                        "no": "2",
+                        "validcode": "0",
+                        "metadata": {
+                            "code": "400",
+                            "error_no": "E2101",
+                            "message": "IM tidak berlaku"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:40:56",
+    "method": "grouper_inacbg_stage1",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "inacbg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_inacbg": {
+                "cbg": {
+                    "code": "X-0-96-X",
+                    "description": "GAGAL: KODE PROSEDUR TIDAK BERLAKU"
+                },
+                "kelas": "kelas_3",
+                "inacbg_version": "5.10.3.202506290741"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:54:00",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:54:20",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:54:31",
+    "method": "inacbg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:54:31",
+    "method": "inacbg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#88.380#86.22#86.22"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#88.380#86.22",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.380",
+                        "display": "CT simulator 3D (IM)",
+                        "no": "2",
+                        "validcode": "0",
+                        "metadata": {
+                            "code": "400",
+                            "error_no": "E2101",
+                            "message": "IM tidak berlaku"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:54:32",
+    "method": "grouper_inacbg_stage1",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "inacbg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_inacbg": {
+                "cbg": {
+                    "code": "X-0-96-X",
+                    "description": "GAGAL: KODE PROSEDUR TIDAK BERLAKU"
+                },
+                "kelas": "kelas_3",
+                "inacbg_version": "5.10.3.202506290741"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:59:42",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 17:59:51",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#88.380#86.22",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.380",
+                            "display": "CT simulator 3D (IM)",
+                            "no": "2",
+                            "validcode": "0",
+                            "metadata": {
+                                "code": "400",
+                                "error_no": "E2101",
+                                "message": "IM tidak berlaku"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "3",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 18:00:09",
+    "method": "inacbg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Failed to connect to 10.10.1.63 port 80 after 10011 ms: Timeout was reached",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-11 18:01:07",
+    "method": "inacbg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 18:01:07",
+    "method": "inacbg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#86.22"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#86.22",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 18:01:08",
+    "method": "grouper_inacbg_stage1",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "inacbg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_inacbg": {
+                "cbg": {
+                    "code": "X-0-99-X",
+                    "description": "FAILED: EMPTY RESULT"
+                },
+                "sub_acute": {
+                    "code": "",
+                    "description": "ADL Score: 0 (-39 hari)",
+                    "tariff": 0
+                },
+                "chronic": {
+                    "code": "",
+                    "description": "ADL Score: 0 (-100 hari)",
+                    "tariff": 0
+                },
+                "special_cmg": [
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Procedure"
+                    },
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Prosthesis"
+                    },
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Investigation"
+                    },
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Drug"
+                    }
+                ],
+                "kelas": "kelas_3",
+                "inacbg_version": "5.10.3.202506290741"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 18:16:04",
+    "method": "inacbg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 18:16:05",
+    "method": "inacbg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#86.22"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#86.22",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 18:16:25",
+    "method": "grouper_inacbg_stage1",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "inacbg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Recv failure: Connection was reset",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-11 18:18:34",
+    "method": "inacbg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 18:18:35",
+    "method": "inacbg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#86.22"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#86.22",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-11 18:18:36",
+    "method": "grouper_inacbg_stage1",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "inacbg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_inacbg": {
+                "cbg": {
+                    "code": "X-0-99-X",
+                    "description": "FAILED: EMPTY RESULT"
+                },
+                "sub_acute": {
+                    "code": "",
+                    "description": "ADL Score: 0 (-39 hari)",
+                    "tariff": 0
+                },
+                "chronic": {
+                    "code": "",
+                    "description": "ADL Score: 0 (-100 hari)",
+                    "tariff": 0
+                },
+                "special_cmg": [
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Procedure"
+                    },
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Prosthesis"
+                    },
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Investigation"
+                    },
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Drug"
+                    }
+                ],
+                "kelas": "kelas_3",
+                "inacbg_version": "5.10.3.202506290741"
+            }
+        },
+        "http_code": 200
+    }
+}

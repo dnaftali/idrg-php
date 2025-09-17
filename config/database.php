@@ -3,7 +3,7 @@
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'idrg');
 define('DB_USER', 'root');
-define('DB_PASS', 'passworddisini');
+define('DB_PASS', 'Naftali123!');
 define('DB_CHARSET', 'latin1');
 
 // Fungsi koneksi database
@@ -19,4 +19,3 @@ function getConnection() {
     }
 }
 ?>
-

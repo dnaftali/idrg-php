@@ -213,6 +213,10 @@ try {
             $result = handleNewClaim($input);
             break;
             
+        case 'reedit_claim':
+            $result = handleReeditClaim($input);
+            break;
+            
         default:
             $result = [
                 'success' => false,
@@ -548,31 +552,96 @@ function handleInacbgGrouperFinal($input) {
             }
             
             if ($metadataCode == 200) {
+                // Tambahkan tracking ke eklaim_method_tracking untuk Final INACBG
+                $trackingResult = saveEklaimMethodTracking(
+                    $nomorSep,
+                    '14', // Method code untuk final_inacbg
+                    'success',
+                    ['nomor_sep' => $nomorSep, 'action' => 'final_inacbg'],
+                    $response,
+                    null, // error_code
+                    null, // error_message
+                    null  // execution_time_ms (akan dihitung jika diperlukan)
+                );
+                
+                // Log hasil tracking
+                error_log("Final INACBG tracking result: " . json_encode($trackingResult, JSON_UNESCAPED_SLASHES));
+                
                 return [
                     'success' => true,
                     'data' => $response,
-                    'message' => 'Final INACBG berhasil diproses'
+                    'message' => 'Final INACBG berhasil diproses',
+                    'tracking' => $trackingResult
                 ];
             } else {
+                // Tambahkan tracking ke eklaim_method_tracking untuk Final INACBG (error)
+                $trackingResult = saveEklaimMethodTracking(
+                    $nomorSep,
+                    '14', // Method code untuk final_inacbg
+                    'error',
+                    ['nomor_sep' => $nomorSep, 'action' => 'final_inacbg'],
+                    $response,
+                    $errorNo, // error_code
+                    $message, // error_message
+                    null      // execution_time_ms
+                );
+                
+                // Log hasil tracking
+                error_log("Final INACBG tracking result (error): " . json_encode($trackingResult, JSON_UNESCAPED_SLASHES));
+                
                 return [
                     'success' => false,
                     'error' => $message ?? 'Gagal melakukan Final INACBG',
                     'error_no' => $errorNo,
-                    'data' => $response
+                    'data' => $response,
+                    'tracking' => $trackingResult
                 ];
             }
         } else {
+            // Tambahkan tracking ke eklaim_method_tracking untuk Final INACBG (response tidak successful)
+            $trackingResult = saveEklaimMethodTracking(
+                $nomorSep,
+                '14', // Method code untuk final_inacbg
+                'error',
+                ['nomor_sep' => $nomorSep, 'action' => 'final_inacbg'],
+                $response,
+                'E5000', // error_code
+                $response['error'] ?? 'Invalid response from E-Klaim', // error_message
+                null     // execution_time_ms
+            );
+            
+            // Log hasil tracking
+            error_log("Final INACBG tracking result (response error): " . json_encode($trackingResult, JSON_UNESCAPED_SLASHES));
+            
             return [
                 'success' => false,
                 'error' => $response['error'] ?? 'Invalid response from E-Klaim',
-                'data' => $response
+                'data' => $response,
+                'tracking' => $trackingResult
             ];
         }
     } catch (Exception $e) {
         error_log("handleInacbgGrouperFinal exception: " . $e->getMessage());
+        
+        // Tambahkan tracking ke eklaim_method_tracking untuk Final INACBG (exception)
+        $trackingResult = saveEklaimMethodTracking(
+            $nomorSep,
+            '14', // Method code untuk final_inacbg
+            'error',
+            ['nomor_sep' => $nomorSep, 'action' => 'final_inacbg'],
+            null, // response_data
+            'E5001', // error_code
+            'Error calling Final INACBG: ' . $e->getMessage(), // error_message
+            null  // execution_time_ms
+        );
+        
+        // Log hasil tracking
+        error_log("Final INACBG tracking result (exception): " . json_encode($trackingResult, JSON_UNESCAPED_SLASHES));
+        
         return [
             'success' => false,
-            'error' => 'Error calling Final INACBG: ' . $e->getMessage()
+            'error' => 'Error calling Final INACBG: ' . $e->getMessage(),
+            'tracking' => $trackingResult
         ];
     }
 }
@@ -691,6 +760,13 @@ function handleIdrgToInacbgImport($input) {
         ];
     }
     
+    // Start tracking
+    $startTime = microtime(true);
+    $requestData = [
+        'nomor_sep' => $nomorSep,
+        'action' => 'idrg_to_inacbg_import'
+    ];
+    
     try {
         // Lakukan import delete terlebih dahulu untuk menghapus data lama
         $importDB = new ImportCodingDB();
@@ -772,7 +848,11 @@ function handleIdrgToInacbgImport($input) {
                 ]);
                 
                 if ($saveResult['success']) {
-                    return [
+                    // Calculate execution time
+                    $executionTime = microtime(true) - $startTime;
+                    
+                    // Prepare success result
+                    $result = [
                         'success' => true,
                         'message' => 'Import coding berhasil',
                         'data' => [
@@ -792,9 +872,27 @@ function handleIdrgToInacbgImport($input) {
                             'deleted_procedure_count' => $deleteResult['deleted_procedure_count']
                         ]
                     ];
+                    
+                    // Save tracking for success
+                    $trackingResult = saveEklaimMethodTracking(
+                        $nomorSep, 
+                        '10', // method_code for idrg_to_inacbg_import
+                        'success', 
+                        $requestData, 
+                        $result, 
+                        null, 
+                        null, 
+                        $executionTime
+                    );
+                    error_log("IDRG to INACBG Import tracking result: " . json_encode($trackingResult, JSON_UNESCAPED_SLASHES));
+                    
+                    return $result;
                 } else {
-                    // Jika gagal menyimpan ke database, tetap return data tapi dengan warning
-                    return [
+                    // Calculate execution time
+                    $executionTime = microtime(true) - $startTime;
+                    
+                    // Prepare result with database error
+                    $result = [
                         'success' => true,
                         'message' => 'Import coding berhasil, namun gagal menyimpan ke database',
                         'data' => [
@@ -804,28 +902,101 @@ function handleIdrgToInacbgImport($input) {
                         'metadata' => $metadata,
                         'database_error' => $saveResult['error']
                     ];
+                    
+                    // Save tracking for database error
+                    $trackingResult = saveEklaimMethodTracking(
+                        $nomorSep, 
+                        '10', // method_code for idrg_to_inacbg_import
+                        'error', 
+                        $requestData, 
+                        $result, 
+                        'DATABASE_ERROR', 
+                        $saveResult['error'], 
+                        $executionTime
+                    );
+                    error_log("IDRG to INACBG Import tracking result (database error): " . json_encode($trackingResult, JSON_UNESCAPED_SLASHES));
+                    
+                    return $result;
                 }
             } else {
-                return [
+                // Calculate execution time
+                $executionTime = microtime(true) - $startTime;
+                
+                // Prepare error result
+                $result = [
                     'success' => false,
                     'error' => $message ?? 'Import coding gagal',
                     'error_code' => $errorNo,
                     'metadata' => $metadata
                 ];
+                
+                // Save tracking for metadata error
+                $trackingResult = saveEklaimMethodTracking(
+                    $nomorSep, 
+                    '10', // method_code for idrg_to_inacbg_import
+                    'error', 
+                    $requestData, 
+                    $result, 
+                    $errorNo, 
+                    $message ?? 'Import coding gagal', 
+                    $executionTime
+                );
+                error_log("IDRG to INACBG Import tracking result (metadata error): " . json_encode($trackingResult, JSON_UNESCAPED_SLASHES));
+                
+                return $result;
             }
         } else {
-            return [
+            // Calculate execution time
+            $executionTime = microtime(true) - $startTime;
+            
+            // Prepare error result
+            $result = [
                 'success' => false,
                 'error' => $response['error'] ?? 'Gagal mengimport coding',
                 'response' => $response
             ];
+            
+            // Save tracking for response error
+            $trackingResult = saveEklaimMethodTracking(
+                $nomorSep, 
+                '10', // method_code for idrg_to_inacbg_import
+                'error', 
+                $requestData, 
+                $result, 
+                'RESPONSE_ERROR', 
+                $response['error'] ?? 'Gagal mengimport coding', 
+                $executionTime
+            );
+            error_log("IDRG to INACBG Import tracking result (response error): " . json_encode($trackingResult, JSON_UNESCAPED_SLASHES));
+            
+            return $result;
         }
     } catch (Exception $e) {
+        // Calculate execution time
+        $executionTime = microtime(true) - $startTime;
+        
         error_log("handleIdrgToInacbgImport exception: " . $e->getMessage());
-        return [
+        
+        // Prepare error result
+        $result = [
             'success' => false,
             'error' => 'Error calling IDRG to INACBG Import: ' . $e->getMessage()
         ];
+        
+        // Save tracking for exception
+        $trackingResult = saveEklaimMethodTracking(
+            $nomorSep, 
+            '10', // method_code for idrg_to_inacbg_import
+            'error', 
+            $requestData, 
+            $result, 
+            'EXCEPTION', 
+            $e->getMessage(), 
+            $executionTime
+        );
+        error_log("IDRG to INACBG Import tracking result (exception): " . json_encode($trackingResult, JSON_UNESCAPED_SLASHES));
+        
+        return $result;
     }
 }
 
@@ -930,6 +1101,47 @@ function handleGrouper($input) {
     
     // Log ke database
     saveWebServiceLog('grouper', $nomorSep, $requestData, $result, $status, $errorCode, $errorMessage, $executionTime);
+    
+    // Tambahkan tracking ke eklaim_method_tracking untuk semua grouper
+    $trackingStatus = $status === 'success' ? 'success' : 'error';
+    $methodCode = '';
+    
+    if ($grouper === 'inacbg') {
+        // Tentukan method code berdasarkan stage untuk INACBG
+        switch ($stage) {
+            case '1':
+                $methodCode = '10'; // Method code untuk INACBG stage 1
+                break;
+            case '2':
+                $methodCode = '13'; // Method code untuk INACBG stage 2 (menggunakan 13 karena 11 sudah digunakan untuk stage 1)
+                break;
+            case 'final':
+                $methodCode = '12'; // Method code untuk INACBG final
+                break;
+        }
+    } elseif ($grouper === 'idrg') {
+        // Method code untuk IDRG
+        $methodCode = '09'; // Method code untuk IDRG grouping
+    }
+    
+    if (!empty($methodCode)) {
+        $trackingResult = saveEklaimMethodTracking(
+            $nomorSep,
+            $methodCode,
+            $trackingStatus,
+            $requestData,
+            $result,
+            $errorCode,
+            $errorMessage,
+            $executionTime
+        );
+        
+        // Log hasil tracking dengan detail
+        error_log("$grouper" . ($stage ? " Stage $stage" : "") . " tracking result: " . json_encode($trackingResult, JSON_UNESCAPED_SLASHES));
+        error_log("Method code used: $methodCode, Status: $trackingStatus, Nomor SEP: $nomorSep");
+    } else {
+        error_log("No method code determined for grouper: $grouper, stage: $stage");
+    }
     
     return $result;
 }
@@ -1324,9 +1536,9 @@ function handleNewClaim($input) {
         
         // Jika berhasil, update status E-Klaim di database
         if ($result['success'] && isset($result['data']['metadata']['code']) && $result['data']['metadata']['code'] === 200) {
-            $stmt = $pdo->prepare("UPDATE kunjungan_pasien SET eklaim_status = 'registered' WHERE id = ?");
+            $stmt = $pdo->prepare("UPDATE kunjungan_pasien SET eklaim_status = 'created' WHERE id = ?");
             $stmt->execute([$patientId]);
-            error_log("Updated E-Klaim status to 'registered' for patient_id: " . $patientId);
+            error_log("Updated E-Klaim status to 'created' for patient_id: " . $patientId);
         }
         
         return [
@@ -1699,6 +1911,73 @@ function handleGetImportHistory($input) {
         return [
             'success' => false,
             'error' => 'Error getting import history: ' . $e->getMessage()
+        ];
+    }
+}
+
+/**
+ * Handle Reedit Claim request
+ * Mengaktifkan kembali form untuk diedit setelah klaim sudah final
+ */
+function handleReeditClaim($input) {
+    $nomorSep = $input['nomor_sep'] ?? '';
+    
+    if (empty($nomorSep)) {
+        return [
+            'success' => false,
+            'error' => 'Nomor SEP tidak boleh kosong'
+        ];
+    }
+    
+    try {
+        // Include database connection
+        require_once '../config/database.php';
+        
+        // Periksa apakah SEP ada di database
+        $pdo = getConnection();
+        $stmt = $pdo->prepare("SELECT id, nomor_sep, nama_pasien, eklaim_status FROM kunjungan_pasien WHERE nomor_sep = ?");
+        $stmt->execute([$nomorSep]);
+        $claim = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if (!$claim) {
+            return [
+                'success' => false,
+                'error' => 'Nomor SEP tidak ditemukan di database'
+            ];
+        }
+        
+        // Log untuk debugging
+        error_log("handleReeditClaim called for nomor_sep: " . $nomorSep);
+        error_log("Current claim status: " . ($claim['eklaim_status'] ?? 'null'));
+        
+        // Update status di database untuk menandai bahwa klaim bisa diedit lagi
+        $stmt = $pdo->prepare("UPDATE kunjungan_pasien SET eklaim_status = 'created' WHERE nomor_sep = ?");
+        $updateResult = $stmt->execute([$nomorSep]);
+        
+        if ($updateResult) {
+            error_log("Successfully updated claim status to 'created' for SEP: " . $nomorSep);
+            
+            return [
+                'success' => true,
+                'message' => 'Klaim berhasil diaktifkan untuk diedit ulang',
+                'nomor_sep' => $nomorSep,
+                'nama_pasien' => $claim['nama_pasien'],
+                'status' => 'created'
+            ];
+        } else {
+            error_log("Failed to update claim status for SEP: " . $nomorSep);
+            
+            return [
+                'success' => false,
+                'error' => 'Gagal mengupdate status klaim di database'
+            ];
+        }
+        
+    } catch (Exception $e) {
+        error_log("Error in handleReeditClaim: " . $e->getMessage());
+        return [
+            'success' => false,
+            'error' => 'Terjadi kesalahan saat memproses edit ulang klaim: ' . $e->getMessage()
         ];
     }
 }

@@ -27,6 +27,7 @@ try {
     }
     
     $nomorSep = $input['nomor_sep'] ?? '';
+    $methodCode = $input['method_code'] ?? null; // Optional method code filter
     
     if (empty($nomorSep)) {
         throw new Exception('Nomor SEP is required');
@@ -37,6 +38,33 @@ try {
     
     if (!$trackingStatus['success']) {
         throw new Exception('Failed to get tracking status: ' . $trackingStatus['error']);
+    }
+    
+    // If specific method_code is requested, return only that method
+    if ($methodCode) {
+        $methodRecord = null;
+        foreach ($trackingStatus['methods'] as $method) {
+            if ($method['method_code'] === $methodCode) {
+                $methodRecord = $method;
+                break;
+            }
+        }
+        
+        if ($methodRecord) {
+            echo json_encode([
+                'success' => true,
+                'nomor_sep' => $nomorSep,
+                'method_code' => $methodCode,
+                'method_record' => $methodRecord
+            ]);
+            exit();
+        } else {
+            echo json_encode([
+                'success' => false,
+                'error' => "Method code $methodCode not found for nomor_sep $nomorSep"
+            ]);
+            exit();
+        }
     }
     
     // Check if final_idrg (method_code 08) is successful

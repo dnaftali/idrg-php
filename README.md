@@ -1,210 +1,247 @@
-# E-KLAIM IDRG PHP Integration
+# IDRG PHP - Sistem Pengelolaan Pasien dan Coding E-Klaim
 
-Proyek ini menyediakan integrasi lengkap dengan sistem E-Klaim IDRG menggunakan PHP, berdasarkan koleksi Postman E-KLAIM IDRG.
+Sistem web berbasis PHP untuk pengelolaan pasien rawat inap/jalan dan integrasi lengkap dengan E-Klaim IDRG/INACBG menggunakan API eksternal.
 
 ## 📁 Struktur File
 
 ```
-├── config/
-│   └── eklaim_config.php          # Konfigurasi dan fungsi E-Klaim lengkap
-├── logs/                          # Direktori log (dibuat otomatis)
-├── EKLAIM_FUNCTIONS_GUIDE.md      # Panduan penggunaan fungsi
-├── contoh_penggunaan_eklaim.php   # Contoh penggunaan lengkap
-└── README.md                      # File ini
+├── api/                              # API Endpoints
+│   ├── eklaim_new_claim.php         # Endpoint utama E-Klaim integration
+│   ├── patients.php                 # API untuk data pasien
+│   ├── search.php                   # API pencarian kode ICD
+│   ├── get_diagnosis.php            # API untuk mendapatkan diagnosa
+│   ├── get_procedure.php            # API untuk mendapatkan prosedur
+│   ├── get_inacbg_codes.php         # API untuk kode INACBG
+│   ├── save_all_coding_data.php     # API untuk menyimpan data coding
+│   ├── check_eklaim_tracking.php    # API untuk tracking E-Klaim
+│   └── check_grouping_status.php    # API untuk status grouping
+├── assets/                          # Assets statis
+│   ├── coding-idrg.css             # Stylesheet utama
+│   └── dody.ico                    # Favicon
+├── config/                          # Konfigurasi
+│   ├── database.php                # Konfigurasi database
+│   ├── eklaim_config.php           # Konfigurasi E-Klaim API
+│   ├── cara_masuk_mapping.php      # Mapping cara masuk
+│   └── kode_tarif_mapping.php      # Mapping kode tarif
+├── database/                        # Database schema
+│   └── import_coding_tables.sql    # Schema tabel import coding
+├── functions/                       # Fungsi utilitas
+│   └── eklaim_method_tracking.php  # Tracking method E-Klaim
+├── includes/                        # Include files
+│   ├── import_coding_db.php        # Fungsi database import coding
+│   └── logging_functions.php       # Fungsi logging
+├── logs/                           # Direktori log (auto-generated)
+├── index.php                       # Halaman utama daftar pasien
+├── coding_idrg.php                 # Interface coding IDRG/INACBG
+└── E-KLAIM IDRG.postman_collection.json # Koleksi Postman untuk referensi API
 ```
 
 ## 🚀 Fitur Utama
 
-### ✅ 21 Fungsi E-Klaim Lengkap
-Berdasarkan koleksi Postman E-KLAIM IDRG, semua fungsi telah diimplementasikan:
+### 1. **Sistem Pengelolaan Pasien**
+- Daftar pasien rawat inap dan rawat jalan
+- Informasi lengkap pasien (SEP, kartu BPJS, RM, dll)
+- Status kunjungan dan discharge
 
-1. **#00 NEW CLAIM** - `createNewClaim()`
-2. **#01 SET CLAIM DATA** - `setClaimData()`
-3. **#02 IDRG DIAGNOSA SET** - `setIdrgDiagnosa()`
-4. **#03 IDRG DIAGNOSA GET** - `getIdrgDiagnosa()`
-5. **#04 IDRG PROCEDURE SET** - `setIdrgProcedure()`
-6. **#05 IDRG PROCEDURE GET** - `getIdrgProcedure()`
-7. **#06 GROUPING IDRG** - `groupIdrg()`
-8. **#07 FINAL IDRG** - `finalizeIdrg()`
-9. **#08 RE-EDIT IDRG** - `reeditIdrg()`
-10. **#09 IDRG TO INACBG IMPORT** - `importIdrgToInacbg()`
-11. **#10 INACBG DIAGNOSA GET** - `getInacbgDiagnosa()`
-12. **#11 INACBG DIAGNOSA SET** - `setInacbgDiagnosa()`
-13. **#12 INACBG PROCEDURE SET** - `setInacbgProcedure()`
-14. **#13 INACBG PROCEDURE GET** - `getInacbgProcedure()`
-15. **#14 GROUPING INACBG STAGE 1** - `groupInacbgStage1()`
-16. **#15 GROUPING INACBG STAGE 2** - `groupInacbgStage2()`
-17. **#16 FINAL INACBG** - `finalizeInacbg()`
-18. **#17 RE-EDIT INACBG** - `reeditInacbg()`
-19. **#18 CLAIM FINAL** - `finalizeClaim()`
-20. **#19 CLAIM RE-EDIT** - `reeditClaim()`
-21. **#20 CLAIM SEND** - `sendClaim()`
-22. **#21 GET CLAIM DATA** - `getClaimData()`
+### 2. **Interface Coding IDRG**
+- **Diagnosa ICD-10-IM**: Pencarian dan pemilihan diagnosa dengan validasi
+- **Prosedur ICD-9**: Pencarian dan pemilihan prosedur dengan quantity
+- **Validasi Real-time**: Validasi kode terhadap database `idr_codes` dan `inacbg_codes`
+- **Import Coding**: Transfer data dari IDRG ke INACBG dengan delete-insert operation
 
-### 🔧 Fungsi Helper
-- **Validasi**: `validateNomorSep()`, `validateDiagnosa()`, `validateProcedure()`
-- **Utilitas**: `formatEklaimDate()`, `getClaimStatus()`, `getErrorMessage()`, `getErrorCode()`
+### 3. **Workflow E-Klaim Lengkap**
+- **IDRG Process**: New Claim → Set Data → Coding → Grouping → Final
+- **INACBG Process**: Import → Coding → Grouping Stage 1 → Stage 2 → Final
+- **Claim Management**: Final Claim → Send Online → Print → Re-edit
 
-### 📝 Logging Otomatis
-Semua request dan response otomatis di-log ke file `logs/eklaim_YYYY-MM-DD.log`
+### 4. **Sistem Tracking dan Logging**
+- **Method Tracking**: Log semua method E-Klaim di `eklaim_method_tracking`
+- **Import Logging**: Log operasi import di `import_coding_log`
+- **Error Logging**: Log error dan response di `logs/`
 
-### 🛡️ Error Handling
-Response standar dengan format:
+### 5. **Validasi dan Error Handling**
+- Validasi MDC/DRG dengan logika khusus (MDC 36 = invalid)
+- Fallback description dari `idr_codes` jika tidak ditemukan di `inacbg_codes`
+- Error handling lengkap dengan pesan yang informatif
+
+## 🔧 API Endpoints
+
+### E-Klaim Integration (`api/eklaim_new_claim.php`)
 ```php
-[
-    'success' => true/false,
-    'data' => [...], // jika success
-    'error' => 'error message', // jika failed
-    'http_code' => 200
-]
+// Actions yang tersedia:
+- setClaimData          // Set data klaim lengkap
+- setIdrgDiagnosa       // Set diagnosa IDRG
+- setIdrgProcedure      // Set prosedur IDRG
+- setInacbgDiagnosa     // Set diagnosa INACBG
+- setInacbgProcedure    // Set prosedur INACBG
+- grouper               // Grouping IDRG/INACBG
+- idrg_grouper_final    // Finalisasi IDRG
+- inacbg_grouper_final  // Finalisasi INACBG
+- idrg_grouper_reedit   // Re-edit IDRG
+- inacbg_grouper_reedit // Re-edit INACBG
+- final_claim           // Finalisasi klaim
+- send_claim_online     // Kirim klaim online
+- idrg_to_inacbg_import // Import IDRG ke INACBG
+- checkGroupingStatus   // Cek status grouping
+- createNewClaim        // Buat klaim baru
 ```
+
+### Utility APIs
+```php
+// api/search.php - Pencarian kode ICD
+GET ?system=idrg&search=term&limit=20
+
+// api/patients.php - Data pasien
+GET ?action=get_patients&type=inpatient|outpatient
+
+// api/get_diagnosis.php - Data diagnosa
+GET ?nomor_sep=xxx
+
+// api/get_procedure.php - Data prosedur  
+GET ?nomor_sep=xxx
+```
+
+## 🗄️ Struktur Database
+
+### Tabel Utama
+- **`kunjungan_pasien`**: Data pasien dan status grouping
+- **`idr_codes`**: Master kode ICD-10 dan ICD-9
+- **`inacbg_codes`**: Master kode INACBG
+- **`eklaim_method_tracking`**: Log method E-Klaim
+- **`eklaim_method_mapping`**: Mapping method code ke nama method
+
+### Tabel Import Coding
+- **`import_coding_log`**: Log operasi import
+- **`import_coding_diagnosis`**: Data diagnosa yang diimport
+- **`import_coding_procedure`**: Data prosedur yang diimport
 
 ## ⚙️ Konfigurasi
 
-Edit file `config/eklaim_config.php` untuk mengatur:
-
+### Database (`config/database.php`)
 ```php
-// Konfigurasi Server E-Klaim
-define('EKLAIM_BASE_URL', 'http://10.10.1.63');  // Ganti dengan URL server Anda
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'idrg');
+define('DB_USER', 'root');
+define('DB_PASS', 'Naftali123!');
+```
+
+### E-Klaim (`config/eklaim_config.php`)
+```php
+define('EKLAIM_BASE_URL', 'http://10.10.11.173');
 define('EKLAIM_ENDPOINT', '/E-Klaim/ws.php');
-define('EKLAIM_DEBUG_MODE', true);  // Set false untuk production
-define('EKLAIM_TIMEOUT', 30);
+define('EKLAIM_DEBUG_MODE', true);
+define('EKLAIM_CODER_NIK', '123123123123');
 ```
 
-## 📖 Cara Penggunaan
+## 🔄 Workflow Sistem
 
-### 1. Include Konfigurasi
-```php
-require_once 'config/eklaim_config.php';
+### 1. **Pembuatan Klaim**
+1. Pilih pasien dari daftar (`index.php`)
+2. Klik "Coding IDRG" untuk masuk ke interface coding
+3. Sistem otomatis membuat klaim baru di E-Klaim
+
+### 2. **Coding IDRG**
+1. **Diagnosa**: Tambah diagnosa ICD-10-IM (minimal 1)
+2. **Prosedur**: Tambah prosedur ICD-9 (opsional)
+3. **Grouping**: Klik "Grouping iDRG" untuk proses grouping
+4. **Final**: Klik "Final iDRG" untuk finalisasi
+
+### 3. **Import ke INACBG**
+1. Klik "Import Coding" untuk transfer data
+2. Sistem melakukan delete-insert ke tabel import
+3. Data tersimpan dengan validasi kode
+
+### 4. **Coding INACBG**
+1. **Diagnosa**: Set diagnosa INACBG
+2. **Prosedur**: Set prosedur INACBG
+3. **Grouping Stage 1**: Klik "Grouping INACBG"
+4. **Grouping Stage 2**: Pilih Special CMG options
+5. **Final**: Klik "Final INACBG"
+
+### 5. **Finalisasi Klaim**
+1. **Final Klaim**: Klik "Final Klaim"
+2. **Status Klaim**: Tampil layout dengan tombol:
+   - Cetak Klaim
+   - Kirim Klaim Online
+   - Edit Ulang Klaim
+
+## 🎯 Fitur Khusus
+
+### Validasi Grouping
+```javascript
+// Logika validasi: MDC 36 = invalid, selain itu valid
+const invalidMdcCode = '36';
+const isValidResult = mdcNumber !== invalidMdcCode && drgCode;
 ```
 
-### 2. Contoh Penggunaan Dasar
-```php
-// Buat klaim baru
-$patientData = [
-    'nomor_kartu' => '0000097208276',
-    'nomor_sep' => 'UJICOBA6',
-    'nomor_rm' => 'A002122',
-    'nama_pasien' => 'PASIEN UJICOBA IDRG 2',
-    'tgl_lahir' => '2000-01-01 02:00:00',
-    'gender' => '2'
-];
+### Fallback Description
+- Jika kode tidak ditemukan di `inacbg_codes`
+- Cari di `idr_codes` dengan append "(IM tidak berlaku)" berwarna merah
 
-$result = createNewClaim($patientData);
-if ($result['success']) {
-    echo "Klaim berhasil dibuat\n";
-} else {
-    echo "Error: " . getErrorMessage($result) . "\n";
-}
-```
+### Method Tracking
+- Setiap method E-Klaim di-track dengan status success/failed
+- Method codes: 22 (INACBG Stage 1), 23 (INACBG Stage 2), 11 (Re-edit IDRG)
 
-### 3. Contoh Penggunaan Lengkap
-Jalankan file `contoh_penggunaan_eklaim.php` untuk melihat contoh penggunaan lengkap semua fungsi.
+### Import Operation
+- Delete-insert operation berdasarkan `nomor_sep`
+- Populate `icd_description` dari master data
+- Log operasi di `import_coding_log`
 
-## 🔄 Urutan Proses E-Klaim
+## 🚨 Error Codes E-Klaim
 
-### Tahap 1: Pembuatan Klaim
-1. `createNewClaim()` - Buat klaim baru
-2. `setClaimData()` - Set data klaim lengkap
-
-### Tahap 2: Coding IDRG
-3. `setIdrgDiagnosa()` - Set diagnosa IDRG
-4. `getIdrgDiagnosa()` - Get diagnosa IDRG
-5. `setIdrgProcedure()` - Set prosedur IDRG
-6. `getIdrgProcedure()` - Get prosedur IDRG
-
-### Tahap 3: Grouping IDRG
-7. `groupIdrg()` - Grouping IDRG
-8. `finalizeIdrg()` - Finalisasi IDRG
-9. `reeditIdrg()` - Re-edit IDRG (opsional)
-
-### Tahap 4: Import ke INACBG
-10. `importIdrgToInacbg()` - Import data IDRG ke INACBG
-
-### Tahap 5: Coding INACBG
-11. `getInacbgDiagnosa()` - Get diagnosa INACBG
-12. `setInacbgDiagnosa()` - Set diagnosa INACBG
-13. `setInacbgProcedure()` - Set prosedur INACBG
-14. `getInacbgProcedure()` - Get prosedur INACBG
-
-### Tahap 6: Grouping INACBG
-15. `groupInacbgStage1()` - Grouping INACBG tahap 1
-16. `groupInacbgStage2()` - Grouping INACBG tahap 2
-17. `finalizeInacbg()` - Finalisasi INACBG
-18. `reeditInacbg()` - Re-edit INACBG (opsional)
-
-### Tahap 7: Finalisasi dan Pengiriman
-19. `finalizeClaim()` - Finalisasi klaim
-20. `reeditClaim()` - Re-edit klaim (opsional)
-21. `sendClaim()` - Kirim klaim ke BPJS
-22. `getClaimData()` - Get data klaim lengkap
-
-## 📋 Validasi Format
-
-### Diagnosa ICD-10
-- Format: `"ICD10#ICD10"` (contoh: `"S71.0#A00.1"`)
-- Validasi: `validateDiagnosa($diagnosa)`
-
-### Prosedur ICD-9
-- Format IDRG: `"ICD9#ICD9+multiplier#ICD9"` (contoh: `"81.52#86.22+2#86.22"`)
-- Format INACBG: `"ICD9#ICD9#ICD9"` (contoh: `"81.52#86.22#90.09"`)
-- Validasi: `validateProcedure($procedure)`
-
-### Tanggal
-- Format: `"YYYY-MM-DD HH:mm:ss"`
-- Helper: `formatEklaimDate($date)`
-
-## 🚨 Error Codes
-
-Berdasarkan koleksi Postman, error codes yang umum:
-- `E2004`: Nomor SEP tidak ditemukan
-- `E2007`: Duplikasi nomor SEP
-- `E2018`: Klaim masih belum final
-- `E2044`: Parameter tidak berlaku
-- `E2101`: IM tidak berlaku
-- `E2102`: iDRG/INACBG coding sudah final
-- `E2103`: iDRG/INACBG coding belum final
-- `E2104`: INACBG coding belum final
-- `E2105`: iDRG error ungroupable
+- **E2004**: Nomor SEP tidak ditemukan
+- **E2007**: Duplikasi nomor SEP  
+- **E2018**: Klaim masih belum final
+- **E2101**: IM tidak berlaku
+- **E2102**: iDRG/INACBG coding sudah final
+- **E2103**: iDRG/INACBG coding belum final
+- **E2104**: INACBG coding belum final
+- **E2105**: iDRG error ungroupable
 
 ## 📊 Logging
 
-Log otomatis tersimpan di `logs/eklaim_YYYY-MM-DD.log` dengan format:
-```json
-{
-    "timestamp": "2025-01-05 10:30:00",
-    "method": "new_claim",
-    "request": {...},
-    "response": {...}
-}
-```
+### File Log
+- `logs/eklaim_YYYY-MM-DD.log`: Log request/response E-Klaim
+- `logs/web_service_requests.log`: Log request web service
+- `logs/web_service_responses.log`: Log response web service
+
+### Database Log
+- `eklaim_method_tracking`: Tracking method dengan status
+- `import_coding_log`: Log operasi import dengan metadata
 
 ## 🧪 Testing
 
-### Menjalankan Contoh
-```bash
-php contoh_penggunaan_eklaim.php
-```
+### Akses Aplikasi
+1. **Beranda**: `http://localhost/idrg-php/`
+2. **Coding**: `http://localhost/idrg-php/coding_idrg.php?patient_id=19`
 
-### Menu Testing
-1. Contoh penggunaan lengkap E-Klaim
-2. Contoh penggunaan fungsi re-edit
-3. Contoh penggunaan fungsi validasi
-4. Contoh penggunaan fungsi utilitas
-5. Jalankan semua contoh
+### Testing Workflow
+1. Pilih pasien dari daftar
+2. Lakukan coding IDRG lengkap
+3. Test import ke INACBG
+4. Lakukan coding INACBG lengkap
+5. Test finalisasi klaim
 
 ## 🔧 Requirements
 
-- PHP 7.0+
-- cURL extension
-- JSON extension
-- Akses ke server E-Klaim
+- **PHP**: 7.0+
+- **Database**: MySQL 5.7+
+- **Extensions**: PDO, cURL, JSON
+- **Server**: Apache/Nginx dengan mod_rewrite
+- **Akses**: Koneksi ke server E-Klaim
 
-## 📝 License
+## 📝 Setup
 
-Proyek ini dibuat berdasarkan koleksi Postman E-KLAIM IDRG untuk integrasi sistem klaim rumah sakit.
+1. **Database**: Import schema dan data master
+2. **Konfigurasi**: Update `config/database.php` dan `config/eklaim_config.php`
+3. **Permissions**: Set write permission untuk direktori `logs/`
+4. **Testing**: Akses `index.php` untuk memulai
 
 ## 🤝 Support
 
-Untuk pertanyaan atau dukungan, silakan merujuk ke dokumentasi atau file contoh yang disediakan.
+Sistem ini dikembangkan berdasarkan koleksi Postman E-KLAIM IDRG untuk integrasi sistem klaim rumah sakit dengan BPJS Kesehatan.
 
+Untuk pertanyaan teknis, silakan merujuk ke:
+- Log file di direktori `logs/`
+- Database tracking di `eklaim_method_tracking`
+- Postman collection untuk referensi API eksternal

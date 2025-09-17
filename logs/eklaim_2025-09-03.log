@@ -1,0 +1,319 @@
+{
+    "timestamp": "2025-09-03 00:56:18",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870020",
+        "nomor_sep": "0001R0016120507441",
+        "nomor_rm": "123-45-86",
+        "nama_pasien": "NAMA TEST PASIEN 20",
+        "tgl_lahir": "1985-04-07 00:00:00",
+        "gender": "2",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-09-03 00:56:24",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870020",
+        "nomor_sep": "0001R0016120507441",
+        "nomor_rm": "123-45-86",
+        "nama_pasien": "NAMA TEST PASIEN 20",
+        "tgl_lahir": "1985-04-07 00:00:00",
+        "gender": "2",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-09-03 00:56:28",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870020",
+            "nomor_sep": "0001R0016120507441",
+            "nomor_rm": "123-45-86",
+            "nama_pasien": "NAMA TEST PASIEN 20",
+            "tgl_lahir": "1985-04-07 00:00:00",
+            "gender": "2"
+        }
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Failed to connect to 10.10.1.63 port 80 after 10014 ms: Timeout was reached",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-03 00:56:28",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870020",
+        "nomor_sep": "0001R0016120507441",
+        "nomor_rm": "123-45-86",
+        "nama_pasien": "NAMA TEST PASIEN 20",
+        "tgl_lahir": "1985-04-07 00:00:00",
+        "gender": "2",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Failed to connect to 10.10.1.63 port 80 after 10014 ms: Timeout was reached",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-03 00:56:34",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870020",
+            "nomor_sep": "0001R0016120507441",
+            "nomor_rm": "123-45-86",
+            "nama_pasien": "NAMA TEST PASIEN 20",
+            "tgl_lahir": "1985-04-07 00:00:00",
+            "gender": "2"
+        }
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Failed to connect to 10.10.1.63 port 80 after 10015 ms: Timeout was reached",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-03 00:56:34",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870020",
+        "nomor_sep": "0001R0016120507441",
+        "nomor_rm": "123-45-86",
+        "nama_pasien": "NAMA TEST PASIEN 20",
+        "tgl_lahir": "1985-04-07 00:00:00",
+        "gender": "2",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Failed to connect to 10.10.1.63 port 80 after 10015 ms: Timeout was reached",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-03 00:56:40",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870009",
+        "nomor_sep": "0001R0016120507430",
+        "nomor_rm": "123-45-75",
+        "nama_pasien": "NAMA TEST PASIEN 9",
+        "tgl_lahir": "1955-09-05 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-09-03 00:56:50",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870009",
+            "nomor_sep": "0001R0016120507430",
+            "nomor_rm": "123-45-75",
+            "nama_pasien": "NAMA TEST PASIEN 9",
+            "tgl_lahir": "1955-09-05 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Failed to connect to 10.10.1.63 port 80 after 10015 ms: Timeout was reached",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-03 00:56:50",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870009",
+        "nomor_sep": "0001R0016120507430",
+        "nomor_rm": "123-45-75",
+        "nama_pasien": "NAMA TEST PASIEN 9",
+        "tgl_lahir": "1955-09-05 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Failed to connect to 10.10.1.63 port 80 after 10015 ms: Timeout was reached",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-03 00:57:10",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870009",
+        "nomor_sep": "0001R0016120507430",
+        "nomor_rm": "123-45-75",
+        "nama_pasien": "NAMA TEST PASIEN 9",
+        "tgl_lahir": "1955-09-05 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-09-03 00:57:13",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870009",
+            "nomor_sep": "0001R0016120507430",
+            "nomor_rm": "123-45-75",
+            "nama_pasien": "NAMA TEST PASIEN 9",
+            "tgl_lahir": "1955-09-05 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": 55546,
+                "admission_id": 1,
+                "hospital_admission_id": 0
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-03 00:57:13",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870009",
+        "nomor_sep": "0001R0016120507430",
+        "nomor_rm": "123-45-75",
+        "nama_pasien": "NAMA TEST PASIEN 9",
+        "tgl_lahir": "1955-09-05 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": 55546,
+                "admission_id": 1,
+                "hospital_admission_id": 0
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-03 01:27:43",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507430"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507430",
+            "nomor_kartu": "0000668870009",
+            "tgl_masuk": "2024-01-23 16:00:00",
+            "tgl_pulang": "2024-02-02 14:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "adl_sub_acute": 12,
+            "adl_chronic": 0,
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": 110,
+            "diastole": 60,
+            "discharge_status": "1",
+            "tarif_rs": {
+                "prosedur_non_bedah": "3000000",
+                "prosedur_bedah": "20000000",
+                "konsultasi": "800000",
+                "tenaga_ahli": "3000000",
+                "keperawatan": "2000000",
+                "penunjang": "1000000",
+                "radiologi": "800000",
+                "laboratorium": "1000000",
+                "pelayanan_darah": "0",
+                "rehabilitasi": "500000",
+                "kamar": "2500000",
+                "rawat_intensif": "2000000",
+                "obat": "1500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "800000",
+                "bmhp": "600000",
+                "sewa_alat": "0"
+            },
+            "pemulasaraan_jenazah": "0",
+            "kantong_jenazah": "0",
+            "peti_jenazah": "0",
+            "plastik_erat": "0",
+            "desinfektan_jenazah": "0",
+            "mobil_jenazah": "0",
+            "desinfektan_mobil_jenazah": "0",
+            "covid19_status_cd": "0",
+            "nomor_kartu_t": "nik",
+            "episodes": "1;1",
+            "akses_naat": "C",
+            "isoman_ind": "0",
+            "bayi_lahir_status_cd": 0,
+            "dializer_single_use": "0",
+            "kantong_darah": 0,
+            "alteplase_ind": 0,
+            "tarif_poli_eks": "0",
+            "nama_dokter": "Dr. Hendra Jantung",
+            "kode_tarif": "AP",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "cob_cd": 0,
+            "coder_nik": "123123123123"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Nomor SEP tidak ditemukan",
+                "error_no": "E2004"
+            }
+        },
+        "http_code": 200
+    }
+}

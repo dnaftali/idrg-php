@@ -1,0 +1,6355 @@
+{
+    "timestamp": "2025-09-05 13:29:34",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "adl_sub_acute": 20,
+            "adl_chronic": 0,
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": 110,
+            "diastole": 60,
+            "discharge_status": "1",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            },
+            "pemulasaraan_jenazah": "0",
+            "kantong_jenazah": "0",
+            "peti_jenazah": "0",
+            "plastik_erat": "0",
+            "desinfektan_jenazah": "0",
+            "mobil_jenazah": "0",
+            "desinfektan_mobil_jenazah": "0",
+            "covid19_status_cd": "0",
+            "nomor_kartu_t": "nik",
+            "episodes": "1;1",
+            "akses_naat": "C",
+            "isoman_ind": "0",
+            "bayi_lahir_status_cd": 0,
+            "dializer_single_use": "0",
+            "kantong_darah": 0,
+            "alteplase_ind": 0,
+            "tarif_poli_eks": "0",
+            "nama_dokter": "Dr. Joko Mata",
+            "kode_tarif": "AP",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "cob_cd": 0,
+            "coder_nik": "123123123123"
+        }
+    },
+    "response": {
+        "success": false,
+        "error": "Response tidak valid dari server E-Klaim: Syntax error",
+        "http_code": 200,
+        "raw_response": "MODE DEBUG IS NOT ALLOWED"
+    }
+}
+{
+    "timestamp": "2025-09-05 13:30:53",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "adl_sub_acute": 20,
+            "adl_chronic": 0,
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": 110,
+            "diastole": 60,
+            "discharge_status": "1",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            },
+            "pemulasaraan_jenazah": "0",
+            "kantong_jenazah": "0",
+            "peti_jenazah": "0",
+            "plastik_erat": "0",
+            "desinfektan_jenazah": "0",
+            "mobil_jenazah": "0",
+            "desinfektan_mobil_jenazah": "0",
+            "covid19_status_cd": "0",
+            "nomor_kartu_t": "nik",
+            "episodes": "1;1",
+            "akses_naat": "C",
+            "isoman_ind": "0",
+            "bayi_lahir_status_cd": 0,
+            "dializer_single_use": "0",
+            "kantong_darah": 0,
+            "alteplase_ind": 0,
+            "tarif_poli_eks": "0",
+            "nama_dokter": "Dr. Joko Mata",
+            "kode_tarif": "AP",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "cob_cd": 0,
+            "coder_nik": "123123123123"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Nomor SEP tidak ditemukan",
+                "error_no": "E2004"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 13:30:53",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "A15.0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Nomor SEP tidak ditemukan",
+                "error_no": "E2004"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 13:30:54",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "82.01#03.52"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Nomor SEP tidak ditemukan",
+                "error_no": "E2004"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 13:30:59",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "adl_sub_acute": 20,
+            "adl_chronic": 0,
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": 110,
+            "diastole": 60,
+            "discharge_status": "1",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            },
+            "pemulasaraan_jenazah": "0",
+            "kantong_jenazah": "0",
+            "peti_jenazah": "0",
+            "plastik_erat": "0",
+            "desinfektan_jenazah": "0",
+            "mobil_jenazah": "0",
+            "desinfektan_mobil_jenazah": "0",
+            "covid19_status_cd": "0",
+            "nomor_kartu_t": "nik",
+            "episodes": "1;1",
+            "akses_naat": "C",
+            "isoman_ind": "0",
+            "bayi_lahir_status_cd": 0,
+            "dializer_single_use": "0",
+            "kantong_darah": 0,
+            "alteplase_ind": 0,
+            "tarif_poli_eks": "0",
+            "nama_dokter": "Dr. Joko Mata",
+            "kode_tarif": "AP",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "cob_cd": 0,
+            "coder_nik": "123123123123"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Nomor SEP tidak ditemukan",
+                "error_no": "E2004"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 13:30:59",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "A15.0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Nomor SEP tidak ditemukan",
+                "error_no": "E2004"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 13:31:00",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "82.01#03.52"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Nomor SEP tidak ditemukan",
+                "error_no": "E2004"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 13:32:43",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "adl_sub_acute": 20,
+            "adl_chronic": 0,
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": 110,
+            "diastole": 60,
+            "discharge_status": "1",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            },
+            "pemulasaraan_jenazah": "0",
+            "kantong_jenazah": "0",
+            "peti_jenazah": "0",
+            "plastik_erat": "0",
+            "desinfektan_jenazah": "0",
+            "mobil_jenazah": "0",
+            "desinfektan_mobil_jenazah": "0",
+            "covid19_status_cd": "0",
+            "nomor_kartu_t": "nik",
+            "episodes": "1;1",
+            "akses_naat": "C",
+            "isoman_ind": "0",
+            "bayi_lahir_status_cd": 0,
+            "dializer_single_use": "0",
+            "kantong_darah": 0,
+            "alteplase_ind": 0,
+            "tarif_poli_eks": "0",
+            "nama_dokter": "Dr. Joko Mata",
+            "kode_tarif": "AP",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "cob_cd": 0,
+            "coder_nik": "123123123123"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Nomor SEP tidak ditemukan",
+                "error_no": "E2004"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 13:37:26",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "adl_sub_acute": 20,
+            "adl_chronic": 0,
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": 110,
+            "diastole": 60,
+            "discharge_status": "1",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            },
+            "pemulasaraan_jenazah": "0",
+            "kantong_jenazah": "0",
+            "peti_jenazah": "0",
+            "plastik_erat": "0",
+            "desinfektan_jenazah": "0",
+            "mobil_jenazah": "0",
+            "desinfektan_mobil_jenazah": "0",
+            "covid19_status_cd": "0",
+            "nomor_kartu_t": "nik",
+            "episodes": "1;1",
+            "akses_naat": "C",
+            "isoman_ind": "0",
+            "bayi_lahir_status_cd": 0,
+            "dializer_single_use": "0",
+            "kantong_darah": 0,
+            "alteplase_ind": 0,
+            "tarif_poli_eks": "0",
+            "nama_dokter": "Dr. Joko Mata",
+            "kode_tarif": "AP",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "cob_cd": 0,
+            "coder_nik": "123123123123"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Nomor SEP tidak ditemukan",
+                "error_no": "E2004"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 13:37:27",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "A15.0#Z99.0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Nomor SEP tidak ditemukan",
+                "error_no": "E2004"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 13:37:28",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "01.32#07.83"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Nomor SEP tidak ditemukan",
+                "error_no": "E2004"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 14:19:33",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "adl_sub_acute": 20,
+            "adl_chronic": 0,
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": 110,
+            "diastole": 60,
+            "discharge_status": "1",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            },
+            "pemulasaraan_jenazah": "0",
+            "kantong_jenazah": "0",
+            "peti_jenazah": "0",
+            "plastik_erat": "0",
+            "desinfektan_jenazah": "0",
+            "mobil_jenazah": "0",
+            "desinfektan_mobil_jenazah": "0",
+            "covid19_status_cd": "0",
+            "nomor_kartu_t": "nik",
+            "episodes": "1;1",
+            "akses_naat": "C",
+            "isoman_ind": "0",
+            "bayi_lahir_status_cd": 0,
+            "dializer_single_use": "0",
+            "kantong_darah": 0,
+            "alteplase_ind": 0,
+            "tarif_poli_eks": "0",
+            "nama_dokter": "Dr. Joko Mata",
+            "kode_tarif": "AP",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "cob_cd": 0,
+            "coder_nik": "123123123123"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Nomor SEP tidak ditemukan",
+                "error_no": "E2004"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 14:39:51",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "adl_sub_acute": 20,
+            "adl_chronic": 0,
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": 110,
+            "diastole": 60,
+            "discharge_status": "1",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            },
+            "pemulasaraan_jenazah": "0",
+            "kantong_jenazah": "0",
+            "peti_jenazah": "0",
+            "plastik_erat": "0",
+            "desinfektan_jenazah": "0",
+            "mobil_jenazah": "0",
+            "desinfektan_mobil_jenazah": "0",
+            "covid19_status_cd": "0",
+            "nomor_kartu_t": "nik",
+            "episodes": "1;1",
+            "akses_naat": "C",
+            "isoman_ind": "0",
+            "bayi_lahir_status_cd": 0,
+            "dializer_single_use": "0",
+            "kantong_darah": 0,
+            "alteplase_ind": 0,
+            "tarif_poli_eks": "0",
+            "nama_dokter": "Dr. Joko Mata",
+            "kode_tarif": "AP",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "cob_cd": 0,
+            "coder_nik": "123123123123"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Nomor SEP tidak ditemukan",
+                "error_no": "E2004"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 14:51:56",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": 55582,
+                "admission_id": 1,
+                "hospital_admission_id": 256380
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:09:03",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:10:12",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:10:12",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "coder_nik": "123123123123",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "cob_cd": "0",
+            "bayi_lahir_status_cd": "0",
+            "birth_weight": "0",
+            "covid19_status_cd": "0",
+            "alteplase_ind": "0",
+            "dializer_single_use": "0",
+            "diastole": "60",
+            "sistole": "110",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "isoman_ind": "0",
+            "kantong_darah": "0",
+            "kantong_jenazah": "0",
+            "mobil_jenazah": "0",
+            "pemulasaraan_jenazah": "0",
+            "peti_jenazah": "0",
+            "plastik_erat": "0",
+            "desinfektan_jenazah": "0",
+            "desinfektan_mobil_jenazah": "0",
+            "upgrade_class_ind": "0",
+            "tarif_poli_eks": "0",
+            "add_payment_pct": "0",
+            "akses_naat": "C",
+            "nomor_kartu_t": "nik",
+            "payor_cd": "JKN",
+            "payor_id": "3",
+            "kode_tarif": "AP",
+            "nama_dokter": "Dr. Joko Mata",
+            "episodes": "1;1",
+            "prosedur_non_bedah": "1000000",
+            "prosedur_bedah": "12000000",
+            "konsultasi": "300000",
+            "tenaga_ahli": "1800000",
+            "keperawatan": "800500",
+            "penunjang": "400000",
+            "radiologi": "300000",
+            "laboratorium": "400000",
+            "pelayanan_darah": "100000",
+            "rehabilitasi": "200000",
+            "kamar": "1200000",
+            "rawat_intensif": "0",
+            "obat": "500000",
+            "obat_kronis": "0",
+            "obat_kemoterapi": "0",
+            "alkes": "250000",
+            "bmhp": "150000",
+            "sewa_alat": "0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Kode tarif invalid",
+                "error_no": "E2014"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:10:31",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:10:31",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "coder_nik": "123123123123",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "cob_cd": "0",
+            "bayi_lahir_status_cd": "0",
+            "birth_weight": "0",
+            "covid19_status_cd": "0",
+            "alteplase_ind": "0",
+            "dializer_single_use": "0",
+            "diastole": "60",
+            "sistole": "110",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "isoman_ind": "0",
+            "kantong_darah": "0",
+            "kantong_jenazah": "0",
+            "mobil_jenazah": "0",
+            "pemulasaraan_jenazah": "0",
+            "peti_jenazah": "0",
+            "plastik_erat": "0",
+            "desinfektan_jenazah": "0",
+            "desinfektan_mobil_jenazah": "0",
+            "upgrade_class_ind": "0",
+            "tarif_poli_eks": "0",
+            "add_payment_pct": "0",
+            "akses_naat": "C",
+            "nomor_kartu_t": "nik",
+            "payor_cd": "JKN",
+            "payor_id": "3",
+            "kode_tarif": "AP",
+            "nama_dokter": "Dr. Joko Mata",
+            "episodes": "1;1",
+            "prosedur_non_bedah": "1000000",
+            "prosedur_bedah": "12000000",
+            "konsultasi": "300000",
+            "tenaga_ahli": "1800000",
+            "keperawatan": "800500",
+            "penunjang": "400000",
+            "radiologi": "300000",
+            "laboratorium": "400000",
+            "pelayanan_darah": "100000",
+            "rehabilitasi": "200000",
+            "kamar": "1200000",
+            "rawat_intensif": "0",
+            "obat": "500000",
+            "obat_kronis": "0",
+            "obat_kemoterapi": "0",
+            "alkes": "250000",
+            "bmhp": "150000",
+            "sewa_alat": "0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Kode tarif invalid",
+                "error_no": "E2014"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:16:55",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:17:12",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:17:13",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "prosedur_non_bedah": "1000000",
+            "prosedur_bedah": "12000000",
+            "konsultasi": "300000",
+            "tenaga_ahli": "1800000",
+            "keperawatan": "800500",
+            "penunjang": "400000",
+            "radiologi": "300000",
+            "laboratorium": "400000",
+            "pelayanan_darah": "100000",
+            "rehabilitasi": "200000",
+            "kamar": "1200000",
+            "rawat_intensif": "0",
+            "obat": "500000",
+            "obat_kronis": "0",
+            "obat_kemoterapi": "0",
+            "alkes": "250000",
+            "bmhp": "150000",
+            "sewa_alat": "0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "NIK Coder masih kosong",
+                "error_no": "E2005"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:31:04",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:31:26",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:31:26",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "prosedur_non_bedah": "1000000",
+            "prosedur_bedah": "12000000",
+            "konsultasi": "300000",
+            "tenaga_ahli": "1800000",
+            "keperawatan": "800500",
+            "penunjang": "400000",
+            "radiologi": "300000",
+            "laboratorium": "400000",
+            "pelayanan_darah": "100000",
+            "rehabilitasi": "200000",
+            "kamar": "1200000",
+            "rawat_intensif": "0",
+            "obat": "500000",
+            "obat_kronis": "0",
+            "obat_kemoterapi": "0",
+            "alkes": "250000",
+            "bmhp": "150000",
+            "sewa_alat": "0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Error: Parameter payor_id kosong atau invalid.",
+                "error_no": "E2051"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:35:51",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:36:05",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:36:05",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "prosedur_non_bedah": "1000000",
+            "prosedur_bedah": "12000000",
+            "konsultasi": "300000",
+            "tenaga_ahli": "1800000",
+            "keperawatan": "800500",
+            "penunjang": "400000",
+            "radiologi": "300000",
+            "laboratorium": "400000",
+            "pelayanan_darah": "100000",
+            "rehabilitasi": "200000",
+            "kamar": "1200000",
+            "rawat_intensif": "0",
+            "obat": "500000",
+            "obat_kronis": "0",
+            "obat_kemoterapi": "0",
+            "alkes": "250000",
+            "bmhp": "150000",
+            "sewa_alat": "0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:40:52",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:41:11",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:41:11",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "prosedur_non_bedah": "1000000",
+            "prosedur_bedah": "12000000",
+            "konsultasi": "300000",
+            "tenaga_ahli": "1800000",
+            "keperawatan": "800500",
+            "penunjang": "400000",
+            "radiologi": "300000",
+            "laboratorium": "400000",
+            "pelayanan_darah": "100000",
+            "rehabilitasi": "200000",
+            "kamar": "1200000",
+            "rawat_intensif": "0",
+            "obat": "500000",
+            "obat_kronis": "0",
+            "obat_kemoterapi": "0",
+            "alkes": "250000",
+            "bmhp": "150000",
+            "sewa_alat": "0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:54:09",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:54:19",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:54:20",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "prosedur_non_bedah": "1000000",
+            "prosedur_bedah": "12000000",
+            "konsultasi": "300000",
+            "tenaga_ahli": "1800000",
+            "keperawatan": "800500",
+            "penunjang": "400000",
+            "radiologi": "300000",
+            "laboratorium": "400000",
+            "pelayanan_darah": "100000",
+            "rehabilitasi": "200000",
+            "kamar": "1200000",
+            "rawat_intensif": "0",
+            "obat": "500000",
+            "obat_kronis": "0",
+            "obat_kemoterapi": "0",
+            "alkes": "250000",
+            "bmhp": "150000",
+            "sewa_alat": "0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:54:20",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "A34#S23.1#D32.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "A34#S23.1#D32.1",
+                "expanded": [
+                    {
+                        "code": "A34",
+                        "display": "Obstetrical tetanus",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "S23.1",
+                        "display": "Dislocation of thoracic vertebra",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "D32.1",
+                        "display": "Benign neoplasm, spinal meninges",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:54:21",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "04.41#01.21+2#01.21#01.21"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "04.41#01.21+2#01.21#01.21",
+                "expanded": [
+                    {
+                        "code": "04.41",
+                        "display": "Decompression of trigeminal nerve root",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 2,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:58:08",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "UJICOBA5"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Nomor SEP tidak ditemukan",
+                "error_no": "E2004"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:58:09",
+    "method": "grouper_inacbg_stage1",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "inacbg"
+        },
+        "data": {
+            "nomor_sep": "UJICOBA5"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Nomor SEP tidak ditemukan",
+                "error_no": "E2004"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 16:59:18",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:01:57",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": "55582",
+                "admission_id": 2,
+                "hospital_admission_id": 256381
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:02:13",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:02:24",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:02:24",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "prosedur_non_bedah": "1000000",
+            "prosedur_bedah": "12000000",
+            "konsultasi": "300000",
+            "tenaga_ahli": "1800000",
+            "keperawatan": "800500",
+            "penunjang": "400000",
+            "radiologi": "300000",
+            "laboratorium": "400000",
+            "pelayanan_darah": "100000",
+            "rehabilitasi": "200000",
+            "kamar": "1200000",
+            "rawat_intensif": "0",
+            "obat": "500000",
+            "obat_kronis": "0",
+            "obat_kemoterapi": "0",
+            "alkes": "250000",
+            "bmhp": "150000",
+            "sewa_alat": "0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:02:25",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "A34#S23.1#D32.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "A34#S23.1#D32.1",
+                "expanded": [
+                    {
+                        "code": "A34",
+                        "display": "Obstetrical tetanus",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "S23.1",
+                        "display": "Dislocation of thoracic vertebra",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "D32.1",
+                        "display": "Benign neoplasm, spinal meninges",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:02:25",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "04.41#01.21+2#01.21#01.21"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "04.41#01.21+2#01.21#01.21",
+                "expanded": [
+                    {
+                        "code": "04.41",
+                        "display": "Decompression of trigeminal nerve root",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 2,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:14:50",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:15:13",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:15:14",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "0",
+            "prosedur_non_bedah": "1000000",
+            "prosedur_bedah": "12000000",
+            "konsultasi": "300000",
+            "tenaga_ahli": "1800000",
+            "keperawatan": "800500",
+            "penunjang": "400000",
+            "radiologi": "300000",
+            "laboratorium": "400000",
+            "pelayanan_darah": "100000",
+            "rehabilitasi": "200000",
+            "kamar": "1200000",
+            "rawat_intensif": "0",
+            "obat": "500000",
+            "obat_kronis": "0",
+            "obat_kemoterapi": "0",
+            "alkes": "250000",
+            "bmhp": "150000",
+            "sewa_alat": "0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:15:15",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "A34#S23.1#D32.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "A34#S23.1#D32.1",
+                "expanded": [
+                    {
+                        "code": "A34",
+                        "display": "Obstetrical tetanus",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "S23.1",
+                        "display": "Dislocation of thoracic vertebra",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "D32.1",
+                        "display": "Benign neoplasm, spinal meninges",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:15:15",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "04.41#01.21+2#01.21#01.21"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "04.41#01.21+2#01.21#01.21",
+                "expanded": [
+                    {
+                        "code": "04.41",
+                        "display": "Decompression of trigeminal nerve root",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 2,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:20:35",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:20:47",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:20:48",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "0",
+            "prosedur_non_bedah": "1000000",
+            "prosedur_bedah": "12000000",
+            "konsultasi": "300000",
+            "tenaga_ahli": "1800000",
+            "keperawatan": "800500",
+            "penunjang": "400000",
+            "radiologi": "300000",
+            "laboratorium": "400000",
+            "pelayanan_darah": "100000",
+            "rehabilitasi": "200000",
+            "kamar": "1200000",
+            "rawat_intensif": "0",
+            "obat": "500000",
+            "obat_kronis": "0",
+            "obat_kemoterapi": "0",
+            "alkes": "250000",
+            "bmhp": "150000",
+            "sewa_alat": "0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:20:48",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "A34#S23.1#D32.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "A34#S23.1#D32.1",
+                "expanded": [
+                    {
+                        "code": "A34",
+                        "display": "Obstetrical tetanus",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "S23.1",
+                        "display": "Dislocation of thoracic vertebra",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "D32.1",
+                        "display": "Benign neoplasm, spinal meninges",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:20:49",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "04.41#01.21+2#01.21#01.21"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "04.41#01.21+2#01.21#01.21",
+                "expanded": [
+                    {
+                        "code": "04.41",
+                        "display": "Decompression of trigeminal nerve root",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 2,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:22:33",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": "55582",
+                "admission_id": 3,
+                "hospital_admission_id": 256382
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:22:48",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:23:11",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:23:12",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "0",
+            "prosedur_non_bedah": "1000000",
+            "prosedur_bedah": "12000000",
+            "konsultasi": "300000",
+            "tenaga_ahli": "1800000",
+            "keperawatan": "800500",
+            "penunjang": "400000",
+            "radiologi": "300000",
+            "laboratorium": "400000",
+            "pelayanan_darah": "100000",
+            "rehabilitasi": "200000",
+            "kamar": "1200000",
+            "rawat_intensif": "0",
+            "obat": "500000",
+            "obat_kronis": "0",
+            "obat_kemoterapi": "0",
+            "alkes": "250000",
+            "bmhp": "150000",
+            "sewa_alat": "0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:23:12",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "A34#S23.1#D32.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "A34#S23.1#D32.1",
+                "expanded": [
+                    {
+                        "code": "A34",
+                        "display": "Obstetrical tetanus",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "S23.1",
+                        "display": "Dislocation of thoracic vertebra",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "D32.1",
+                        "display": "Benign neoplasm, spinal meninges",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:23:13",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "04.41#01.21+2#01.21#01.21"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "04.41#01.21+2#01.21#01.21",
+                "expanded": [
+                    {
+                        "code": "04.41",
+                        "display": "Decompression of trigeminal nerve root",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 2,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:23:40",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:23:40",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "0",
+            "prosedur_non_bedah": "1000000",
+            "prosedur_bedah": "12000000",
+            "konsultasi": "300000",
+            "tenaga_ahli": "1800000",
+            "keperawatan": "800500",
+            "penunjang": "400000",
+            "radiologi": "300000",
+            "laboratorium": "400000",
+            "pelayanan_darah": "100000",
+            "rehabilitasi": "200000",
+            "kamar": "1200000",
+            "rawat_intensif": "0",
+            "obat": "500000",
+            "obat_kronis": "0",
+            "obat_kemoterapi": "0",
+            "alkes": "250000",
+            "bmhp": "150000",
+            "sewa_alat": "0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:23:41",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "A34#S23.1#D32.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "A34#S23.1#D32.1",
+                "expanded": [
+                    {
+                        "code": "A34",
+                        "display": "Obstetrical tetanus",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "S23.1",
+                        "display": "Dislocation of thoracic vertebra",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "D32.1",
+                        "display": "Benign neoplasm, spinal meninges",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:23:41",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "04.41#01.21+2#01.21#01.21"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "04.41#01.21+2#01.21#01.21",
+                "expanded": [
+                    {
+                        "code": "04.41",
+                        "display": "Decompression of trigeminal nerve root",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 2,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:27:13",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:27:23",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:27:24",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "0",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:27:25",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "A34#S23.1#D32.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "A34#S23.1#D32.1",
+                "expanded": [
+                    {
+                        "code": "A34",
+                        "display": "Obstetrical tetanus",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "S23.1",
+                        "display": "Dislocation of thoracic vertebra",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "D32.1",
+                        "display": "Benign neoplasm, spinal meninges",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:27:25",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "04.41#01.21+2#01.21#01.21"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "04.41#01.21+2#01.21#01.21",
+                "expanded": [
+                    {
+                        "code": "04.41",
+                        "display": "Decompression of trigeminal nerve root",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 2,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:27:33",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:27:34",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "0",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:27:34",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "A34#S23.1#D32.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "A34#S23.1#D32.1",
+                "expanded": [
+                    {
+                        "code": "A34",
+                        "display": "Obstetrical tetanus",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "S23.1",
+                        "display": "Dislocation of thoracic vertebra",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "D32.1",
+                        "display": "Benign neoplasm, spinal meninges",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:27:35",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "04.41#01.21+2#01.21#01.21"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "04.41#01.21+2#01.21#01.21",
+                "expanded": [
+                    {
+                        "code": "04.41",
+                        "display": "Decompression of trigeminal nerve root",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 2,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:34:31",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:36:12",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:39:03",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:39:16",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "36",
+                "mdc_description": "Ungroupable or Unrelated",
+                "drg_code": "3611199",
+                "drg_description": "Primary Diagnosis code A34 is not valid for Male"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:41:33",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:41:43",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "36",
+                "mdc_description": "Ungroupable or Unrelated",
+                "drg_code": "3611199",
+                "drg_description": "Primary Diagnosis code A34 is not valid for Male"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:45:35",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:45:48",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "36",
+                "mdc_description": "Ungroupable or Unrelated",
+                "drg_code": "3611199",
+                "drg_description": "Primary Diagnosis code A34 is not valid for Male"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:46:10",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:46:11",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "0",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:46:12",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S23.1#D32.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "S23.1#D32.1",
+                "expanded": [
+                    {
+                        "code": "S23.1",
+                        "display": "Dislocation of thoracic vertebra",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "D32.1",
+                        "display": "Benign neoplasm, spinal meninges",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:46:12",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "04.41#01.21+2#01.21#01.21"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "04.41#01.21+2#01.21#01.21",
+                "expanded": [
+                    {
+                        "code": "04.41",
+                        "display": "Decompression of trigeminal nerve root",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 2,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "01.21",
+                        "display": "Incision and drainage of cranial sinus",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:46:18",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "36",
+                "mdc_description": "Ungroupable or Unrelated",
+                "drg_code": "3600019",
+                "drg_description": "Unrelated OR Procedures"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:48:31",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:48:32",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "0",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:48:32",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:48:33",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#88.380#86.22+2#86.22#86.22"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#88.380#86.22+2#86.22#86.22",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.380",
+                        "display": "CT simulator 3D (IM)",
+                        "multiplicity": 1,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 2,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 1,
+                        "no": "5",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:48:39",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:50:34",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:51:51",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:51:52",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "0",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:51:53",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:52:01",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:52:47",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:52:55",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:53:30",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:53:31",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "0",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:53:33",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "I50.0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "I50.0",
+                "expanded": [
+                    {
+                        "code": "I50.0",
+                        "display": "Congestive heart failure",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:53:46",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "15",
+                "mdc_description": "Diseases and Disorders of the Circulatory System",
+                "drg_code": "1527310",
+                "drg_description": "Other Circulatory Wound Debridement w\/ No CC"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:53:49",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:53:50",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "0",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:53:51",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "I50.0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "I50.0",
+                "expanded": [
+                    {
+                        "code": "I50.0",
+                        "display": "Congestive heart failure",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:58:07",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:58:18",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:58:19",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "0",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:58:19",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "I50.0"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "I50.0",
+                "expanded": [
+                    {
+                        "code": "I50.0",
+                        "display": "Congestive heart failure",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:58:20",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "06.2"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "06.2",
+                "expanded": [
+                    {
+                        "code": "06.2",
+                        "display": "Unilateral thyroid lobectomy",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 17:58:30",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "36",
+                "mdc_description": "Ungroupable or Unrelated",
+                "drg_code": "3600019",
+                "drg_description": "Unrelated OR Procedures"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:09:38",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:09:48",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "36",
+                "mdc_description": "Ungroupable or Unrelated",
+                "drg_code": "3600019",
+                "drg_description": "Unrelated OR Procedures"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:12:46",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "36",
+                "mdc_description": "Ungroupable or Unrelated",
+                "drg_code": "3600019",
+                "drg_description": "Unrelated OR Procedures"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:12:54",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:13:00",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "36",
+                "mdc_description": "Ungroupable or Unrelated",
+                "drg_code": "3600019",
+                "drg_description": "Unrelated OR Procedures"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:17:06",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:17:15",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "36",
+                "mdc_description": "Ungroupable or Unrelated",
+                "drg_code": "3600019",
+                "drg_description": "Unrelated OR Procedures"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:19:51",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:19:58",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "36",
+                "mdc_description": "Ungroupable or Unrelated",
+                "drg_code": "3600019",
+                "drg_description": "Unrelated OR Procedures"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:21:24",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:21:25",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "1",
+            "discharge_status": "1",
+            "adl_sub_acute": "20",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "0",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:21:25",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:21:26",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#88.380#86.22+2#86.22#86.22"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#88.380#86.22+2#86.22#86.22",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.380",
+                        "display": "CT simulator 3D (IM)",
+                        "multiplicity": 1,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 2,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 1,
+                        "no": "5",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:21:32",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:24:46",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:29:57",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:30:14",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:30:29",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:31:26",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:39:43",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:40:19",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:40:59",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:41:46",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:45:44",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:47:24",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:47:38",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc."
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:47:46",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-05 18:49:14",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "2024-02-02 02:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}

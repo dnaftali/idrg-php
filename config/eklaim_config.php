@@ -10,7 +10,7 @@ require_once __DIR__ . '/../functions/eklaim_method_tracking.php';
 
 // Konfigurasi Server E-Klaim
 //define('EKLAIM_BASE_URL', 'http://10.10.1.63');
-define('EKLAIM_BASE_URL', 'http://10.10.11.173');
+define('EKLAIM_BASE_URL', 'http://192.168.100.27');
 define('EKLAIM_ENDPOINT', '/E-Klaim/ws.php');
 define('EKLAIM_DEBUG_MODE', true); // Set false untuk production
 

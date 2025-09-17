@@ -1,0 +1,1497 @@
+{
+    "timestamp": "2025-09-17 16:19:25",
+    "method": "new_claim",
+    "request": {
+        "metadata": {
+            "method": "new_claim"
+        },
+        "data": {
+            "nomor_kartu": "0000668870019",
+            "nomor_sep": "0001R0016120507440",
+            "nomor_rm": "123-45-85",
+            "nama_pasien": "NAMA TEST PASIEN 19",
+            "tgl_lahir": "1950-10-28 00:00:00",
+            "gender": "1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": 1,
+                "admission_id": 1,
+                "hospital_admission_id": 1
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:19:38",
+    "method": "idrg_grouper_reedit",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_reedit"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:19:51",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "3",
+            "discharge_status": "1",
+            "adl_sub_acute": "0",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "DS",
+            "cob_cd": "#",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Kode tarif invalid",
+                "error_no": "E2014"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:19:54",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:19:56",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#86.22+2#86.22#88.38"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#86.22+2#86.22#88.38",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 2,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 1,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.38",
+                        "display": "Other computerized axial tomography",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:19:58",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Kode tarif invalid",
+                "error_no": "E2014"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:20:30",
+    "method": "set_claim_data",
+    "request": {
+        "metadata": {
+            "method": "set_claim_data",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "nomor_kartu": "0000668870019",
+            "tgl_masuk": "2024-02-02 02:00:00",
+            "tgl_pulang": "2024-02-04 19:00:00",
+            "cara_masuk": "gp",
+            "jenis_rawat": "1",
+            "kelas_rawat": "3",
+            "discharge_status": "1",
+            "adl_sub_acute": "0",
+            "adl_chronic": "0",
+            "icu_indikator": "0",
+            "icu_los": "0",
+            "upgrade_class_ind": "0",
+            "add_payment_pct": "0",
+            "birth_weight": "0",
+            "sistole": "110",
+            "diastole": "60",
+            "coder_nik": "123123123123",
+            "payor_id": "3",
+            "payor_cd": "JKN",
+            "nama_dokter": "Dr. Joko Mata",
+            "tarif_poli_eks": "0",
+            "kode_tarif": "AP",
+            "cob_cd": "#",
+            "tarif_rs": {
+                "prosedur_non_bedah": "1000000",
+                "prosedur_bedah": "12000000",
+                "konsultasi": "300000",
+                "tenaga_ahli": "1800000",
+                "keperawatan": "800500",
+                "penunjang": "400000",
+                "radiologi": "300000",
+                "laboratorium": "400000",
+                "pelayanan_darah": "100000",
+                "rehabilitasi": "200000",
+                "kamar": "1200000",
+                "rawat_intensif": "0",
+                "obat": "500000",
+                "obat_kronis": "0",
+                "obat_kemoterapi": "0",
+                "alkes": "250000",
+                "bmhp": "150000",
+                "sewa_alat": "0"
+            }
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:20:33",
+    "method": "idrg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:20:35",
+    "method": "idrg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "idrg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#86.22+2#86.22#88.38"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#86.22+2#86.22#88.38",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "multiplicity": 1,
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 2,
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "multiplicity": 1,
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.38",
+                        "display": "Other computerized axial tomography",
+                        "multiplicity": 1,
+                        "no": "4",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:20:44",
+    "method": "grouper_idrg",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "idrg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_idrg": {
+                "mdc_number": "31",
+                "mdc_description": "Multiple Significant Trauma",
+                "drg_code": "3109119",
+                "drg_description": "Multiple Significant Trauma w\/ Other OR Proc.",
+                "script_version": "1.0.26",
+                "logic_version": "0.2.1718.202508082251"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:21:09",
+    "method": "idrg_grouper_final",
+    "request": {
+        "metadata": {
+            "method": "idrg_grouper_final"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:21:18",
+    "method": "idrg_to_inacbg_import",
+    "request": {
+        "metadata": {
+            "method": "idrg_to_inacbg_import"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "idrg_to_inacbg_import"
+            },
+            "data": {
+                "diagnosa": {
+                    "string": "S71.0#A00.1",
+                    "expanded": [
+                        {
+                            "code": "S71.0",
+                            "display": "Open wound of hip",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "A00.1",
+                            "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                },
+                "procedure": {
+                    "string": "81.52#86.22#88.38",
+                    "expanded": [
+                        {
+                            "code": "81.52",
+                            "display": "Partial hip replacement",
+                            "no": "1",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "86.22",
+                            "display": "Excisional debridement of wound, infection, or burn",
+                            "no": "2",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        },
+                        {
+                            "code": "88.38",
+                            "display": "Other computerized axial tomography",
+                            "no": "4",
+                            "validcode": "1",
+                            "metadata": {
+                                "code": "200",
+                                "message": "Ok"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:22:52",
+    "method": "inacbg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:22:54",
+    "method": "inacbg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#86.22#88.38"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#86.22#88.38",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.38",
+                        "display": "Other computerized axial tomography",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:22:59",
+    "method": "grouper_inacbg_stage1",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "inacbg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_inacbg": {
+                "cbg": {
+                    "code": "X-0-97-X",
+                    "description": "FAILED: LICENSE EXPIRED"
+                },
+                "sub_acute": {
+                    "code": "",
+                    "description": "ADL Score: 0 (-39 hari)",
+                    "tariff": 0
+                },
+                "chronic": {
+                    "code": "",
+                    "description": "ADL Score: 0 (-100 hari)",
+                    "tariff": 0
+                },
+                "special_cmg": [
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Procedure"
+                    },
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Prosthesis"
+                    },
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Investigation"
+                    },
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Drug"
+                    }
+                ],
+                "kelas": "kelas_3",
+                "inacbg_version": "5.10.4.202508270937.dev"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:24:23",
+    "method": "inacbg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:24:25",
+    "method": "inacbg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#86.22#88.38"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#86.22#88.38",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.38",
+                        "display": "Other computerized axial tomography",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:24:29",
+    "method": "grouper_inacbg_stage1",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "inacbg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_inacbg": {
+                "cbg": {
+                    "code": "X-0-97-X",
+                    "description": "FAILED: LICENSE EXPIRED"
+                },
+                "sub_acute": {
+                    "code": "",
+                    "description": "ADL Score: 0 (-39 hari)",
+                    "tariff": 0
+                },
+                "chronic": {
+                    "code": "",
+                    "description": "ADL Score: 0 (-100 hari)",
+                    "tariff": 0
+                },
+                "special_cmg": [
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Procedure"
+                    },
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Prosthesis"
+                    },
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Investigation"
+                    },
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Drug"
+                    }
+                ],
+                "kelas": "kelas_3",
+                "inacbg_version": "5.10.4.202508270937.dev"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:30:00",
+    "method": "inacbg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:30:02",
+    "method": "inacbg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#86.22#88.38"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#86.22#88.38",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.38",
+                        "display": "Other computerized axial tomography",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:30:06",
+    "method": "grouper_inacbg_stage1",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "inacbg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_inacbg": {
+                "cbg": {
+                    "code": "X-0-97-X",
+                    "description": "FAILED: LICENSE EXPIRED"
+                },
+                "sub_acute": {
+                    "code": "",
+                    "description": "ADL Score: 0 (-39 hari)",
+                    "tariff": 0
+                },
+                "chronic": {
+                    "code": "",
+                    "description": "ADL Score: 0 (-100 hari)",
+                    "tariff": 0
+                },
+                "special_cmg": [
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Procedure"
+                    },
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Prosthesis"
+                    },
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Investigation"
+                    },
+                    {
+                        "code": "",
+                        "description": "",
+                        "tariff": 0,
+                        "type": "Special Drug"
+                    }
+                ],
+                "kelas": "kelas_3",
+                "inacbg_version": "5.10.4.202508270937.dev"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:32:43",
+    "method": "inacbg_diagnosa_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_diagnosa_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "diagnosa": "S71.0#A00.1"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_diagnosa_set"
+            },
+            "data": {
+                "string": "S71.0#A00.1",
+                "expanded": [
+                    {
+                        "code": "S71.0",
+                        "display": "Open wound of hip",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "A00.1",
+                        "display": "Cholera due to vibrio cholerae 01, biovar eltor",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:32:44",
+    "method": "inacbg_procedure_set",
+    "request": {
+        "metadata": {
+            "method": "inacbg_procedure_set",
+            "nomor_sep": "0001R0016120507440"
+        },
+        "data": {
+            "procedure": "81.52#86.22#88.38"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok",
+                "method": "inacbg_procedure_set"
+            },
+            "data": {
+                "string": "81.52#86.22#88.38",
+                "expanded": [
+                    {
+                        "code": "81.52",
+                        "display": "Partial hip replacement",
+                        "no": "1",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "86.22",
+                        "display": "Excisional debridement of wound, infection, or burn",
+                        "no": "2",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    },
+                    {
+                        "code": "88.38",
+                        "display": "Other computerized axial tomography",
+                        "no": "3",
+                        "validcode": "1",
+                        "metadata": {
+                            "code": "200",
+                            "message": "Ok"
+                        }
+                    }
+                ]
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:32:52",
+    "method": "grouper_inacbg_stage1",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "1",
+            "grouper": "inacbg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_inacbg": {
+                "cbg": {
+                    "code": "M-1-04-II",
+                    "description": "PROSEDUR PADA SENDI TUNGKAI BAWAH (SEDANG)"
+                },
+                "base_tariff": "38971000",
+                "tariff": "38971000",
+                "kelas": "kelas_3",
+                "inacbg_version": "5.10.4.202508270937.dev"
+            },
+            "special_cmg_option": [
+                {
+                    "code": "RR04Hip",
+                    "description": "Hip Implant",
+                    "type": "Special Prosthesis"
+                },
+                {
+                    "code": "RR04Knee",
+                    "description": "Knee Implant",
+                    "type": "Special Prosthesis"
+                },
+                {
+                    "code": "YY01",
+                    "description": "Hip Replacement \/ Knee Replacement",
+                    "type": "Special Procedure"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:33:00",
+    "method": "grouper_inacbg_stage2",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "2",
+            "grouper": "inacbg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "special_cmg": "YY01"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_inacbg": {
+                "cbg": {
+                    "code": "M-1-04-II",
+                    "description": "PROSEDUR PADA SENDI TUNGKAI BAWAH (SEDANG)"
+                },
+                "base_tariff": "38971000",
+                "tariff": "52070000",
+                "special_cmg": [
+                    {
+                        "code": "YY-01-II",
+                        "description": "HIP REPLACEMENT \/ KNEE REPLACEMENT",
+                        "tariff": 13099000,
+                        "type": "Special Procedure"
+                    }
+                ],
+                "kelas": "kelas_3",
+                "inacbg_version": "5.10.4.202508270937.dev"
+            },
+            "special_cmg_option": [
+                {
+                    "code": "RR04Hip",
+                    "description": "Hip Implant",
+                    "type": "Special Prosthesis"
+                },
+                {
+                    "code": "RR04Knee",
+                    "description": "Knee Implant",
+                    "type": "Special Prosthesis"
+                },
+                {
+                    "code": "YY01",
+                    "description": "Hip Replacement \/ Knee Replacement",
+                    "type": "Special Procedure"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:33:07",
+    "method": "grouper_inacbg_stage2",
+    "request": {
+        "metadata": {
+            "method": "grouper",
+            "stage": "2",
+            "grouper": "inacbg"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "special_cmg": "YY01#RR04Knee"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response_inacbg": {
+                "cbg": {
+                    "code": "M-1-04-II",
+                    "description": "PROSEDUR PADA SENDI TUNGKAI BAWAH (SEDANG)"
+                },
+                "base_tariff": "38971000",
+                "tariff": "65070000",
+                "special_cmg": [
+                    {
+                        "code": "YY-01-II",
+                        "description": "HIP REPLACEMENT \/ KNEE REPLACEMENT",
+                        "tariff": 13099000,
+                        "type": "Special Procedure"
+                    },
+                    {
+                        "code": "RR-04-III-Knee",
+                        "description": "",
+                        "tariff": 13000000,
+                        "type": "Special Prosthesis"
+                    }
+                ],
+                "kelas": "kelas_3",
+                "inacbg_version": "5.10.4.202508270937.dev"
+            },
+            "special_cmg_option": [
+                {
+                    "code": "RR04Hip",
+                    "description": "Hip Implant",
+                    "type": "Special Prosthesis"
+                },
+                {
+                    "code": "RR04Knee",
+                    "description": "Knee Implant",
+                    "type": "Special Prosthesis"
+                },
+                {
+                    "code": "YY01",
+                    "description": "Hip Replacement \/ Knee Replacement",
+                    "type": "Special Procedure"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:33:13",
+    "method": "inacbg_grouper_final",
+    "request": {
+        "metadata": {
+            "method": "inacbg_grouper_final"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:33:22",
+    "method": "inacbg_grouper_reedit",
+    "request": {
+        "metadata": {
+            "method": "inacbg_grouper_reedit"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:33:34",
+    "method": "inacbg_grouper_final",
+    "request": {
+        "metadata": {
+            "method": "inacbg_grouper_final"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-17 16:33:43",
+    "method": "claim_final",
+    "request": {
+        "metadata": {
+            "method": "claim_final"
+        },
+        "data": {
+            "nomor_sep": "0001R0016120507440",
+            "coder_nik": "123123123123"
+        }
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            }
+        },
+        "http_code": 200
+    }
+}

@@ -1,0 +1,838 @@
+{
+    "timestamp": "2025-08-31 07:58:31",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870014",
+        "nomor_sep": "0001R0016120507435",
+        "nomor_rm": "123-45-80",
+        "nama_pasien": "NAMA TEST PASIEN 14",
+        "tgl_lahir": "1978-03-17 00:00:00",
+        "gender": "1"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 07:58:31",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870014",
+        "nomor_sep": "0001R0016120507435",
+        "nomor_rm": "123-45-80",
+        "nama_pasien": "NAMA TEST PASIEN 14",
+        "tgl_lahir": "1978-03-17 00:00:00",
+        "gender": "1"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": 17216,
+                "admission_id": 1,
+                "hospital_admission_id": 74016
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 08:48:05",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 08:48:05",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": 17217,
+                "admission_id": 1,
+                "hospital_admission_id": 74017
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 08:49:29",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870015",
+        "nomor_sep": "0001R0016120507436",
+        "nomor_rm": "123-45-81",
+        "nama_pasien": "NAMA TEST PASIEN 15",
+        "tgl_lahir": "2015-11-25 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 08:49:29",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870015",
+        "nomor_sep": "0001R0016120507436",
+        "nomor_rm": "123-45-81",
+        "nama_pasien": "NAMA TEST PASIEN 15",
+        "tgl_lahir": "2015-11-25 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": 17218,
+                "admission_id": 1,
+                "hospital_admission_id": 74018
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 08:51:54",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870015",
+        "nomor_sep": "0001R0016120507436",
+        "nomor_rm": "123-45-81",
+        "nama_pasien": "NAMA TEST PASIEN 15",
+        "tgl_lahir": "2015-11-25 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 08:51:55",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870015",
+        "nomor_sep": "0001R0016120507436",
+        "nomor_rm": "123-45-81",
+        "nama_pasien": "NAMA TEST PASIEN 15",
+        "tgl_lahir": "2015-11-25 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 15",
+                    "nomor_rm": "123-45-81",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 08:55:51",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870001",
+        "nomor_sep": "0001R0016120507422",
+        "nomor_rm": "123-45-67",
+        "nama_pasien": "NAMA TEST PASIEN 1",
+        "tgl_lahir": "1940-01-01 02:00:00",
+        "gender": "2",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 08:55:52",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870001",
+        "nomor_sep": "0001R0016120507422",
+        "nomor_rm": "123-45-67",
+        "nama_pasien": "NAMA TEST PASIEN 1",
+        "tgl_lahir": "1940-01-01 02:00:00",
+        "gender": "2",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": 17219,
+                "admission_id": 1,
+                "hospital_admission_id": 74019
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 08:58:32",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 08:58:33",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 09:15:17",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 09:15:17",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 09:24:48",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 09:24:48",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 09:31:04",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 09:31:04",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 09:49:42",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 09:49:43",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 09:56:06",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 09:56:07",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 09:57:53",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 09:57:54",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 10:04:56",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 10:04:57",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 10:07:00",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 10:07:01",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 10:26:43",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 10:26:43",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 10:35:55",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 10:35:56",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 10:39:20",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 10:39:21",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 10:43:55",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 10:43:56",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 400,
+                "message": "Duplikasi nomor SEP",
+                "error_no": "E2007"
+            },
+            "duplicate": [
+                {
+                    "nama_pasien": "NAMA TEST PASIEN 19",
+                    "nomor_rm": "123-45-85",
+                    "tgl_masuk": "0000-00-00 00:00:00"
+                }
+            ]
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-08-31 10:45:00",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870013",
+        "nomor_sep": "0001R0016120507434",
+        "nomor_rm": "123-45-79",
+        "nama_pasien": "NAMA TEST PASIEN 13",
+        "tgl_lahir": "1992-08-30 00:00:00",
+        "gender": "2",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-08-31 10:45:01",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870013",
+        "nomor_sep": "0001R0016120507434",
+        "nomor_rm": "123-45-79",
+        "nama_pasien": "NAMA TEST PASIEN 13",
+        "tgl_lahir": "1992-08-30 00:00:00",
+        "gender": "2",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": 17220,
+                "admission_id": 1,
+                "hospital_admission_id": 74020
+            }
+        },
+        "http_code": 200
+    }
+}

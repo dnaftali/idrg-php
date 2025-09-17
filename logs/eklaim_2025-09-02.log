@@ -1,0 +1,316 @@
+{
+    "timestamp": "2025-09-02 00:42:11",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870013",
+        "nomor_sep": "0001R0016120507434",
+        "nomor_rm": "123-45-79",
+        "nama_pasien": "NAMA TEST PASIEN 13",
+        "tgl_lahir": "1992-08-30 00:00:00",
+        "gender": "2",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-09-02 00:42:17",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870013",
+        "nomor_sep": "0001R0016120507434",
+        "nomor_rm": "123-45-79",
+        "nama_pasien": "NAMA TEST PASIEN 13",
+        "tgl_lahir": "1992-08-30 00:00:00",
+        "gender": "2",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-09-02 00:42:21",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870013",
+        "nomor_sep": "0001R0016120507434",
+        "nomor_rm": "123-45-79",
+        "nama_pasien": "NAMA TEST PASIEN 13",
+        "tgl_lahir": "1992-08-30 00:00:00",
+        "gender": "2",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Failed to connect to 10.10.1.63 port 80 after 10013 ms: Timeout was reached",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-02 00:42:27",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870013",
+        "nomor_sep": "0001R0016120507434",
+        "nomor_rm": "123-45-79",
+        "nama_pasien": "NAMA TEST PASIEN 13",
+        "tgl_lahir": "1992-08-30 00:00:00",
+        "gender": "2",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": false,
+        "error": "Gagal terhubung ke server E-Klaim: Failed to connect to 10.10.1.63 port 80 after 10011 ms: Timeout was reached",
+        "http_code": 0
+    }
+}
+{
+    "timestamp": "2025-09-02 00:43:55",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870015",
+        "nomor_sep": "0001R0016120507436",
+        "nomor_rm": "123-45-81",
+        "nama_pasien": "NAMA TEST PASIEN 15",
+        "tgl_lahir": "2015-11-25 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-09-02 00:43:57",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870015",
+        "nomor_sep": "0001R0016120507436",
+        "nomor_rm": "123-45-81",
+        "nama_pasien": "NAMA TEST PASIEN 15",
+        "tgl_lahir": "2015-11-25 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": 55541,
+                "admission_id": 1,
+                "hospital_admission_id": 0
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-02 01:00:00",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-09-02 01:00:01",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": 55542,
+                "admission_id": 1,
+                "hospital_admission_id": 0
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-02 01:15:28",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-09-02 01:15:29",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": "55542",
+                "admission_id": 1,
+                "hospital_admission_id": 0
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-02 01:17:01",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-09-02 01:17:02",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": "55542",
+                "admission_id": 1,
+                "hospital_admission_id": 0
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-02 01:24:53",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-09-02 01:24:54",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": "55542",
+                "admission_id": 1,
+                "hospital_admission_id": 0
+            }
+        },
+        "http_code": 200
+    }
+}
+{
+    "timestamp": "2025-09-02 01:27:19",
+    "method": "new_claim",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": null
+}
+{
+    "timestamp": "2025-09-02 01:27:19",
+    "method": "new_claim_response",
+    "request": {
+        "nomor_kartu": "0000668870019",
+        "nomor_sep": "0001R0016120507440",
+        "nomor_rm": "123-45-85",
+        "nama_pasien": "NAMA TEST PASIEN 19",
+        "tgl_lahir": "1950-10-28 00:00:00",
+        "gender": "1",
+        "cara_masuk": "gp"
+    },
+    "response": {
+        "success": true,
+        "data": {
+            "metadata": {
+                "code": 200,
+                "message": "Ok"
+            },
+            "response": {
+                "patient_id": "55542",
+                "admission_id": 1,
+                "hospital_admission_id": 0
+            }
+        },
+        "http_code": 200
+    }
+}

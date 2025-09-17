@@ -653,8 +653,13 @@ require_once 'config/eklaim_config.php';
                 // Check grouping status setelah data pasien dimuat
                 setTimeout(function() {
                     const nomorSep = $('#noSEP').val();
+                    console.log('=== PAGE LOAD: CHECKING GROUPING STATUS ===');
+                    console.log('Nomor SEP:', nomorSep);
                     if (nomorSep) {
+                        console.log('Calling checkGroupingStatus for nomor_sep:', nomorSep);
                         checkGroupingStatus(nomorSep);
+                    } else {
+                        console.log('No nomor SEP found - skipping grouping status check');
                     }
                 }, 1000); // Delay 1 detik untuk memastikan form sudah terisi
             } else {
@@ -867,6 +872,7 @@ require_once 'config/eklaim_config.php';
             
             // Special CMG dropdown change handlers
             $(document).on('change', '#inacbgSpecialProcedure, #inacbgSpecialProsthesis, #inacbgSpecialInvestigation, #inacbgSpecialDrug', function() {
+                // Call API grouper stage 2 to update code and tariff based on selected special CMG
                 performInacbgStage2();
             });
         });
@@ -1638,34 +1644,30 @@ require_once 'config/eklaim_config.php';
              if (patient.detail_tarif) {
                  const tarif = patient.detail_tarif;
                  
-                 // Format angka dengan pemisah ribuan (format Indonesia)
-                 function formatCurrency(amount) {
-                     return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-                 }
                  
                  // Update field-field rincian biaya
-                 $('#prosedurNonBedah').val(formatCurrency(tarif.prosedur_non_bedah || 0));
-                 $('#prosedurBedah').val(formatCurrency(tarif.prosedur_bedah || 0));
-                 $('#konsultasi').val(formatCurrency(tarif.konsultasi || 0));
-                 $('#tenagaAhli').val(formatCurrency(tarif.tenaga_ahli || 0));
-                 $('#keperawatan').val(formatCurrency(tarif.keperawatan || 0));
-                 $('#penunjang').val(formatCurrency(tarif.penunjang || 0));
-                 $('#radiologi').val(formatCurrency(tarif.radiologi || 0));
-                 $('#laboratorium').val(formatCurrency(tarif.laboratorium || 0));
-                 $('#pelayananDarah').val(formatCurrency(tarif.pelayanan_darah || 0));
-                 $('#rehabilitasi').val(formatCurrency(tarif.rehabilitasi || 0));
-                 $('#kamarAkomodasi').val(formatCurrency(tarif.kamar || 0));
-                 $('#rawatIntensif').val(formatCurrency(tarif.rawat_intensif || 0));
-                 $('#obat').val(formatCurrency(tarif.obat || 0));
-                 $('#obatKronis').val(formatCurrency(tarif.obat_kronis || 0));
-                 $('#obatKemoterapi').val(formatCurrency(tarif.obat_kemoterapi || 0));
-                 $('#alkes').val(formatCurrency(tarif.alkes || 0));
-                 $('#bmhp').val(formatCurrency(tarif.bmhp || 0));
-                 $('#sewaAlat').val(formatCurrency(tarif.sewa_alat || 0));
+                 $('#prosedurNonBedah').val((tarif.prosedur_non_bedah || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#prosedurBedah').val((tarif.prosedur_bedah || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#konsultasi').val((tarif.konsultasi || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#tenagaAhli').val((tarif.tenaga_ahli || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#keperawatan').val((tarif.keperawatan || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#penunjang').val((tarif.penunjang || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#radiologi').val((tarif.radiologi || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#laboratorium').val((tarif.laboratorium || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#pelayananDarah').val((tarif.pelayanan_darah || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#rehabilitasi').val((tarif.rehabilitasi || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#kamarAkomodasi').val((tarif.kamar || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#rawatIntensif').val((tarif.rawat_intensif || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#obat').val((tarif.obat || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#obatKronis').val((tarif.obat_kronis || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#obatKemoterapi').val((tarif.obat_kemoterapi || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#alkes').val((tarif.alkes || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#bmhp').val((tarif.bmhp || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+                 $('#sewaAlat').val((tarif.sewa_alat || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
                  
                  // Update total tarif
                  if (tarif.total_tarif > 0) {
-                     $('#totalTarif').text(`Rp ${formatCurrency(tarif.total_tarif)}`);
+                     $('#totalTarif').text(`Rp ${(tarif.total_tarif).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`);
                  } else {
                      // Jika total_tarif kosong, hitung dari komponen
                      calculateTotalCost();
@@ -2336,6 +2338,12 @@ require_once 'config/eklaim_config.php';
                         // Apply final iDRG status
                         applyFinalIdrgStatus(response.final_idrg_record);
                         
+                        // Check for INACBG stage 1 results
+                        checkInacbgStage1Results(nomorSep);
+                        
+                        // Check for iDRG grouping results
+                        checkIdrgGroupingResults(nomorSep);
+                        
                     } else {
                         console.log('Final iDRG not completed yet - normal flow');
                         console.log('Tracking summary:', response.tracking_summary);
@@ -2347,15 +2355,343 @@ require_once 'config/eklaim_config.php';
                             // You might want to show a warning or handle this case
                         }
                     }
+                    
+                    // Always check for iDRG grouping results regardless of final_idrg_success status
+                    // because grouping data might be available even if final iDRG is not completed
+                    console.log('=== ALWAYS CHECKING iDRG GROUPING RESULTS ON PAGE LOAD ===');
+                    checkIdrgGroupingResults(nomorSep);
                 },
                 error: function(xhr, status, error) {
                     console.log('Error checking E-Klaim tracking status:', {xhr, status, error});
                     console.log('Response text:', xhr.responseText);
                     // Continue with normal flow if tracking check fails
                     isFinalIdrgCompleted = false;
+                    
+                    // Even if tracking check fails, still try to load iDRG grouping results
+                    console.log('=== CHECKING iDRG GROUPING RESULTS DESPITE TRACKING ERROR ===');
+                    checkIdrgGroupingResults(nomorSep);
                 }
             });
         }
+        
+        function checkInacbgStage1Results(nomorSep) {
+            console.log('Checking INACBG Stage 1 results for nomor_sep:', nomorSep);
+            
+            $.ajax({
+                url: 'api/check_eklaim_tracking.php',
+                method: 'POST',
+                data: JSON.stringify({
+                    nomor_sep: nomorSep,
+                    method_code: '11' // Method code untuk grouper_inacbg_stage1
+                }),
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function(response) {
+                    console.log('INACBG Stage 1 tracking response:', response);
+                    
+                    if (response.success && response.method_record && response.method_record.status === 'success') {
+                        console.log('INACBG Stage 1 completed - displaying results');
+                        
+                        // Parse response data
+                        const responseData = JSON.parse(response.method_record.response_data);
+                        console.log('INACBG Stage 1 response data:', responseData);
+                        
+                        // Display INACBG grouping results
+                        displayInacbgGroupingResults(responseData);
+                        
+                    } else {
+                        console.log('INACBG Stage 1 not completed or failed');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.log('Error checking INACBG Stage 1 results:', {xhr, status, error});
+                }
+            });
+        }
+        
+        
+        function checkIdrgGroupingResults(nomorSep) {
+            console.log('=== CHECKING iDRG GROUPING RESULTS ===');
+            console.log('Nomor SEP:', nomorSep);
+            console.log('Method Code: 07 (grouping_idrg)');
+            
+            $.ajax({
+                url: 'api/check_eklaim_tracking.php',
+                method: 'POST',
+                data: JSON.stringify({
+                    nomor_sep: nomorSep,
+                    method_code: '07' // Method code untuk grouping_idrg
+                }),
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function(response) {
+                    console.log('=== iDRG GROUPING TRACKING RESPONSE ===');
+                    console.log('Full response:', response);
+                    console.log('Response success:', response.success);
+                    console.log('Method record exists:', !!response.method_record);
+                    
+                    if (response.method_record) {
+                        console.log('Method record details:');
+                        console.log('- Method code:', response.method_record.method_code);
+                        console.log('- Method name:', response.method_record.method_name);
+                        console.log('- Status:', response.method_record.status);
+                        console.log('- Response data exists:', !!response.method_record.response_data);
+                        console.log('- Response data type:', typeof response.method_record.response_data);
+                        console.log('- Response data length:', response.method_record.response_data ? response.method_record.response_data.length : 'N/A');
+                    }
+                    
+                    if (response.success && response.method_record && response.method_record.status === 'success') {
+                        console.log('=== iDRG GROUPING COMPLETED - PARSING RESPONSE DATA ===');
+                        
+                        try {
+                            // Parse response data
+                            console.log('Raw response_data:', response.method_record.response_data);
+                            console.log('Raw response_data type:', typeof response.method_record.response_data);
+                            
+                            let responseData = JSON.parse(response.method_record.response_data);
+                            console.log('First parse result:', responseData);
+                            console.log('First parse result type:', typeof responseData);
+                            
+                            // Check if grouping_result is a JSON string that needs further parsing
+                            if (responseData.data && responseData.data.grouping_result && typeof responseData.data.grouping_result === 'string') {
+                                console.log('=== DETECTED DOUBLE JSON ENCODING ===');
+                                console.log('grouping_result (string):', responseData.data.grouping_result);
+                                
+                                try {
+                                    const parsedGroupingResult = JSON.parse(responseData.data.grouping_result);
+                                    console.log('Parsed grouping_result:', parsedGroupingResult);
+                                    
+                                    // Replace the string with parsed object
+                                    responseData.data.grouping_result = parsedGroupingResult;
+                                    console.log('Updated responseData after parsing grouping_result:', responseData);
+                                    
+                                } catch (groupingParseError) {
+                                    console.error('Error parsing grouping_result:', groupingParseError);
+                                    console.error('grouping_result string:', responseData.data.grouping_result);
+                                }
+                            }
+                            
+                            console.log('Final responseData:', responseData);
+                            console.log('Final responseData type:', typeof responseData);
+                            
+                            // Display iDRG grouping results
+                            console.log('Calling displayIdrgGroupingResults with final parsed data...');
+                            displayIdrgGroupingResults(responseData);
+                            
+                        } catch (parseError) {
+                            console.error('=== ERROR PARSING RESPONSE DATA ===');
+                            console.error('Parse error:', parseError);
+                            console.error('Raw response_data that failed to parse:', response.method_record.response_data);
+                        }
+                        
+                    } else {
+                        console.log('=== iDRG GROUPING NOT COMPLETED OR FAILED ===');
+                        console.log('Response success:', response.success);
+                        if (response.method_record) {
+                            console.log('Method record status:', response.method_record.status);
+                            console.log('Method record error:', response.method_record.error_message);
+                        }
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('=== ERROR CHECKING iDRG GROUPING RESULTS ===');
+                    console.error('XHR:', xhr);
+                    console.error('Status:', status);
+                    console.error('Error:', error);
+                    console.error('Response text:', xhr.responseText);
+                }
+            });
+        }
+        
+        function displayIdrgGroupingResults(responseData) {
+            console.log('=== DISPLAYING iDRG GROUPING RESULTS ===');
+            console.log('Full responseData:', responseData);
+            console.log('ResponseData type:', typeof responseData);
+            console.log('ResponseData keys:', Object.keys(responseData || {}));
+            
+            try {
+                // Log structure analysis
+                console.log('--- Analyzing response structure ---');
+                console.log('responseData.data exists:', !!responseData.data);
+                if (responseData.data) {
+                    console.log('responseData.data keys:', Object.keys(responseData.data));
+                    console.log('responseData.data.response_idrg exists:', !!responseData.data.response_idrg);
+                    console.log('responseData.data.grouping_result exists:', !!responseData.data.grouping_result);
+                    console.log('responseData.data.grouping_result type:', typeof responseData.data.grouping_result);
+                    
+                    if (responseData.data.grouping_result) {
+                        console.log('responseData.data.grouping_result keys:', Object.keys(responseData.data.grouping_result));
+                        console.log('responseData.data.grouping_result.data exists:', !!responseData.data.grouping_result.data);
+                        if (responseData.data.grouping_result.data) {
+                            console.log('responseData.data.grouping_result.data keys:', Object.keys(responseData.data.grouping_result.data));
+                            console.log('responseData.data.grouping_result.data.response_idrg exists:', !!responseData.data.grouping_result.data.response_idrg);
+                        }
+                    }
+                }
+                
+                // Extract iDRG data from response - handle both structures
+                let idrgData = null;
+                
+                // Try direct path first
+                if (responseData.data?.response_idrg) {
+                    idrgData = responseData.data.response_idrg;
+                    console.log('Using direct response_idrg path');
+                }
+                // Try nested path through grouping_result
+                else if (responseData.data?.grouping_result?.data?.response_idrg) {
+                    idrgData = responseData.data.grouping_result.data.response_idrg;
+                    console.log('Using nested grouping_result.data.response_idrg path');
+                }
+                console.log('--- Extracted iDRG Data ---');
+                console.log('idrgData:', idrgData);
+                console.log('idrgData type:', typeof idrgData);
+                
+                if (idrgData) {
+                    console.log('idrgData keys:', Object.keys(idrgData));
+                    
+                    // Show iDRG grouping results section
+                    console.log('--- Showing groupingResults section ---');
+                    console.log('groupingResults element exists:', $('#groupingResults').length > 0);
+                    console.log('groupingResults element:', $('#groupingResults')[0]);
+                    $('#groupingResults').show();
+                    console.log('groupingResults section is now visible');
+                    
+                    // Check if all required elements exist
+                    console.log('--- Checking required elements ---');
+                    console.log('groupingMDC element exists:', $('#groupingMDC').length > 0);
+                    console.log('groupingMDCNumber element exists:', $('#groupingMDCNumber').length > 0);
+                    console.log('groupingDRG element exists:', $('#groupingDRG').length > 0);
+                    console.log('groupingDRGCode element exists:', $('#groupingDRGCode').length > 0);
+                    
+                    // Populate iDRG grouping results
+                    console.log('--- Populating grouping results fields ---');
+                    
+                    // Info field
+                    $('#groupingInfo').text('iDRG Grouping Results');
+                    console.log('✓ Set groupingInfo: "iDRG Grouping Results"');
+                    
+                    // Jenis Rawat field
+                    $('#groupingJenisRawat').text('Rawat Inap');
+                    console.log('✓ Set groupingJenisRawat: "Rawat Inap"');
+                    
+                    // MDC information
+                    console.log('--- Setting MDC information ---');
+                    console.log('idrgData.mdc_number:', idrgData.mdc_number);
+                    console.log('idrgData.mdc_description:', idrgData.mdc_description);
+                    
+                    if (idrgData.mdc_number) {
+                        $('#groupingMDCNumber').text(idrgData.mdc_number);
+                        console.log('✓ Set groupingMDCNumber to:', idrgData.mdc_number);
+                        console.log('✓ Element after setting:', $('#groupingMDCNumber').text());
+                    } else {
+                        console.log('✗ mdc_number not found in idrgData');
+                        $('#groupingMDCNumber').text('N/A');
+                    }
+                    
+                    if (idrgData.mdc_description) {
+                        $('#groupingMDC').text(idrgData.mdc_description);
+                        console.log('✓ Set groupingMDC to:', idrgData.mdc_description);
+                        console.log('✓ Element after setting:', $('#groupingMDC').text());
+                    } else {
+                        console.log('✗ mdc_description not found in idrgData');
+                        $('#groupingMDC').text('N/A');
+                    }
+                    
+                    // DRG information
+                    console.log('--- Setting DRG information ---');
+                    console.log('idrgData.drg_code:', idrgData.drg_code);
+                    console.log('idrgData.drg_description:', idrgData.drg_description);
+                    
+                    if (idrgData.drg_code) {
+                        $('#groupingDRGCode').text(idrgData.drg_code);
+                        console.log('✓ Set groupingDRGCode to:', idrgData.drg_code);
+                        console.log('✓ Element after setting:', $('#groupingDRGCode').text());
+                    } else {
+                        console.log('✗ drg_code not found in idrgData');
+                        $('#groupingDRGCode').text('N/A');
+                    }
+                    
+                    if (idrgData.drg_description) {
+                        $('#groupingDRG').text(idrgData.drg_description);
+                        console.log('✓ Set groupingDRG to:', idrgData.drg_description);
+                        console.log('✓ Element after setting:', $('#groupingDRG').text());
+                    } else {
+                        console.log('✗ drg_description not found in idrgData');
+                        $('#groupingDRG').text('N/A');
+                    }
+                    
+                    // Status
+                    $('#groupingStatus').text('Berhasil');
+                    console.log('✓ Set groupingStatus: "Berhasil"');
+                    
+                    // Log final state
+                    console.log('--- Final field values ---');
+                    console.log('groupingInfo:', $('#groupingInfo').text());
+                    console.log('groupingJenisRawat:', $('#groupingJenisRawat').text());
+                    console.log('groupingMDCNumber:', $('#groupingMDCNumber').text());
+                    console.log('groupingMDC:', $('#groupingMDC').text());
+                    console.log('groupingDRGCode:', $('#groupingDRGCode').text());
+                    console.log('groupingDRG:', $('#groupingDRG').text());
+                    console.log('groupingStatus:', $('#groupingStatus').text());
+                    
+                    console.log('=== iDRG GROUPING RESULTS DISPLAYED SUCCESSFULLY ===');
+                } else {
+                    console.log('=== NO iDRG DATA FOUND IN RESPONSE ===');
+                    console.log('Available data structure:');
+                    console.log('- responseData:', responseData);
+                    console.log('- responseData.data:', responseData.data);
+                    if (responseData.data) {
+                        console.log('- Available keys in responseData.data:', Object.keys(responseData.data));
+                    }
+                }
+                
+            } catch (error) {
+                console.error('=== ERROR DISPLAYING iDRG GROUPING RESULTS ===');
+                console.error('Error:', error);
+                console.error('Error message:', error.message);
+                console.error('Error stack:', error.stack);
+                console.error('ResponseData that caused error:', responseData);
+            }
+        }
+        
+        // Test function untuk debugging - dapat dipanggil dari console browser
+        function testDisplayIdrgGroupingResults() {
+            console.log('=== TESTING DISPLAY iDRG GROUPING RESULTS ===');
+            
+            // Test data sesuai dengan JSON yang diberikan
+            const testData = {
+                "success": true,
+                "data": {
+                    "grouping_status": "success",
+                    "grouping_result": {
+                        "success": true,
+                        "data": {
+                            "metadata": {
+                                "code": 200,
+                                "message": "Ok"
+                            },
+                            "response_idrg": {
+                                "mdc_number": "31",
+                                "mdc_description": "Multiple Significant Trauma",
+                                "drg_code": "3109119",
+                                "drg_description": "Multiple Significant Trauma w/ Other OR Proc.",
+                                "script_version": "1.0.26",
+                                "logic_version": "0.2.1718.202508082251"
+                            }
+                        },
+                        "http_code": 200
+                    },
+                    "grouped_at": "2025-09-13 14:38:42",
+                    "grouping_error_message": null
+                }
+            };
+            
+            console.log('Test data:', testData);
+            displayIdrgGroupingResults(testData);
+        }
+        
+        // Expose test function to global scope
+        window.testDisplayIdrgGroupingResults = testDisplayIdrgGroupingResults;
         
         function ensureFormIsEditable() {
             console.log('Ensuring form is editable - final_idrg not completed');
@@ -3669,75 +4005,6 @@ require_once 'config/eklaim_config.php';
             });
         }
         
-        function displayInacbgGroupingResults(data) {
-            // Show the results section
-            $('#groupingResults').show();
-            
-            // Populate basic information untuk INACBG
-            $('#groupingInfo').text('INACBG @ ' + new Date().toLocaleString('id-ID') + ' - 1.0.24 / 0.2.1664.202505111134');
-            
-            // Set jenis rawat berdasarkan data form
-            const jenisRawat = $('input[name="jenisRawat"]:checked').val();
-            const tglMasuk = $('#tanggalMasuk').val();
-            const tglPulang = $('#tanggalPulang').val();
-            
-            let jenisRawatText = '';
-            if (jenisRawat === '1') {
-                // Rawat Inap - hitung LOS
-                if (tglMasuk && tglPulang) {
-                    const los = calculateLOSFromDates(tglMasuk, tglPulang);
-                    jenisRawatText = `Rawat Inap (${los} Hari)`;
-                } else {
-                    jenisRawatText = 'Rawat Inap';
-                }
-            } else if (jenisRawat === '2') {
-                jenisRawatText = 'Rawat Jalan';
-            } else {
-                jenisRawatText = 'Tidak Diketahui';
-            }
-            
-            $('#groupingJenisRawat').text(jenisRawatText);
-            $('#groupingStatus').text('normal');
-            
-            // Populate CMG dan CMG Code dari response_inacbg
-            const cmgDescription = data.response_inacbg?.cmg_description || 'N/A';
-            const cmgCode = data.response_inacbg?.cmg_code || 'N/A';
-            const cmgNumber = data.response_inacbg?.cmg_number || 'N/A';
-            const cmgWeight = data.response_inacbg?.cmg_weight || 'N/A';
-            
-            const mdcElement = $('#groupingMDC');
-            const drgElement = $('#groupingDRG');
-            const mdcNumberElement = $('#groupingMDCNumber');
-            const drgCodeElement = $('#groupingDRGCode');
-            
-            // Update labels untuk INACBG
-            $('#groupingMDCLabel').text('CMG Description:');
-            $('#groupingDRGLabel').text('CMG Code:');
-            $('#groupingMDCNumberLabel').text('CMG Number:');
-            $('#groupingDRGCodeLabel').text('CMG Weight:');
-            
-            mdcElement.text(cmgDescription);
-            drgElement.text(cmgCode);
-            mdcNumberElement.text(cmgNumber);
-            drgCodeElement.text(cmgWeight);
-            
-            // Untuk INACBG, tidak ada error detection seperti iDRG
-            // Semua hasil dianggap valid
-            mdcElement.removeClass('text-danger fw-bold');
-            drgElement.removeClass('text-danger fw-bold');
-            mdcNumberElement.removeClass('text-danger');
-            drgCodeElement.removeClass('text-danger');
-            
-            // Hide error section dan final DRG button untuk INACBG
-            $('#groupingErrorSection').hide();
-            $('#finalDrgSection').hide();
-            
-            
-            // Scroll to results
-            $('html, body').animate({
-                scrollTop: $('#groupingResults').offset().top - 100
-            }, 500);
-        }
         
         function displayGroupingResults(data) {
             // Show the results section
@@ -4653,8 +4920,9 @@ require_once 'config/eklaim_config.php';
             // Set Total Klaim
             $('#inacbgTotalKlaim').text(formatCurrency(baseTariff));
             
-            // Store base tariff for reset functionality
+            // Store base tariff and special options for reset functionality
             $('#inacbgGroupingResults').data('baseTariff', baseTariff);
+            $('#inacbgGroupingResults').data('specialOptions', specialOptions);
             
             
             // Show Final INACBG button
@@ -4755,7 +5023,10 @@ require_once 'config/eklaim_config.php';
                 success: function(response) {
                     hideProcessingMessage();
                     
+                    console.log('INACBG Stage 2 response:', response);
+                    
                     if (response.success === true || response.success === 'true') {
+                        // Call updateInacbgTariff with the correct data structure
                         updateInacbgTariff(response.data);
                     } else {
                         showErrorMessage('Error INACBG Stage 2: ' + (response.error || response.message || 'Unknown error'));
@@ -4769,13 +5040,46 @@ require_once 'config/eklaim_config.php';
         }
         
         function updateInacbgTariff(data) {
-            // Update base tariff and total claim
-            const newTariff = data.response_inacbg?.tariff || data.response_inacbg?.base_tariff || '0';
-            $('#inacbgGroupingGroupAmount').text(formatCurrency(newTariff));
-            $('#inacbgTotalKlaim').text(formatCurrency(newTariff));
+            console.log('Updating INACBG tariff with data:', data);
             
-            // Update special CMG amounts
-            const specialCmg = data.response_inacbg?.special_cmg || [];
+            // Handle different response structures
+            let responseInacbg = null;
+            
+            // Check if data has response_inacbg directly
+            if (data.response_inacbg) {
+                responseInacbg = data.response_inacbg;
+            } 
+            // Check if data is the response_inacbg object itself
+            else if (data.cbg || data.base_tariff || data.tariff) {
+                responseInacbg = data;
+            }
+            
+            if (responseInacbg) {
+                // Update CBG code and description
+                if (responseInacbg.cbg) {
+                    $('#inacbgGroupingGroupCode').text(responseInacbg.cbg.code || '-');
+                    $('#inacbgGroupingGroupDesc').text(responseInacbg.cbg.description || '-');
+                    console.log('Updated CBG code:', responseInacbg.cbg.code);
+                    console.log('Updated CBG description:', responseInacbg.cbg.description);
+                }
+                
+                // Update base tariff and total claim
+                const newTariff = responseInacbg.tariff || responseInacbg.base_tariff || '0';
+                $('#inacbgGroupingGroupAmount').text(formatCurrency(newTariff));
+                $('#inacbgTotalKlaim').text(formatCurrency(newTariff));
+                console.log('Updated tariff:', newTariff);
+                
+                // Update special CMG amounts based on dropdown selections
+                updateSpecialCmgAmounts(responseInacbg);
+                
+                console.log('INACBG tariff updated successfully');
+            } else {
+                console.error('No valid INACBG data found in response:', data);
+            }
+        }
+        
+        function updateSpecialCmgAmounts(responseInacbg) {
+            console.log('Updating special CMG amounts based on API response');
             
             // Reset all special amounts to 0
             $('#inacbgSpecialProcedureAmount').text('Rp 0');
@@ -4783,24 +5087,63 @@ require_once 'config/eklaim_config.php';
             $('#inacbgSpecialInvestigationAmount').text('Rp 0');
             $('#inacbgSpecialDrugAmount').text('Rp 0');
             
-            // Update amounts based on selected special CMG
+            // Update amounts based on special_cmg data from API response
+            const specialCmg = responseInacbg.special_cmg || [];
+            
+            console.log('Special CMG from API response:', specialCmg);
+            
+            // Update amounts based on special CMG from API response
             specialCmg.forEach(item => {
                 const amount = formatCurrency(item.tariff || '0');
                 
                 switch(item.type) {
                     case 'Special Procedure':
                         $('#inacbgSpecialProcedureAmount').text(amount);
+                        console.log('Updated Special Procedure amount from API:', amount);
                         break;
                     case 'Special Prosthesis':
                         $('#inacbgSpecialProsthesisAmount').text(amount);
+                        console.log('Updated Special Prosthesis amount from API:', amount);
                         break;
                     case 'Special Investigation':
                         $('#inacbgSpecialInvestigationAmount').text(amount);
+                        console.log('Updated Special Investigation amount from API:', amount);
                         break;
                     case 'Special Drug':
                         $('#inacbgSpecialDrugAmount').text(amount);
+                        console.log('Updated Special Drug amount from API:', amount);
                         break;
                 }
+            });
+            
+            // Calculate and update total claim
+            calculateTotalClaim();
+        }
+        
+        function calculateTotalClaim() {
+            // Get base tariff
+            const baseTariffText = $('#inacbgGroupingGroupAmount').text();
+            const baseTariff = parseInt(baseTariffText.replace(/[^\d]/g, '')) || 0;
+            
+            // Get special CMG amounts
+            const procedureAmount = parseInt($('#inacbgSpecialProcedureAmount').text().replace(/[^\d]/g, '')) || 0;
+            const prosthesisAmount = parseInt($('#inacbgSpecialProsthesisAmount').text().replace(/[^\d]/g, '')) || 0;
+            const investigationAmount = parseInt($('#inacbgSpecialInvestigationAmount').text().replace(/[^\d]/g, '')) || 0;
+            const drugAmount = parseInt($('#inacbgSpecialDrugAmount').text().replace(/[^\d]/g, '')) || 0;
+            
+            // Calculate total
+            const totalAmount = baseTariff + procedureAmount + prosthesisAmount + investigationAmount + drugAmount;
+            
+            // Update total claim
+            $('#inacbgTotalKlaim').text(formatCurrency(totalAmount.toString()));
+            
+            console.log('Total claim calculated:', {
+                baseTariff,
+                procedureAmount,
+                prosthesisAmount,
+                investigationAmount,
+                drugAmount,
+                totalAmount
             });
         }
         
@@ -4817,6 +5160,9 @@ require_once 'config/eklaim_config.php';
                 $('#inacbgGroupingGroupAmount').text(formatCurrency(baseTariff));
                 $('#inacbgTotalKlaim').text(formatCurrency(baseTariff));
             }
+            
+            // Recalculate total claim
+            calculateTotalClaim();
         }
         
         function performFinalInacbg() {
