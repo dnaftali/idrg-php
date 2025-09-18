@@ -297,7 +297,7 @@ const isValidResult = mdcNumber !== invalidMdcCode && drgCode;
 
 ## 🤝 Support
 
-Sistem ini dikembangkan berdasarkan koleksi Postman E-KLAIM IDRG untuk integrasi sistem klaim rumah sakit dengan BPJS Kesehatan.
+Sistem ini dikembangkan berdasarkan koleksi Postman E-KLAIM IDRG untuk integrasi SIMRS rumah sakit dengan aplikasi Eklaim versi iDRG.
 
 Diskusi dan Saran:
 
