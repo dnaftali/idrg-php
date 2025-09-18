@@ -151,7 +151,7 @@ POST { "kunjungan_id": xxx, "diagnosis": [...], "procedures": [...] }
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'idrg');
 define('DB_USER', 'root');
-define('DB_PASS', 'Naftali123!');
+define('DB_PASS', 'passworddbdisini');
 ```
 
 ### E-Klaim (`config/eklaim_config.php`)
@@ -264,7 +264,7 @@ const isValidResult = mdcNumber !== invalidMdcCode && drgCode;
 
 ## 🔧 Requirements
 
-- **PHP**: 7.0+
+- **PHP**: 8.0+
 - **Database**: MySQL 5.7+
 - **Extensions**: PDO, cURL, JSON
 - **Server**: Apache/Nginx dengan mod_rewrite
@@ -302,5 +302,5 @@ Sistem ini dikembangkan berdasarkan koleksi Postman E-KLAIM IDRG untuk integrasi
 Diskusi dan Saran:
 
 email: dodynaftali@gmail.com 
-whatsapp: 08170214602
+
 telegram: @dodynaftali
