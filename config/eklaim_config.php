@@ -58,35 +58,68 @@ function sendEklaimRequest($data) {
         ];
     }
     
-    // Initialize cURL
-    $ch = curl_init();
-    
-    // Set cURL options
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $requestData);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_TIMEOUT, EKLAIM_TIMEOUT);
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, [
-        'Content-Type: ' . EKLAIM_CONTENT_TYPE,
-        'Accept: ' . EKLAIM_ACCEPT,
-        'Content-Length: ' . strlen($requestData)
-    ]);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-    
-    // Execute request
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $error = curl_error($ch);
-    
-    // Log response details
-    error_log("sendEklaimRequest HTTP Code: " . $httpCode);
-    error_log("sendEklaimRequest Response: " . $response);
-    error_log("sendEklaimRequest cURL Error: " . ($error ?: 'None'));
-    
-    curl_close($ch);
+    // Check if cURL is available
+    if (function_exists('curl_init')) {
+        // Initialize cURL
+        $ch = curl_init();
+        
+        // Set cURL options
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $requestData);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, EKLAIM_TIMEOUT);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Content-Type: ' . EKLAIM_CONTENT_TYPE,
+            'Accept: ' . EKLAIM_ACCEPT,
+            'Content-Length: ' . strlen($requestData)
+        ]);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        
+        // Execute request
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $error = curl_error($ch);
+        
+        // Log response details
+        error_log("sendEklaimRequest HTTP Code: " . $httpCode);
+        error_log("sendEklaimRequest Response: " . $response);
+        error_log("sendEklaimRequest cURL Error: " . ($error ?: 'None'));
+        
+        curl_close($ch);
+    } else {
+        // Fallback to file_get_contents with stream context
+        error_log("sendEklaimRequest: cURL not available, using file_get_contents fallback");
+        
+        $context = stream_context_create([
+            'http' => [
+                'method' => 'POST',
+                'header' => [
+                    'Content-Type: ' . EKLAIM_CONTENT_TYPE,
+                    'Accept: ' . EKLAIM_ACCEPT,
+                    'Content-Length: ' . strlen($requestData)
+                ],
+                'content' => $requestData,
+                'timeout' => EKLAIM_TIMEOUT
+            ]
+        ]);
+        
+        $response = file_get_contents($url, false, $context);
+        $httpCode = 200; // file_get_contents doesn't provide HTTP code directly
+        $error = null;
+        
+        if ($response === false) {
+            $error = 'file_get_contents failed';
+            $httpCode = 0;
+        }
+        
+        // Log response details
+        error_log("sendEklaimRequest HTTP Code: " . $httpCode);
+        error_log("sendEklaimRequest Response: " . $response);
+        error_log("sendEklaimRequest file_get_contents Error: " . ($error ?: 'None'));
+    }
     
     // Handle errors
     if ($error) {

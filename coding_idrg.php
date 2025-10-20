@@ -942,6 +942,18 @@ require_once 'config/eklaim_config.php';
             var rowCount = tbody.find('tr').length + 1;
             var jenis = rowCount === 1 ? 'Primary' : 'Secondary';
             
+            // Additional validation: Check if accpdx=N and this would be primary
+            if (!isInacbg && data.accpdx === 'N' && rowCount === 1) {
+                showError(`Kode ${data.code} dengan accpdx=N tidak dapat dijadikan primary diagnosis. Harap pilih diagnosa lain sebagai primary terlebih dahulu.`);
+                return;
+            }
+            
+            // Additional validation: Check if asterisk=1 and this would be primary
+            if (!isInacbg && data.asterisk === 1 && rowCount === 1) {
+                showError(`Kode ${data.code} dengan asterisk=1 tidak dapat dijadikan primary diagnosis. Harap pilih diagnosa lain sebagai primary terlebih dahulu.`);
+                return;
+            }
+            
             var newRow;
             if (isInacbg) {
                 // Format untuk INACBG dengan styling yang sama dengan IDRG
@@ -985,6 +997,9 @@ require_once 'config/eklaim_config.php';
             }
             
             tbody.append(newRow);
+            
+            // Update validation status after adding diagnosis
+            updateValidationStatus();
         }
 
         // Generic function untuk menambah prosedur ke tabel
@@ -1043,6 +1058,9 @@ require_once 'config/eklaim_config.php';
             }
             
             tbody.append(newRow);
+            
+            // Update validation status after adding procedure
+            updateValidationStatus();
         }
 
         function removeDiagnosis(id) {
@@ -1061,6 +1079,9 @@ require_once 'config/eklaim_config.php';
             }
             
             renumberDiagnosisTable();
+            
+            // Update validation status after removing diagnosis
+            updateValidationStatus();
         }
         
         // Generic function untuk menghapus row dari tabel
@@ -1082,6 +1103,9 @@ require_once 'config/eklaim_config.php';
                     </tr>
                 `);
             }
+            
+            // Update validation status after removing row
+            updateValidationStatus();
         }
         
         function checkAndRemoveInvalidSecondaryDiagnoses() {
@@ -1211,6 +1235,9 @@ require_once 'config/eklaim_config.php';
             }
             
             renumberProcedureTable();
+            
+            // Update validation status after removing procedure
+            updateValidationStatus();
         }
         
         function checkAndRemoveInvalidSecondaryProcedures() {
@@ -1284,10 +1311,22 @@ require_once 'config/eklaim_config.php';
                 var row = $(this);
                 var rowNumber = index + 1;
                 
+                // Check if this diagnosis can be primary
+                var accpdx = row.attr('data-accpdx');
+                var asterisk = row.attr('data-asterisk');
+                var canBePrimary = accpdx !== 'N' && asterisk !== '1';
+                
                 // Update jenis (Primary/Secondary)
                 var jenisCell = row.find('td:nth-child(1)');
-                var jenis = rowNumber === 1 ? 'Primary' : 'Secondary';
-                var badgeClass = rowNumber === 1 ? 'bg-primary' : 'bg-secondary';
+                var jenis, badgeClass;
+                
+                if (rowNumber === 1 && canBePrimary) {
+                    jenis = 'Primary';
+                    badgeClass = 'bg-primary';
+                } else {
+                    jenis = 'Secondary';
+                    badgeClass = 'bg-secondary';
+                }
                 
                 jenisCell.html(`<span class="badge ${badgeClass}">${jenis}</span>`);
                  
@@ -1295,7 +1334,7 @@ require_once 'config/eklaim_config.php';
                  var actionCell = row.find('td:nth-child(4)');
                  var dataId = row.attr('data-id');
                  
-                 if (rowNumber === 1) {
+                 if (rowNumber === 1 && canBePrimary) {
                      // Primary diagnosis - only remove button
                      actionCell.html(`
                          <button class="btn-remove" onclick="removeDiagnosis(${dataId})">
@@ -1330,7 +1369,12 @@ require_once 'config/eklaim_config.php';
             var tbody = $('#procedureTableBody');
             var rows = tbody.find('tr');
             
-            if (rows.length === 0) {
+            // Check if there are only empty-table rows
+            var emptyRows = rows.filter('.empty-table');
+            var dataRows = rows.not('.empty-table');
+            
+            if (dataRows.length === 0) {
+                // Clear all rows and add empty message
                 tbody.html(`
                     <tr>
                         <td colspan="5" class="empty-table">
@@ -1342,7 +1386,8 @@ require_once 'config/eklaim_config.php';
                 return;
             }
             
-            rows.each(function(index) {
+            // Only process data rows (not empty-table rows)
+            dataRows.each(function(index) {
                 var row = $(this);
                 var rowNumber = index + 1;
                 
@@ -2710,6 +2755,9 @@ require_once 'config/eklaim_config.php';
             $('#adlSubAcute').prop('readonly', false);
             $('#adlChronic').prop('readonly', false);
             $('#caraPulangSelect').prop('disabled', false);
+            $('#cobSelect').prop('disabled', false);
+            $('#beratLahir').prop('readonly', false);
+            $('#subAcute').prop('readonly', false);
             
             // Re-enable cost inputs
             $('.cost-input').prop('readonly', false);
@@ -2880,6 +2928,9 @@ require_once 'config/eklaim_config.php';
             $('#adlSubAcute').prop('readonly', true);
             $('#adlChronic').prop('readonly', true);
             $('#caraPulangSelect').prop('disabled', true);
+            $('#cobSelect').prop('disabled', true);
+            $('#beratLahir').prop('readonly', true);
+            $('#subAcute').prop('readonly', true);
             
             // Make all cost inputs read-only
             $('.cost-input').prop('readonly', true);
@@ -4356,9 +4407,13 @@ require_once 'config/eklaim_config.php';
          }
 
          // Update validation status for diagnosis and procedures
-         function updateValidationStatus() {
-             const diagnosisCount = $('#diagnosisTableBody tr:not(:has(.empty-table))').length;
-             const procedureCount = $('#procedureTableBody tr:not(:has(.empty-table))').length;
+        function updateValidationStatus() {
+            const diagnosisCount = $('#diagnosisTableBody tr').filter(function() {
+                return !$(this).hasClass('empty-table') && !$(this).find('.empty-table').length;
+            }).length;
+            const procedureCount = $('#procedureTableBody tr').filter(function() {
+                return !$(this).hasClass('empty-table') && !$(this).find('.empty-table').length;
+            }).length;
              
              // Update diagnosis validation status
              const diagnosisStatus = $('#diagnosisValidationStatus');
@@ -4379,10 +4434,10 @@ require_once 'config/eklaim_config.php';
                  procedureStatus.find('small').text(`${procedureCount} record(s)`).removeClass('text-warning').addClass('text-success');
          }
          
-         // Event listeners for table changes
-         // $(document).on('DOMNodeInserted DOMNodeRemoved', '#diagnosisTableBody, #procedureTableBody', function() {
-         //     updateValidationStatus();
-         // });
+        // Event listeners for table changes
+        $(document).on('DOMNodeInserted DOMNodeRemoved', '#diagnosisTableBody, #procedureTableBody', function() {
+            updateValidationStatus();
+        });
          
          // Initial validation status update
          $(document).ready(function() {
