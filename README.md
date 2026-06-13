@@ -52,11 +52,12 @@ Sistem web berbasis PHP untuk pengelolaan pasien rawat inap/jalan dan integrasi 
 - **Prosedur ICD-9**: Pencarian dan pemilihan prosedur dengan quantity
 - **Validasi Real-time**: Validasi kode terhadap database `idr_codes` dan `inacbg_codes`
 - **Import Coding**: Transfer data dari IDRG ke INACBG dengan delete-insert operation
+- **iDRG Top-up Options**: Dropdown top-up per tipe (dinamis) muncul jika Stage 1 mengembalikan `topup_options`; tombol Final iDRG ditahan hingga Stage 2 selesai
 - **Special CMG Options**: Dropdown untuk Special Procedure, Prosthesis, Investigation, Drug
 - **Real-time Tariff Update**: Update tarif berdasarkan pilihan Special CMG
 
 ### 3. **Workflow E-Klaim Lengkap**
-- **IDRG Process**: New Claim → Set Data → Coding → Grouping → Final
+- **IDRG Process**: New Claim → Set Data → Coding → Grouping Stage 1 → Stage 2 Top-up (jika ada) → Final
 - **INACBG Process**: Import → Coding → Grouping Stage 1 → Stage 2 (Special CMG) → Final
 - **Claim Management**: Final Claim → Send Online → Print → Re-edit
 - **Method Tracking**: Tracking semua method E-Klaim dengan status success/error
@@ -85,7 +86,8 @@ Sistem web berbasis PHP untuk pengelolaan pasien rawat inap/jalan dan integrasi 
 - setIdrgProcedure      // Set prosedur IDRG
 - setInacbgDiagnosa     // Set diagnosa INACBG
 - setInacbgProcedure    // Set prosedur INACBG
-- grouper               // Grouping IDRG/INACBG (stage 1 & 2)
+- grouper               // Grouping IDRG/INACBG Stage 1 (param: grouper=idrg|inacbg, stage=1)
+- idrg_grouper_stage2   // Grouping iDRG Stage 2 Top-up (param: topup_codes joined by #)
 - idrg_grouper_final    // Finalisasi IDRG
 - inacbg_grouper_final  // Finalisasi INACBG
 - idrg_grouper_reedit   // Re-edit IDRG
@@ -173,8 +175,9 @@ define('EKLAIM_TIMEOUT', 30);
 ### 2. **Coding IDRG**
 1. **Diagnosa**: Tambah diagnosa ICD-10-IM (minimal 1)
 2. **Prosedur**: Tambah prosedur ICD-9 (opsional)
-3. **Grouping**: Klik "Grouping iDRG" untuk proses grouping
-4. **Final**: Klik "Final iDRG" untuk finalisasi
+3. **Grouping Stage 1**: Klik "Grouping iDRG" untuk proses grouping pertama
+4. **Grouping Stage 2** *(opsional, jika Stage 1 mengembalikan `topup_options`)*: Pilih kode top-up per tipe dari dropdown yang muncul; `total_cost_weight` terupdate otomatis
+5. **Final**: Klik "Final iDRG" (tombol muncul setelah Stage 2 selesai, atau langsung jika tidak ada top-up)
 
 ### 3. **Import ke INACBG**
 1. Klik "Import Coding" untuk transfer data
@@ -211,7 +214,7 @@ const isValidResult = mdcNumber !== invalidMdcCode && drgCode;
 
 ### Method Tracking
 - Setiap method E-Klaim di-track dengan status success/failed
-- Method codes: 02 (Set Claim Data), 03 (Set IDRG Diagnosa), 05 (Set IDRG Procedure), 07 (Grouping IDRG), 08 (Final IDRG), 11 (Re-edit IDRG), 22 (INACBG Stage 1), 23 (INACBG Stage 2)
+- Method codes: `02` Set Claim Data, `03` Set IDRG Diagnosa, `05` Set IDRG Procedure, `07` Grouping IDRG Stage 1, `08` Final IDRG, `11` Re-edit IDRG, `18` Grouping iDRG Stage 2 *(baru)*, `12` Set INACBG Diagnosa, `14` Set INACBG Procedure, `15` Grouping INACBG Stage 1, `16` Grouping INACBG Stage 2
 - Execution time tracking untuk setiap method
 - Response caching untuk menghindari API call berulang
 
@@ -279,7 +282,16 @@ const isValidResult = mdcNumber !== invalidMdcCode && drgCode;
 
 ## 📈 Recent Updates
 
-### v2.0 (Current)
+### v3.0 (Current)
+Mengikuti Manual Web Service E-Klaim 5.10.7 changelog `20260403`:
+- ✅ **iDRG Grouping 2-Stage**: Stage 1 menghasilkan `topup_options` (di dalam `response_idrg`); Stage 2 mengirim `topup_codes` (dipisah `#`) dan mengembalikan `total_cost_weight` yang diperbarui
+- ✅ **Fungsi `groupIdrgStage2()`**: Wrapper baru di `eklaim_config.php`, method tracking code `18`
+- ✅ **Top-up Options UI**: Dropdown dinamis per tipe top-up; berbasis `cost_weight` (bukan tarif Rupiah seperti INACBG)
+- ✅ **Gating Final iDRG**: Tombol "Final iDRG" ditahan hingga Stage 2 selesai jika ada `topup_options`; MDC 36 tetap selalu blokir
+- ✅ **Fix bug tracking**: `handleGrouper()` iDRG sebelumnya mencatat method `09` (re_edit_idrg); diperbaiki ke `07` Stage 1 dan `18` Stage 2
+- ✅ **CLAUDE.md**: Dokumentasi arsitektur, konvensi kode, dan panduan pengembangan
+
+### v2.0 (Previous)
 - ✅ **Special CMG Integration**: Dropdown untuk Special Procedure, Prosthesis, Investigation, Drug
 - ✅ **Real-time Tariff Update**: Update tarif otomatis berdasarkan pilihan Special CMG
 - ✅ **Auto-calculation**: Total klaim otomatis dihitung dari base tariff + special CMG
@@ -289,7 +301,7 @@ const isValidResult = mdcNumber !== invalidMdcCode && drgCode;
 - ✅ **Default Kode Tarif**: AP (TARIF RS KELAS A PEMERINTAH)
 - ✅ **Enhanced Error Handling**: Error handling yang lebih informatif
 
-### v1.0 (Previous)
+### v1.0
 - Basic IDRG/INACBG workflow
 - Import coding functionality
 - Method tracking system
