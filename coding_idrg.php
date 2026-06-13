@@ -490,7 +490,26 @@ require_once 'config/eklaim_config.php';
                                     <strong>Perhatian:</strong> MDC dan DRG menunjukkan bahwa variabel diagnosa atau procedure tidak benar. Silakan periksa kembali data yang dimasukkan.
                                 </div>
                             </div>
-                            
+
+                            <!-- Top-up Options iDRG (Grouping Stage 2) -->
+                            <div id="idrgTopupSection" class="mt-3" style="display: none;">
+                                <h6 class="fw-bold text-primary mb-2">Top-up Options</h6>
+                                <div class="table-responsive">
+                                    <table class="table table-sm table-borderless mb-0">
+                                        <tbody id="idrgTopupTableBody">
+                                            <!-- Diisi dinamis oleh populateTopupOptions() berdasarkan "type" -->
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <td class="fw-bold" style="width: 200px;">Total Cost Weight</td>
+                                                <td class="text-end" style="width: 200px;"></td>
+                                                <td id="idrgTotalCostWeight" class="fw-bold text-end">-</td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+
                             <!-- Final iDRG Button -->
                             <div class="mt-3 d-flex justify-content-end">
                                 <!-- Final iDRG Button (hanya tampil jika MDC=31 dan DRG dimulai dengan 31) -->
@@ -1882,20 +1901,36 @@ require_once 'config/eklaim_config.php';
              
              // Deteksi error menggunakan helper function
              const isError = isGroupingError(mdcDescription, drgDescription, mdcNumber, drgCode);
-             
+
              // Apply error styling
              applyErrorStyling(mdcElement, drgElement, mdcNumberElement, drgCodeElement, isError);
-             
-             // Tentukan section yang akan ditampilkan
+
+             // Top-up options (Grouping Stage 2) jika ada pada hasil tersimpan
+             const idrg = responseData.response_idrg || {};
+             const topupOptions = (!isError && Array.isArray(idrg.topup_options)) ? idrg.topup_options : [];
+             const hasTopup = topupOptions.length > 0;
+             const selectedTopupCodes = Array.isArray(idrg.topup) ? idrg.topup.map(t => t.code) : [];
+
+             if (hasTopup) {
+                 const baseCostWeight = idrg.total_cost_weight || idrg.cost_weight || '0';
+                 $('#groupingResults').data('baseCostWeight', baseCostWeight);
+                 $('#groupingResults').data('topupOptions', topupOptions);
+                 populateTopupOptions(topupOptions, baseCostWeight, selectedTopupCodes);
+                 $('#idrgTopupSection').show();
+             } else {
+                 $('#idrgTopupSection').hide();
+             }
+
+             // Final iDRG: jika ada top-up, baru muncul setelah top-up dipilih (stage 2)
              const showErrorSection = isError;
-             const showFinalDrgButton = !isError;
-             
+             const showFinalDrgButton = !isError && (!hasTopup || selectedTopupCodes.length > 0);
+
              // Show/hide sections menggunakan helper function
              toggleGroupingSections(showErrorSection, showFinalDrgButton);
-             
+
              // Update final iDRG status
              updateFinalIdrgStatus();
-             
+
              console.log('Previous grouping result displayed successfully');
          }
         
@@ -4119,18 +4154,180 @@ require_once 'config/eklaim_config.php';
             const invalidMdcCode = '36';
             const isValidResult = mdcNumber !== invalidMdcCode && drgCode;
             const showErrorSection = !isValidResult;
-            const showFinalDrgButton = isValidResult;
-            
+
+            // Top-up options (Grouping Stage 2). topup_options berada DI DALAM response_idrg.
+            const topupOptions = (isValidResult && Array.isArray(data?.topup_options)) ? data.topup_options : [];
+            const hasTopup = topupOptions.length > 0;
+
+            if (hasTopup) {
+                // Ada top-up: tampilkan pilihan stage 2, Final iDRG baru muncul setelah stage 2 dijalankan.
+                const baseCostWeight = data?.total_cost_weight || data?.cost_weight || '0';
+                $('#groupingResults').data('baseCostWeight', baseCostWeight);
+                $('#groupingResults').data('topupOptions', topupOptions);
+                populateTopupOptions(topupOptions, baseCostWeight);
+                $('#idrgTopupSection').show();
+            } else {
+                $('#idrgTopupSection').hide();
+            }
+
+            // Final iDRG: jika tidak ada top-up dan hasil valid -> langsung boleh final.
+            const showFinalDrgButton = isValidResult && !hasTopup;
+
             // Show/hide sections menggunakan helper function
             toggleGroupingSections(showErrorSection, showFinalDrgButton);
-            
-            
+
+
             // Scroll to results
             $('html, body').animate({
                 scrollTop: $('#groupingResults').offset().top - 100
             }, 500);
         }
+
+        // Render dropdown top-up iDRG dikelompokkan berdasarkan "type" (terbuka, tidak hardcoded).
+        function populateTopupOptions(topupOptions, totalCostWeight, selectedCodes) {
+            selectedCodes = selectedCodes || [];
+            const tbody = $('#idrgTopupTableBody');
+            tbody.empty();
+
+            // Kelompokkan options berdasarkan type
+            const byType = {};
+            (topupOptions || []).forEach(opt => {
+                const type = opt.type || 'Top-up';
+                if (!byType[type]) byType[type] = [];
+                byType[type].push(opt);
+            });
+
+            Object.keys(byType).forEach((type, idx) => {
+                const selectId = 'idrgTopup_' + idx;
+                let optionsHtml = '<option value="">None</option>';
+                byType[type].forEach(opt => {
+                    const sel = selectedCodes.indexOf(opt.code) !== -1 ? ' selected' : '';
+                    optionsHtml += `<option value="${opt.code}" data-cost-weight="${opt.cost_weight || 0}"${sel}>${opt.description}</option>`;
+                });
+
+                const row = `
+                    <tr>
+                        <td class="fw-bold" style="width: 200px;">${type}</td>
+                        <td>
+                            <select id="${selectId}" class="form-select form-select-sm idrg-topup-select" style="width: 220px;">
+                                ${optionsHtml}
+                            </select>
+                        </td>
+                        <td class="text-end idrg-topup-weight" data-select="${selectId}">-</td>
+                    </tr>`;
+                tbody.append(row);
+            });
+
+            $('#idrgTotalCostWeight').text(totalCostWeight || '-');
+
+            // Bind change handler (sekali) untuk memicu stage 2
+            $('#idrgTopupTableBody').off('change.idrgTopup', '.idrg-topup-select')
+                .on('change.idrgTopup', '.idrg-topup-select', function() {
+                    performIdrgStage2();
+                });
+        }
                
+        // Grouping iDRG Stage 2: kirim kode top-up terpilih, gabung dengan tanda #.
+        function performIdrgStage2() {
+            const nomorSep = $('#noSEP').val();
+            if (!nomorSep) {
+                return;
+            }
+
+            // Kumpulkan kode top-up terpilih dari semua dropdown
+            const selectedCodes = [];
+            $('.idrg-topup-select').each(function() {
+                const val = $(this).val();
+                if (val) selectedCodes.push(val);
+            });
+
+            // Reset tampilan bobot per baris
+            $('.idrg-topup-weight').text('-');
+
+            // Jika tidak ada yang dipilih: kembalikan ke bobot dasar dan sembunyikan tombol final
+            if (selectedCodes.length === 0) {
+                const baseWeight = $('#groupingResults').data('baseCostWeight');
+                $('#idrgTotalCostWeight').text(baseWeight || '-');
+                $('#finalDrgSection').hide();
+                return;
+            }
+
+            showProcessingMessage('Sedang memproses Grouping iDRG Stage 2...');
+
+            const requestData = {
+                action: 'grouper',
+                nomor_sep: nomorSep,
+                stage: '2',
+                grouper: 'idrg',
+                topup_codes: selectedCodes.join('#')
+            };
+
+            $.ajax({
+                url: 'api/eklaim_new_claim.php',
+                method: 'POST',
+                data: JSON.stringify(requestData),
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function(response) {
+                    hideProcessingMessage();
+                    console.log('iDRG Stage 2 response:', response);
+
+                    if (response.success === true || response.success === 'true') {
+                        updateIdrgTopup(response.data);
+                    } else {
+                        showErrorMessage('Error iDRG Stage 2: ' + (response.error || response.message || 'Unknown error'));
+                    }
+                },
+                error: function(xhr, status, error) {
+                    hideProcessingMessage();
+                    showErrorMessage('Error iDRG Stage 2: ' + error);
+                }
+            });
+        }
+
+        // Update tampilan setelah Grouping iDRG Stage 2 (berbasis cost_weight, bukan tarif Rupiah).
+        function updateIdrgTopup(data) {
+            // Struktur respons stage 2: { response_idrg: { ..., topup: [...], topup_options: [...] } }
+            let responseIdrg = null;
+            if (data && data.response_idrg) {
+                responseIdrg = data.response_idrg;
+            } else if (data && (data.drg_code || data.total_cost_weight)) {
+                responseIdrg = data;
+            }
+
+            if (!responseIdrg) {
+                console.error('Tidak ada data response_idrg pada respons stage 2:', data);
+                return;
+            }
+
+            // Update MDC/DRG dan total cost weight
+            if (responseIdrg.mdc_number) $('#groupingMDCNumber').text(responseIdrg.mdc_number);
+            if (responseIdrg.mdc_description) $('#groupingMDC').text(responseIdrg.mdc_description);
+            if (responseIdrg.drg_code) $('#groupingDRGCode').text(responseIdrg.drg_code);
+            if (responseIdrg.drg_description) $('#groupingDRG').text(responseIdrg.drg_description);
+            if (responseIdrg.status_cd) $('#groupingStatus').text(responseIdrg.status_cd);
+
+            $('#idrgTotalCostWeight').text(responseIdrg.total_cost_weight || responseIdrg.cost_weight || '-');
+
+            // Tampilkan cost_weight untuk top-up yang terpilih
+            const selectedTopup = responseIdrg.topup || [];
+            $('.idrg-topup-weight').text('-');
+            $('.idrg-topup-select').each(function() {
+                const code = $(this).val();
+                if (!code) return;
+                const match = selectedTopup.find(t => t.code === code);
+                const weight = match ? match.cost_weight : ($(this).find('option:selected').data('cost-weight') || '-');
+                $(this).closest('tr').find('.idrg-topup-weight').text(weight);
+            });
+
+            // Setelah stage 2 berhasil, tombol Final iDRG boleh muncul (selama hasil bukan error)
+            const mdcNumber = responseIdrg.mdc_number || $('#groupingMDCNumber').text();
+            if (mdcNumber !== '36') {
+                $('#finalDrgSection').show();
+                $('#groupingErrorSection').hide();
+            }
+        }
+
         function getDiagnosisData() {
             const diagnoses = [];
             $('#diagnosisTableBody tr').each(function() {

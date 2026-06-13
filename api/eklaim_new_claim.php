@@ -160,7 +160,14 @@ try {
             $input['stage'] = '1';
             $result = handleGrouper($input);
             break;
-            
+
+        case 'idrg_grouper_stage2':
+            // IDRG grouping stage 2 (top-up), butuh topup_codes pada $input
+            $input['grouper'] = 'idrg';
+            $input['stage'] = '2';
+            $result = handleGrouper($input);
+            break;
+
         case 'idrg_grouper_final':
             $result = handleIdrgGrouperFinal($input);
             break;
@@ -1062,7 +1069,14 @@ function handleGrouper($input) {
     
     // Panggil fungsi grouper sesuai tipe
     if ($grouper === 'idrg') {
-        $result = groupIdrg($nomorSep, $forceApiCall);
+        // iDRG kini terdiri atas 2 stage (sejak Manual WS 5.10.7 / changelog 20260403)
+        if ($stage === '2') {
+            $topupCodes = $input['topup_codes'] ?? '';
+            $result = groupIdrgStage2($nomorSep, $topupCodes);
+        } else {
+            // stage '1' (default)
+            $result = groupIdrg($nomorSep, $forceApiCall);
+        }
     } else {
         // Untuk INACBG, perlu handle stage 1, 2, dan final
         if ($stage === '1') {
@@ -1120,8 +1134,16 @@ function handleGrouper($input) {
                 break;
         }
     } elseif ($grouper === 'idrg') {
-        // Method code untuk IDRG
-        $methodCode = '09'; // Method code untuk IDRG grouping
+        // Tentukan method code berdasarkan stage untuk IDRG
+        switch ($stage) {
+            case '2':
+                $methodCode = '18'; // Method code untuk IDRG grouping stage 2 (top-up)
+                break;
+            case '1':
+            default:
+                $methodCode = '07'; // Method code untuk IDRG grouping stage 1
+                break;
+        }
     }
     
     if (!empty($methodCode)) {

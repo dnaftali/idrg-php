@@ -10,7 +10,7 @@ require_once __DIR__ . '/../functions/eklaim_method_tracking.php';
 
 // Konfigurasi Server E-Klaim
 //define('EKLAIM_BASE_URL', 'http://10.10.1.63');
-define('EKLAIM_BASE_URL', 'http://192.168.100.27');
+define('EKLAIM_BASE_URL', 'http://10.100.254.31');
 define('EKLAIM_ENDPOINT', '/E-Klaim/ws.php');
 define('EKLAIM_DEBUG_MODE', true); // Set false untuk production
 
@@ -37,17 +37,18 @@ define('EKLAIM_ERROR_INVALID_RESPONSE', 'Response tidak valid dari server E-Klai
  * @param array $data Data yang akan dikirim
  * @return array Response dari server E-Klaim
  */
-function sendEklaimRequest($data) {
+function sendEklaimRequest($data)
+{
     $url = EKLAIM_FULL_URL;
-    
+
     // Log request details
     error_log("sendEklaimRequest called with URL: " . $url);
     error_log("sendEklaimRequest data: " . json_encode($data, JSON_UNESCAPED_SLASHES));
-    
+
     // Prepare request data
     $requestData = json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
     error_log("sendEklaimRequest JSON data: " . $requestData);
-    
+
     // Validate JSON before sending
     if (json_last_error() !== JSON_ERROR_NONE) {
         error_log("sendEklaimRequest JSON encoding error: " . json_last_error_msg());
@@ -57,12 +58,12 @@ function sendEklaimRequest($data) {
             'http_code' => 0
         ];
     }
-    
+
     // Check if cURL is available
     if (function_exists('curl_init')) {
         // Initialize cURL
         $ch = curl_init();
-        
+
         // Set cURL options
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, true);
@@ -77,22 +78,22 @@ function sendEklaimRequest($data) {
         ]);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-        
+
         // Execute request
         $response = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $error = curl_error($ch);
-        
+
         // Log response details
         error_log("sendEklaimRequest HTTP Code: " . $httpCode);
         error_log("sendEklaimRequest Response: " . $response);
         error_log("sendEklaimRequest cURL Error: " . ($error ?: 'None'));
-        
+
         curl_close($ch);
     } else {
         // Fallback to file_get_contents with stream context
         error_log("sendEklaimRequest: cURL not available, using file_get_contents fallback");
-        
+
         $context = stream_context_create([
             'http' => [
                 'method' => 'POST',
@@ -105,22 +106,22 @@ function sendEklaimRequest($data) {
                 'timeout' => EKLAIM_TIMEOUT
             ]
         ]);
-        
+
         $response = file_get_contents($url, false, $context);
         $httpCode = 200; // file_get_contents doesn't provide HTTP code directly
         $error = null;
-        
+
         if ($response === false) {
             $error = 'file_get_contents failed';
             $httpCode = 0;
         }
-        
+
         // Log response details
         error_log("sendEklaimRequest HTTP Code: " . $httpCode);
         error_log("sendEklaimRequest Response: " . $response);
         error_log("sendEklaimRequest file_get_contents Error: " . ($error ?: 'None'));
     }
-    
+
     // Handle errors
     if ($error) {
         error_log("sendEklaimRequest cURL Error occurred: " . $error);
@@ -130,7 +131,7 @@ function sendEklaimRequest($data) {
             'http_code' => $httpCode
         ];
     }
-    
+
     if ($httpCode !== 200) {
         error_log("sendEklaimRequest HTTP Error: " . $httpCode);
         return [
@@ -140,7 +141,7 @@ function sendEklaimRequest($data) {
             'response' => $response
         ];
     }
-    
+
     // Parse JSON response
     $responseData = json_decode($response, true);
     if (json_last_error() !== JSON_ERROR_NONE) {
@@ -152,9 +153,9 @@ function sendEklaimRequest($data) {
             'raw_response' => $response
         ];
     }
-    
+
     error_log("sendEklaimRequest Parsed Response: " . json_encode($responseData, JSON_UNESCAPED_SLASHES));
-    
+
     return [
         'success' => true,
         'data' => $responseData,
@@ -168,22 +169,23 @@ function sendEklaimRequest($data) {
  * @param array $requestData Data request
  * @param array $responseData Data response
  */
-function logEklaimRequest($method, $requestData, $responseData) {
+function logEklaimRequest($method, $requestData, $responseData)
+{
     $logData = [
         'timestamp' => date('Y-m-d H:i:s'),
         'method' => $method,
         'request' => $requestData,
         'response' => $responseData
     ];
-    
+
     $logFile = __DIR__ . '/../logs/eklaim_' . date('Y-m-d') . '.log';
     $logDir = dirname($logFile);
-    
+
     // Create log directory if not exists
     if (!is_dir($logDir)) {
         mkdir($logDir, 0755, true);
     }
-    
+
     file_put_contents($logFile, json_encode($logData, JSON_PRETTY_PRINT) . "\n", FILE_APPEND | LOCK_EX);
 }
 
@@ -196,10 +198,11 @@ function logEklaimRequest($method, $requestData, $responseData) {
  * @param array $patientData Data pasien (nomor_kartu, nomor_sep, nomor_rm, nama_pasien, tgl_lahir, gender)
  * @return array Response dari server E-Klaim
  */
-function createNewClaim($patientData) {
+function createNewClaim($patientData)
+{
     // Log input data
     error_log("createNewClaim called with patient data: " . json_encode($patientData, JSON_UNESCAPED_SLASHES));
-    
+
     $requestData = [
         'metadata' => [
             'method' => 'new_claim'
@@ -213,18 +216,18 @@ function createNewClaim($patientData) {
             'gender' => $patientData['gender'] ?? ''
         ]
     ];
-    
+
     // Log request data yang akan dikirim
     error_log("createNewClaim request data: " . json_encode($requestData, JSON_UNESCAPED_SLASHES));
     error_log("createNewClaim sending to URL: " . EKLAIM_FULL_URL);
-    
+
     $response = sendEklaimRequest($requestData);
-    
+
     // Log response
     error_log("createNewClaim response: " . json_encode($response, JSON_UNESCAPED_SLASHES));
-    
+
     logEklaimRequest('new_claim', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -234,18 +237,19 @@ function createNewClaim($patientData) {
  * @param array $claimData Data klaim lengkap
  * @return array Response dari server E-Klaim
  */
-function setClaimData($nomorSep, $claimData) {
+function setClaimData($nomorSep, $claimData)
+{
     $startTime = microtime(true);
     $methodCode = '02'; // Method 02: set_claim_data
-    
+
     try {
         // Simpan tracking sebagai pending
         saveEklaimMethodTracking($nomorSep, $methodCode, 'pending', $claimData);
-        
+
         // Log input data
         error_log("setClaimData called with nomor_sep: " . $nomorSep);
         error_log("setClaimData claim_data: " . json_encode($claimData, JSON_UNESCAPED_SLASHES));
-        
+
         $requestData = [
             'metadata' => [
                 'method' => 'set_claim_data',
@@ -253,69 +257,69 @@ function setClaimData($nomorSep, $claimData) {
             ],
             'data' => array_merge(['nomor_sep' => $nomorSep], $claimData)
         ];
-        
+
         // Log request data yang akan dikirim
         error_log("setClaimData request data: " . json_encode($requestData, JSON_UNESCAPED_SLASHES));
         error_log("setClaimData sending to URL: " . EKLAIM_FULL_URL);
-        
+
         $response = sendEklaimRequest($requestData);
-        
+
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         // Log response
         error_log("setClaimData response: " . json_encode($response, JSON_UNESCAPED_SLASHES));
-        
+
         logEklaimRequest('set_claim_data', $requestData, $response);
-        
+
         // Update tracking berdasarkan response
         if (isset($response['metadata']['code']) && $response['metadata']['code'] == 200) {
             // Success
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'success', 
-                $requestData, 
-                $response, 
-                null, 
-                null, 
+                $nomorSep,
+                $methodCode,
+                'success',
+                $requestData,
+                $response,
+                null,
+                null,
                 $executionTime
             );
         } else {
             // Error
             $errorCode = $response['metadata']['error_no'] ?? 'UNKNOWN';
             $errorMessage = $response['metadata']['message'] ?? 'Unknown error';
-            
+
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'error', 
-                $requestData, 
-                $response, 
-                $errorCode, 
-                $errorMessage, 
+                $nomorSep,
+                $methodCode,
+                'error',
+                $requestData,
+                $response,
+                $errorCode,
+                $errorMessage,
                 $executionTime
             );
         }
-        
+
         return $response;
-        
+
     } catch (Exception $e) {
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         // Update tracking dengan error
         saveEklaimMethodTracking(
-            $nomorSep, 
-            $methodCode, 
-            'error', 
-            $requestData ?? null, 
-            null, 
-            'EXCEPTION', 
-            $e->getMessage(), 
+            $nomorSep,
+            $methodCode,
+            'error',
+            $requestData ?? null,
+            null,
+            'EXCEPTION',
+            $e->getMessage(),
             $executionTime
         );
-        
+
         error_log("setClaimData exception: " . $e->getMessage());
         throw $e;
     }
@@ -327,18 +331,19 @@ function setClaimData($nomorSep, $claimData) {
  * @param string $diagnosa String diagnosa (format: "ICD10#ICD10")
  * @return array Response dari server E-Klaim
  */
-function setIdrgDiagnosa($nomorSep, $diagnosa) {
+function setIdrgDiagnosa($nomorSep, $diagnosa)
+{
     $startTime = microtime(true);
     $methodCode = '03'; // Method 03: idrg_diagnosa_set
-    
+
     try {
         // Simpan tracking sebagai pending
         saveEklaimMethodTracking($nomorSep, $methodCode, 'pending', ['diagnosa' => $diagnosa]);
-        
+
         // Log input data
         error_log("setIdrgDiagnosa called with nomor_sep: " . $nomorSep);
         error_log("setIdrgDiagnosa diagnosa: " . $diagnosa);
-        
+
         $requestData = [
             'metadata' => [
                 'method' => 'idrg_diagnosa_set',
@@ -348,69 +353,69 @@ function setIdrgDiagnosa($nomorSep, $diagnosa) {
                 'diagnosa' => $diagnosa
             ]
         ];
-        
+
         // Log request data yang akan dikirim
         error_log("setIdrgDiagnosa request data: " . json_encode($requestData, JSON_UNESCAPED_SLASHES));
         error_log("setIdrgDiagnosa sending to URL: " . EKLAIM_FULL_URL);
-        
+
         $response = sendEklaimRequest($requestData);
-        
+
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         // Log response
         error_log("setIdrgDiagnosa response: " . json_encode($response, JSON_UNESCAPED_SLASHES));
-        
+
         logEklaimRequest('idrg_diagnosa_set', $requestData, $response);
-        
+
         // Update tracking berdasarkan response
         if (isset($response['metadata']['code']) && $response['metadata']['code'] == 200) {
             // Success
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'success', 
-                $requestData, 
-                $response, 
-                null, 
-                null, 
+                $nomorSep,
+                $methodCode,
+                'success',
+                $requestData,
+                $response,
+                null,
+                null,
                 $executionTime
             );
         } else {
             // Error
             $errorCode = $response['metadata']['error_no'] ?? 'UNKNOWN';
             $errorMessage = $response['metadata']['message'] ?? 'Unknown error';
-            
+
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'error', 
-                $requestData, 
-                $response, 
-                $errorCode, 
-                $errorMessage, 
+                $nomorSep,
+                $methodCode,
+                'error',
+                $requestData,
+                $response,
+                $errorCode,
+                $errorMessage,
                 $executionTime
             );
         }
-        
+
         return $response;
-        
+
     } catch (Exception $e) {
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         // Update tracking dengan error
         saveEklaimMethodTracking(
-            $nomorSep, 
-            $methodCode, 
-            'error', 
-            $requestData ?? null, 
-            null, 
-            'EXCEPTION', 
-            $e->getMessage(), 
+            $nomorSep,
+            $methodCode,
+            'error',
+            $requestData ?? null,
+            null,
+            'EXCEPTION',
+            $e->getMessage(),
             $executionTime
         );
-        
+
         error_log("setIdrgDiagnosa exception: " . $e->getMessage());
         throw $e;
     }
@@ -421,7 +426,8 @@ function setIdrgDiagnosa($nomorSep, $diagnosa) {
  * @param string $nomorSep Nomor SEP
  * @return array Response dari server E-Klaim
  */
-function getIdrgDiagnosa($nomorSep) {
+function getIdrgDiagnosa($nomorSep)
+{
     $requestData = [
         'metadata' => [
             'method' => 'idrg_diagnosa_get'
@@ -430,10 +436,10 @@ function getIdrgDiagnosa($nomorSep) {
             'nomor_sep' => $nomorSep
         ]
     ];
-    
+
     $response = sendEklaimRequest($requestData);
     logEklaimRequest('idrg_diagnosa_get', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -443,18 +449,19 @@ function getIdrgDiagnosa($nomorSep) {
  * @param string $procedure String prosedur (format: "ICD9#ICD9+multiplier#ICD9")
  * @return array Response dari server E-Klaim
  */
-function setIdrgProcedure($nomorSep, $procedure) {
+function setIdrgProcedure($nomorSep, $procedure)
+{
     $startTime = microtime(true);
     $methodCode = '05'; // Method 05: idrg_procedure_set
-    
+
     try {
         // Simpan tracking sebagai pending
         saveEklaimMethodTracking($nomorSep, $methodCode, 'pending', ['procedure' => $procedure]);
-        
+
         // Log input data
         error_log("setIdrgProcedure called with nomor_sep: " . $nomorSep);
         error_log("setIdrgProcedure procedure: " . $procedure);
-        
+
         $requestData = [
             'metadata' => [
                 'method' => 'idrg_procedure_set',
@@ -464,69 +471,69 @@ function setIdrgProcedure($nomorSep, $procedure) {
                 'procedure' => $procedure
             ]
         ];
-        
+
         // Log request data yang akan dikirim
         error_log("setIdrgProcedure request data: " . json_encode($requestData, JSON_UNESCAPED_SLASHES));
         error_log("setIdrgProcedure sending to URL: " . EKLAIM_FULL_URL);
-        
+
         $response = sendEklaimRequest($requestData);
-        
+
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         // Log response
         error_log("setIdrgProcedure response: " . json_encode($response, JSON_UNESCAPED_SLASHES));
-        
+
         logEklaimRequest('idrg_procedure_set', $requestData, $response);
-        
+
         // Update tracking berdasarkan response
         if (isset($response['metadata']['code']) && $response['metadata']['code'] == 200) {
             // Success
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'success', 
-                $requestData, 
-                $response, 
-                null, 
-                null, 
+                $nomorSep,
+                $methodCode,
+                'success',
+                $requestData,
+                $response,
+                null,
+                null,
                 $executionTime
             );
         } else {
             // Error
             $errorCode = $response['metadata']['error_no'] ?? 'UNKNOWN';
             $errorMessage = $response['metadata']['message'] ?? 'Unknown error';
-            
+
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'error', 
-                $requestData, 
-                $response, 
-                $errorCode, 
-                $errorMessage, 
+                $nomorSep,
+                $methodCode,
+                'error',
+                $requestData,
+                $response,
+                $errorCode,
+                $errorMessage,
                 $executionTime
             );
         }
-        
+
         return $response;
-        
+
     } catch (Exception $e) {
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         // Update tracking dengan error
         saveEklaimMethodTracking(
-            $nomorSep, 
-            $methodCode, 
-            'error', 
-            $requestData ?? null, 
-            null, 
-            'EXCEPTION', 
-            $e->getMessage(), 
+            $nomorSep,
+            $methodCode,
+            'error',
+            $requestData ?? null,
+            null,
+            'EXCEPTION',
+            $e->getMessage(),
             $executionTime
         );
-        
+
         error_log("setIdrgProcedure exception: " . $e->getMessage());
         throw $e;
     }
@@ -537,7 +544,8 @@ function setIdrgProcedure($nomorSep, $procedure) {
  * @param string $nomorSep Nomor SEP
  * @return array Response dari server E-Klaim
  */
-function getIdrgProcedure($nomorSep) {
+function getIdrgProcedure($nomorSep)
+{
     $requestData = [
         'metadata' => [
             'method' => 'idrg_procedure_get'
@@ -546,10 +554,10 @@ function getIdrgProcedure($nomorSep) {
             'nomor_sep' => $nomorSep
         ]
     ];
-    
+
     $response = sendEklaimRequest($requestData);
     logEklaimRequest('idrg_procedure_get', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -558,65 +566,66 @@ function getIdrgProcedure($nomorSep) {
  * @param string $nomorSep Nomor SEP
  * @return array Response dari server E-Klaim
  */
-function groupIdrg($nomorSep, $forceApiCall = false) {
+function groupIdrg($nomorSep, $forceApiCall = false)
+{
     $startTime = microtime(true);
     $methodCode = '07'; // Method 07: grouping_idrg
-    
+
     try {
         // Jika forceApiCall = true, skip cache check dan langsung ke API
         if (!$forceApiCall) {
             // Cek apakah data grouping sudah ada di database
             $existingData = getEklaimMethodStatus($nomorSep);
-        
-        if ($existingData['success']) {
-            // Cari method 07 (grouping_idrg) yang sudah berhasil
-            foreach ($existingData['methods'] as $method) {
-                if ($method['method_code'] === '07') {
-                    // Periksa apakah response_data menunjukkan success
-                    $isSuccessful = false;
-                    
-                    if (!empty($method['response_data'])) {
-                        $responseData = json_decode($method['response_data'], true);
-                        // Periksa apakah response benar-benar berhasil (bukan hanya HTTP success)
-                        if (isset($responseData['success']) && $responseData['success'] === true) {
-                            // Periksa apakah ada error dalam metadata
-                            if (isset($responseData['data']['metadata']['code']) && $responseData['data']['metadata']['code'] == 200) {
-                                $isSuccessful = true;
-                            } else {
-                                // Ada error dalam response, tidak dianggap sukses
-                                $isSuccessful = false;
+
+            if ($existingData['success']) {
+                // Cari method 07 (grouping_idrg) yang sudah berhasil
+                foreach ($existingData['methods'] as $method) {
+                    if ($method['method_code'] === '07') {
+                        // Periksa apakah response_data menunjukkan success
+                        $isSuccessful = false;
+
+                        if (!empty($method['response_data'])) {
+                            $responseData = json_decode($method['response_data'], true);
+                            // Periksa apakah response benar-benar berhasil (bukan hanya HTTP success)
+                            if (isset($responseData['success']) && $responseData['success'] === true) {
+                                // Periksa apakah ada error dalam metadata
+                                if (isset($responseData['data']['metadata']['code']) && $responseData['data']['metadata']['code'] == 200) {
+                                    $isSuccessful = true;
+                                } else {
+                                    // Ada error dalam response, tidak dianggap sukses
+                                    $isSuccessful = false;
+                                }
                             }
+                        } else {
+                            // Fallback ke status field
+                            $isSuccessful = ($method['status'] === 'success');
                         }
-                    } else {
-                        // Fallback ke status field
-                        $isSuccessful = ($method['status'] === 'success');
-                    }
-                    
-                    if ($isSuccessful) {
-                        // Data sudah ada dan berhasil, kembalikan data yang sudah ada
-                        error_log("Grouping data already exists for nomor_sep: " . $nomorSep . ", returning cached data");
-                        
-                        $responseData = json_decode($method['response_data'], true);
-                        return [
-                            'success' => true,
-                            'data' => $responseData,
-                            'message' => 'Grouping data retrieved from cache',
-                            'cached' => true
-                        ];
+
+                        if ($isSuccessful) {
+                            // Data sudah ada dan berhasil, kembalikan data yang sudah ada
+                            error_log("Grouping data already exists for nomor_sep: " . $nomorSep . ", returning cached data");
+
+                            $responseData = json_decode($method['response_data'], true);
+                            return [
+                                'success' => true,
+                                'data' => $responseData,
+                                'message' => 'Grouping data retrieved from cache',
+                                'cached' => true
+                            ];
+                        }
                     }
                 }
             }
-        }
         } else {
             error_log("Force API call requested for nomor_sep: " . $nomorSep . ", skipping cache check");
         }
-        
+
         // Jika tidak ada data yang berhasil atau forceApiCall = true, lanjutkan dengan API call
         error_log("Calling external API for nomor_sep: " . $nomorSep . ($forceApiCall ? " (forced)" : " (no cache found)"));
-        
+
         // Simpan tracking sebagai pending
         saveEklaimMethodTracking($nomorSep, $methodCode, 'pending');
-        
+
         $requestData = [
             'metadata' => [
                 'method' => 'grouper',
@@ -627,63 +636,150 @@ function groupIdrg($nomorSep, $forceApiCall = false) {
                 'nomor_sep' => $nomorSep
             ]
         ];
-        
+
         $response = sendEklaimRequest($requestData);
-        
+
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         logEklaimRequest('grouper_idrg', $requestData, $response);
-        
+
         // Update tracking berdasarkan response
         if (isset($response['metadata']['code']) && $response['metadata']['code'] == 200) {
             // Success
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'success', 
-                $requestData, 
-                $response, 
-                null, 
-                null, 
+                $nomorSep,
+                $methodCode,
+                'success',
+                $requestData,
+                $response,
+                null,
+                null,
                 $executionTime
             );
         } else {
             // Error
             $errorCode = $response['metadata']['error_no'] ?? 'UNKNOWN';
             $errorMessage = $response['metadata']['message'] ?? 'Unknown error';
-            
+
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'error', 
-                $requestData, 
-                $response, 
-                $errorCode, 
-                $errorMessage, 
+                $nomorSep,
+                $methodCode,
+                'error',
+                $requestData,
+                $response,
+                $errorCode,
+                $errorMessage,
                 $executionTime
             );
         }
-        
+
         return $response;
-        
+
     } catch (Exception $e) {
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         // Update tracking dengan error
         saveEklaimMethodTracking(
-            $nomorSep, 
-            $methodCode, 
-            'error', 
-            $requestData ?? null, 
-            null, 
-            'EXCEPTION', 
-            $e->getMessage(), 
+            $nomorSep,
+            $methodCode,
+            'error',
+            $requestData ?? null,
+            null,
+            'EXCEPTION',
+            $e->getMessage(),
             $executionTime
         );
-        
+
         error_log("groupIdrg exception: " . $e->getMessage());
+        throw $e;
+    }
+}
+
+/**
+ * GROUPING IDRG STAGE 2 - Menambahkan top-up (prosthesis/dsb) ke hasil grouping iDRG.
+ * Hanya perlu dipanggil jika hasil stage 1 mengandung "topup_options".
+ * @param string $nomorSep Nomor SEP
+ * @param string $topupCodes Kode top-up dari stage 1 (segment "topup_options"), digabung dengan tanda #
+ * @return array Response dari server E-Klaim
+ */
+function groupIdrgStage2($nomorSep, $topupCodes)
+{
+    $startTime = microtime(true);
+    $methodCode = '18'; // Method 18: grouper_idrg_stage2
+
+    try {
+        // Simpan tracking sebagai pending
+        saveEklaimMethodTracking($nomorSep, $methodCode, 'pending', ['topup_codes' => $topupCodes]);
+
+        $requestData = [
+            'metadata' => [
+                'method' => 'grouper',
+                'stage' => '2',
+                'grouper' => 'idrg'
+            ],
+            'data' => [
+                'nomor_sep' => $nomorSep,
+                'topup_codes' => $topupCodes
+            ]
+        ];
+
+        $response = sendEklaimRequest($requestData);
+        logEklaimRequest('grouper_idrg_stage2', $requestData, $response);
+
+        // Hitung execution time
+        $executionTime = round((microtime(true) - $startTime) * 1000);
+
+        // Update tracking berdasarkan response
+        if (isset($response['metadata']['code']) && $response['metadata']['code'] == 200) {
+            // Success
+            saveEklaimMethodTracking(
+                $nomorSep,
+                $methodCode,
+                'success',
+                $requestData,
+                $response,
+                null,
+                null,
+                $executionTime
+            );
+        } else {
+            // Error
+            $errorCode = $response['metadata']['error_no'] ?? 'UNKNOWN';
+            $errorMessage = $response['metadata']['message'] ?? 'Unknown error';
+
+            saveEklaimMethodTracking(
+                $nomorSep,
+                $methodCode,
+                'error',
+                $requestData,
+                $response,
+                $errorCode,
+                $errorMessage,
+                $executionTime
+            );
+        }
+
+        return $response;
+
+    } catch (Exception $e) {
+        // Hitung execution time
+        $executionTime = round((microtime(true) - $startTime) * 1000);
+
+        // Update tracking dengan error
+        saveEklaimMethodTracking(
+            $nomorSep,
+            $methodCode,
+            'error',
+            $requestData ?? null,
+            null,
+            'EXCEPTION',
+            $e->getMessage(),
+            $executionTime
+        );
+
+        error_log("groupIdrgStage2 exception: " . $e->getMessage());
         throw $e;
     }
 }
@@ -693,21 +789,22 @@ function groupIdrg($nomorSep, $forceApiCall = false) {
  * @param string $nomorSep Nomor SEP
  * @return array Response dari server E-Klaim
  */
-function finalizeIdrg($nomorSep) {
+function finalizeIdrg($nomorSep)
+{
     $startTime = microtime(true);
     $methodCode = '08'; // Method 08: final_idrg
-    
+
     try {
         // Cek apakah data final_idrg sudah ada di database
         $existingData = getEklaimMethodStatus($nomorSep);
-        
+
         if ($existingData['success']) {
             // Cari method 08 (final_idrg) yang sudah berhasil
             foreach ($existingData['methods'] as $method) {
                 if ($method['method_code'] === '08') {
                     // Periksa apakah response_data menunjukkan success
                     $isSuccessful = false;
-                    
+
                     if (!empty($method['response_data'])) {
                         $responseData = json_decode($method['response_data'], true);
                         // Periksa apakah response benar-benar berhasil (bukan hanya HTTP success)
@@ -724,11 +821,11 @@ function finalizeIdrg($nomorSep) {
                         // Fallback ke status field
                         $isSuccessful = ($method['status'] === 'success');
                     }
-                    
+
                     if ($isSuccessful) {
                         // Data sudah ada dan berhasil, kembalikan data yang sudah ada
                         error_log("Final iDRG data already exists for nomor_sep: " . $nomorSep . ", returning cached data");
-                        
+
                         $responseData = json_decode($method['response_data'], true);
                         return [
                             'success' => true,
@@ -740,13 +837,13 @@ function finalizeIdrg($nomorSep) {
                 }
             }
         }
-        
+
         // Jika tidak ada data yang berhasil, lanjutkan dengan API call
         error_log("No successful final_idrg data found for nomor_sep: " . $nomorSep . ", calling external API");
-        
+
         // Simpan tracking sebagai pending
         saveEklaimMethodTracking($nomorSep, $methodCode, 'pending');
-        
+
         $requestData = [
             'metadata' => [
                 'method' => 'idrg_grouper_final'
@@ -755,62 +852,62 @@ function finalizeIdrg($nomorSep) {
                 'nomor_sep' => $nomorSep
             ]
         ];
-        
+
         $response = sendEklaimRequest($requestData);
-        
+
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         logEklaimRequest('idrg_grouper_final', $requestData, $response);
-        
+
         // Update tracking berdasarkan response
         if (isset($response['metadata']['code']) && $response['metadata']['code'] == 200) {
             // Success
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'success', 
-                $requestData, 
-                $response, 
-                null, 
-                null, 
+                $nomorSep,
+                $methodCode,
+                'success',
+                $requestData,
+                $response,
+                null,
+                null,
                 $executionTime
             );
         } else {
             // Error
             $errorCode = $response['metadata']['error_no'] ?? 'UNKNOWN';
             $errorMessage = $response['metadata']['message'] ?? 'Unknown error';
-            
+
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'error', 
-                $requestData, 
-                $response, 
-                $errorCode, 
-                $errorMessage, 
+                $nomorSep,
+                $methodCode,
+                'error',
+                $requestData,
+                $response,
+                $errorCode,
+                $errorMessage,
                 $executionTime
             );
         }
-        
+
         return $response;
-        
+
     } catch (Exception $e) {
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         // Update tracking dengan error
         saveEklaimMethodTracking(
-            $nomorSep, 
-            $methodCode, 
-            'error', 
-            $requestData ?? null, 
-            null, 
-            'EXCEPTION', 
-            $e->getMessage(), 
+            $nomorSep,
+            $methodCode,
+            'error',
+            $requestData ?? null,
+            null,
+            'EXCEPTION',
+            $e->getMessage(),
             $executionTime
         );
-        
+
         error_log("finalizeIdrg exception: " . $e->getMessage());
         throw $e;
     }
@@ -821,14 +918,15 @@ function finalizeIdrg($nomorSep) {
  * @param string $nomorSep Nomor SEP
  * @return array Response dari server E-Klaim
  */
-function reeditIdrg($nomorSep) {
+function reeditIdrg($nomorSep)
+{
     $startTime = microtime(true);
     $methodCode = '11'; // Method 11: idrg_grouper_reedit
-    
+
     try {
         // Simpan tracking sebagai pending
         saveEklaimMethodTracking($nomorSep, $methodCode, 'pending');
-        
+
         $requestData = [
             'metadata' => [
                 'method' => 'idrg_grouper_reedit'
@@ -837,61 +935,61 @@ function reeditIdrg($nomorSep) {
                 'nomor_sep' => $nomorSep
             ]
         ];
-        
+
         $response = sendEklaimRequest($requestData);
         logEklaimRequest('idrg_grouper_reedit', $requestData, $response);
-        
+
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         // Update tracking berdasarkan response
         if (isset($response['metadata']['code']) && $response['metadata']['code'] == 200) {
             // Success
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'success', 
-                $requestData, 
-                $response, 
-                null, 
-                null, 
+                $nomorSep,
+                $methodCode,
+                'success',
+                $requestData,
+                $response,
+                null,
+                null,
                 $executionTime
             );
         } else {
             // Error
             $errorCode = $response['metadata']['error_no'] ?? 'UNKNOWN';
             $errorMessage = $response['metadata']['message'] ?? 'Unknown error';
-            
+
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'error', 
-                $requestData, 
-                $response, 
-                $errorCode, 
-                $errorMessage, 
+                $nomorSep,
+                $methodCode,
+                'error',
+                $requestData,
+                $response,
+                $errorCode,
+                $errorMessage,
                 $executionTime
             );
         }
-        
+
         return $response;
-        
+
     } catch (Exception $e) {
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         // Update tracking dengan error
         saveEklaimMethodTracking(
-            $nomorSep, 
-            $methodCode, 
-            'error', 
-            $requestData ?? null, 
-            null, 
-            'EXCEPTION', 
-            $e->getMessage(), 
+            $nomorSep,
+            $methodCode,
+            'error',
+            $requestData ?? null,
+            null,
+            'EXCEPTION',
+            $e->getMessage(),
             $executionTime
         );
-        
+
         throw $e;
     }
 }
@@ -901,7 +999,8 @@ function reeditIdrg($nomorSep) {
  * @param string $nomorSep Nomor SEP
  * @return array Response dari server E-Klaim
  */
-function importIdrgToInacbg($nomorSep) {
+function importIdrgToInacbg($nomorSep)
+{
     $requestData = [
         'metadata' => [
             'method' => 'idrg_to_inacbg_import'
@@ -910,10 +1009,10 @@ function importIdrgToInacbg($nomorSep) {
             'nomor_sep' => $nomorSep
         ]
     ];
-    
+
     $response = sendEklaimRequest($requestData);
     logEklaimRequest('idrg_to_inacbg_import', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -922,7 +1021,8 @@ function importIdrgToInacbg($nomorSep) {
  * @param string $nomorSep Nomor SEP
  * @return array Response dari server E-Klaim
  */
-function getInacbgDiagnosa($nomorSep) {
+function getInacbgDiagnosa($nomorSep)
+{
     $requestData = [
         'metadata' => [
             'method' => 'inacbg_diagnosa_get'
@@ -931,10 +1031,10 @@ function getInacbgDiagnosa($nomorSep) {
             'nomor_sep' => $nomorSep
         ]
     ];
-    
+
     $response = sendEklaimRequest($requestData);
     logEklaimRequest('inacbg_diagnosa_get', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -944,7 +1044,8 @@ function getInacbgDiagnosa($nomorSep) {
  * @param string $diagnosa String diagnosa (format: "ICD10#ICD10")
  * @return array Response dari server E-Klaim
  */
-function setInacbgDiagnosa($nomorSep, $diagnosa) {
+function setInacbgDiagnosa($nomorSep, $diagnosa)
+{
     $requestData = [
         'metadata' => [
             'method' => 'inacbg_diagnosa_set',
@@ -954,10 +1055,10 @@ function setInacbgDiagnosa($nomorSep, $diagnosa) {
             'diagnosa' => $diagnosa
         ]
     ];
-    
+
     $response = sendEklaimRequest($requestData);
     logEklaimRequest('inacbg_diagnosa_set', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -967,7 +1068,8 @@ function setInacbgDiagnosa($nomorSep, $diagnosa) {
  * @param string $procedure String prosedur (format: "ICD9#ICD9#ICD9")
  * @return array Response dari server E-Klaim
  */
-function setInacbgProcedure($nomorSep, $procedure) {
+function setInacbgProcedure($nomorSep, $procedure)
+{
     $requestData = [
         'metadata' => [
             'method' => 'inacbg_procedure_set',
@@ -977,10 +1079,10 @@ function setInacbgProcedure($nomorSep, $procedure) {
             'procedure' => $procedure
         ]
     ];
-    
+
     $response = sendEklaimRequest($requestData);
     logEklaimRequest('inacbg_procedure_set', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -989,7 +1091,8 @@ function setInacbgProcedure($nomorSep, $procedure) {
  * @param string $nomorSep Nomor SEP
  * @return array Response dari server E-Klaim
  */
-function getInacbgProcedure($nomorSep) {
+function getInacbgProcedure($nomorSep)
+{
     $requestData = [
         'metadata' => [
             'method' => 'inacbg_procedure_get'
@@ -998,10 +1101,10 @@ function getInacbgProcedure($nomorSep) {
             'nomor_sep' => $nomorSep
         ]
     ];
-    
+
     $response = sendEklaimRequest($requestData);
     logEklaimRequest('inacbg_procedure_get', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -1010,14 +1113,15 @@ function getInacbgProcedure($nomorSep) {
  * @param string $nomorSep Nomor SEP
  * @return array Response dari server E-Klaim
  */
-function groupInacbgStage1($nomorSep) {
+function groupInacbgStage1($nomorSep)
+{
     $startTime = microtime(true);
     $methodCode = '22'; // Method 22: grouper_inacbg_stage1
-    
+
     try {
         // Simpan tracking sebagai pending
         saveEklaimMethodTracking($nomorSep, $methodCode, 'pending');
-        
+
         $requestData = [
             'metadata' => [
                 'method' => 'grouper',
@@ -1028,61 +1132,61 @@ function groupInacbgStage1($nomorSep) {
                 'nomor_sep' => $nomorSep
             ]
         ];
-        
+
         $response = sendEklaimRequest($requestData);
         logEklaimRequest('grouper_inacbg_stage1', $requestData, $response);
-        
+
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         // Update tracking berdasarkan response
         if (isset($response['metadata']['code']) && $response['metadata']['code'] == 200) {
             // Success
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'success', 
-                $requestData, 
-                $response, 
-                null, 
-                null, 
+                $nomorSep,
+                $methodCode,
+                'success',
+                $requestData,
+                $response,
+                null,
+                null,
                 $executionTime
             );
         } else {
             // Error
             $errorCode = $response['metadata']['error_no'] ?? 'UNKNOWN';
             $errorMessage = $response['metadata']['message'] ?? 'Unknown error';
-            
+
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'error', 
-                $requestData, 
-                $response, 
-                $errorCode, 
-                $errorMessage, 
+                $nomorSep,
+                $methodCode,
+                'error',
+                $requestData,
+                $response,
+                $errorCode,
+                $errorMessage,
                 $executionTime
             );
         }
-        
+
         return $response;
-        
+
     } catch (Exception $e) {
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         // Update tracking dengan error
         saveEklaimMethodTracking(
-            $nomorSep, 
-            $methodCode, 
-            'error', 
-            $requestData ?? null, 
-            null, 
-            'EXCEPTION', 
-            $e->getMessage(), 
+            $nomorSep,
+            $methodCode,
+            'error',
+            $requestData ?? null,
+            null,
+            'EXCEPTION',
+            $e->getMessage(),
             $executionTime
         );
-        
+
         throw $e;
     }
 }
@@ -1093,14 +1197,15 @@ function groupInacbgStage1($nomorSep) {
  * @param string $specialCmg Special CMG (format: "CMG1#CMG2")
  * @return array Response dari server E-Klaim
  */
-function groupInacbgStage2($nomorSep, $specialCmg) {
+function groupInacbgStage2($nomorSep, $specialCmg)
+{
     $startTime = microtime(true);
     $methodCode = '23'; // Method 23: grouper_inacbg_stage2
-    
+
     try {
         // Simpan tracking sebagai pending
         saveEklaimMethodTracking($nomorSep, $methodCode, 'pending', ['special_cmg' => $specialCmg]);
-        
+
         $requestData = [
             'metadata' => [
                 'method' => 'grouper',
@@ -1112,61 +1217,61 @@ function groupInacbgStage2($nomorSep, $specialCmg) {
                 'special_cmg' => $specialCmg
             ]
         ];
-        
+
         $response = sendEklaimRequest($requestData);
         logEklaimRequest('grouper_inacbg_stage2', $requestData, $response);
-        
+
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         // Update tracking berdasarkan response
         if (isset($response['metadata']['code']) && $response['metadata']['code'] == 200) {
             // Success
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'success', 
-                $requestData, 
-                $response, 
-                null, 
-                null, 
+                $nomorSep,
+                $methodCode,
+                'success',
+                $requestData,
+                $response,
+                null,
+                null,
                 $executionTime
             );
         } else {
             // Error
             $errorCode = $response['metadata']['error_no'] ?? 'UNKNOWN';
             $errorMessage = $response['metadata']['message'] ?? 'Unknown error';
-            
+
             saveEklaimMethodTracking(
-                $nomorSep, 
-                $methodCode, 
-                'error', 
-                $requestData, 
-                $response, 
-                $errorCode, 
-                $errorMessage, 
+                $nomorSep,
+                $methodCode,
+                'error',
+                $requestData,
+                $response,
+                $errorCode,
+                $errorMessage,
                 $executionTime
             );
         }
-        
+
         return $response;
-        
+
     } catch (Exception $e) {
         // Hitung execution time
         $executionTime = round((microtime(true) - $startTime) * 1000);
-        
+
         // Update tracking dengan error
         saveEklaimMethodTracking(
-            $nomorSep, 
-            $methodCode, 
-            'error', 
-            $requestData ?? null, 
-            null, 
-            'EXCEPTION', 
-            $e->getMessage(), 
+            $nomorSep,
+            $methodCode,
+            'error',
+            $requestData ?? null,
+            null,
+            'EXCEPTION',
+            $e->getMessage(),
             $executionTime
         );
-        
+
         throw $e;
     }
 }
@@ -1176,7 +1281,8 @@ function groupInacbgStage2($nomorSep, $specialCmg) {
  * @param string $nomorSep Nomor SEP
  * @return array Response dari server E-Klaim
  */
-function groupInacbgFinal($nomorSep) {
+function groupInacbgFinal($nomorSep)
+{
     $requestData = [
         'metadata' => [
             'method' => 'inacbg_grouper_final'
@@ -1185,17 +1291,17 @@ function groupInacbgFinal($nomorSep) {
             'nomor_sep' => $nomorSep
         ]
     ];
-    
+
     // Log request data untuk debugging
     error_log("groupInacbgFinal Request Data: " . json_encode($requestData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
-    
+
     $response = sendEklaimRequest($requestData);
-    
+
     // Log response untuk debugging
     error_log("groupInacbgFinal Response: " . json_encode($response, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
-    
+
     logEklaimRequest('inacbg_grouper_final', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -1204,7 +1310,8 @@ function groupInacbgFinal($nomorSep) {
  * @param string $nomorSep Nomor SEP
  * @return array Response dari server E-Klaim
  */
-function finalizeInacbg($nomorSep) {
+function finalizeInacbg($nomorSep)
+{
     $requestData = [
         'metadata' => [
             'method' => 'inacbg_grouper_final'
@@ -1213,10 +1320,10 @@ function finalizeInacbg($nomorSep) {
             'nomor_sep' => $nomorSep
         ]
     ];
-    
+
     $response = sendEklaimRequest($requestData);
     logEklaimRequest('inacbg_grouper_final', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -1225,7 +1332,8 @@ function finalizeInacbg($nomorSep) {
  * @param string $nomorSep Nomor SEP
  * @return array Response dari server E-Klaim
  */
-function reeditInacbg($nomorSep) {
+function reeditInacbg($nomorSep)
+{
     $requestData = [
         'metadata' => [
             'method' => 'inacbg_grouper_reedit'
@@ -1234,10 +1342,10 @@ function reeditInacbg($nomorSep) {
             'nomor_sep' => $nomorSep
         ]
     ];
-    
+
     $response = sendEklaimRequest($requestData);
     logEklaimRequest('inacbg_grouper_reedit', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -1247,7 +1355,8 @@ function reeditInacbg($nomorSep) {
  * @param string $coderNik NIK coder
  * @return array Response dari server E-Klaim
  */
-function finalizeClaim($nomorSep, $coderNik) {
+function finalizeClaim($nomorSep, $coderNik)
+{
     $requestData = [
         'metadata' => [
             'method' => 'claim_final'
@@ -1257,10 +1366,10 @@ function finalizeClaim($nomorSep, $coderNik) {
             'coder_nik' => $coderNik
         ]
     ];
-    
+
     $response = sendEklaimRequest($requestData);
     logEklaimRequest('claim_final', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -1269,7 +1378,8 @@ function finalizeClaim($nomorSep, $coderNik) {
  * @param string $nomorSep Nomor SEP
  * @return array Response dari server E-Klaim
  */
-function reeditClaim($nomorSep) {
+function reeditClaim($nomorSep)
+{
     $requestData = [
         'metadata' => [
             'method' => 'reedit_claim'
@@ -1278,10 +1388,10 @@ function reeditClaim($nomorSep) {
             'nomor_sep' => $nomorSep
         ]
     ];
-    
+
     $response = sendEklaimRequest($requestData);
     logEklaimRequest('reedit_claim', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -1291,7 +1401,8 @@ function reeditClaim($nomorSep) {
  * @param string $coderNik NIK Coder
  * @return array Response dari server E-Klaim
  */
-function claimFinal($nomorSep, $coderNik) {
+function claimFinal($nomorSep, $coderNik)
+{
     $requestData = [
         'metadata' => [
             'method' => 'claim_final'
@@ -1301,10 +1412,10 @@ function claimFinal($nomorSep, $coderNik) {
             'coder_nik' => $coderNik
         ]
     ];
-    
+
     $response = sendEklaimRequest($requestData);
     logEklaimRequest('claim_final', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -1313,7 +1424,8 @@ function claimFinal($nomorSep, $coderNik) {
  * @param string $nomorSep Nomor SEP
  * @return array Response dari server E-Klaim
  */
-function sendClaim($nomorSep) {
+function sendClaim($nomorSep)
+{
     $requestData = [
         'metadata' => [
             'method' => 'send_claim_individual'
@@ -1322,10 +1434,10 @@ function sendClaim($nomorSep) {
             'nomor_sep' => $nomorSep
         ]
     ];
-    
+
     $response = sendEklaimRequest($requestData);
     logEklaimRequest('send_claim_individual', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -1334,7 +1446,8 @@ function sendClaim($nomorSep) {
  * @param string $nomorSep Nomor SEP
  * @return array Response dari server E-Klaim
  */
-function getClaimData($nomorSep) {
+function getClaimData($nomorSep)
+{
     $requestData = [
         'metadata' => [
             'method' => 'get_claim_data'
@@ -1343,10 +1456,10 @@ function getClaimData($nomorSep) {
             'nomor_sep' => $nomorSep
         ]
     ];
-    
+
     $response = sendEklaimRequest($requestData);
     logEklaimRequest('get_claim_data', $requestData, $response);
-    
+
     return $response;
 }
 
@@ -1359,7 +1472,8 @@ function getClaimData($nomorSep) {
  * @param string $nomorSep Nomor SEP
  * @return bool True jika valid
  */
-function validateNomorSep($nomorSep) {
+function validateNomorSep($nomorSep)
+{
     return !empty($nomorSep) && strlen($nomorSep) >= 5;
 }
 
@@ -1368,24 +1482,25 @@ function validateNomorSep($nomorSep) {
  * @param string $diagnosa String diagnosa
  * @return bool True jika valid
  */
-function validateDiagnosa($diagnosa) {
+function validateDiagnosa($diagnosa)
+{
     if (empty($diagnosa)) {
         return false;
     }
-    
+
     // Split diagnosa dengan delimiter #
     $codes = explode('#', $diagnosa);
-    
+
     foreach ($codes as $code) {
         $code = trim($code);
-        
+
         // Validasi format ICD-10: huruf diikuti angka, bisa ada titik dan angka lagi
         // Contoh: A00.1, S71.0, D32.1, A34, A15.00
         if (!preg_match('/^[A-Z][0-9]{2}(\.[0-9]{1,2})?$/', $code)) {
             return false;
         }
     }
-    
+
     return true;
 }
 
@@ -1394,24 +1509,25 @@ function validateDiagnosa($diagnosa) {
  * @param string $procedure String prosedur
  * @return bool True jika valid
  */
-function validateProcedure($procedure) {
+function validateProcedure($procedure)
+{
     if (empty($procedure)) {
         return false;
     }
-    
+
     // Split prosedur dengan delimiter #
     $codes = explode('#', $procedure);
-    
+
     foreach ($codes as $code) {
         $code = trim($code);
-        
+
         // Validasi format ICD-9: angka, titik, angka, bisa ada +multiplier
         // Contoh: 06.2, 88.01, 86.22, 90.090+2
         if (!preg_match('/^[0-9]{2}\.[0-9]{1,3}(\+[0-9]+)?$/', $code)) {
             return false;
         }
     }
-    
+
     return true;
 }
 
@@ -1420,12 +1536,15 @@ function validateProcedure($procedure) {
  * @param string $date Tanggal dalam format apapun
  * @return string Tanggal dalam format E-Klaim
  */
-function formatEklaimDate($date) {
-    if (empty($date)) return '';
-    
+function formatEklaimDate($date)
+{
+    if (empty($date))
+        return '';
+
     $timestamp = strtotime($date);
-    if ($timestamp === false) return '';
-    
+    if ($timestamp === false)
+        return '';
+
     return date('Y-m-d H:i:s', $timestamp);
 }
 
@@ -1434,12 +1553,14 @@ function formatEklaimDate($date) {
  * @param array $response Response dari E-Klaim
  * @return string Status klaim
  */
-function getClaimStatus($response) {
-    if (!$response['success']) return 'error';
-    
+function getClaimStatus($response)
+{
+    if (!$response['success'])
+        return 'error';
+
     $data = $response['data'] ?? [];
     $metadata = $data['metadata'] ?? [];
-    
+
     return $metadata['code'] == 200 ? 'success' : 'failed';
 }
 
@@ -1448,12 +1569,14 @@ function getClaimStatus($response) {
  * @param array $response Response dari E-Klaim
  * @return string Pesan error
  */
-function getErrorMessage($response) {
-    if ($response['success']) return '';
-    
+function getErrorMessage($response)
+{
+    if ($response['success'])
+        return '';
+
     $data = $response['data'] ?? [];
     $metadata = $data['metadata'] ?? [];
-    
+
     return $metadata['message'] ?? $response['error'] ?? 'Unknown error';
 }
 
@@ -1462,12 +1585,14 @@ function getErrorMessage($response) {
  * @param array $response Response dari E-Klaim
  * @return string Kode error
  */
-function getErrorCode($response) {
-    if ($response['success']) return '';
-    
+function getErrorCode($response)
+{
+    if ($response['success'])
+        return '';
+
     $data = $response['data'] ?? [];
     $metadata = $data['metadata'] ?? [];
-    
+
     return $metadata['error_no'] ?? '';
 }
 
@@ -1479,31 +1604,32 @@ function getErrorCode($response) {
  * @param string $procedure String prosedur (default: '#')
  * @return array Hasil semua method
  */
-function runEklaimProcessWithTracking($nomorSep, $claimData, $diagnosa, $procedure = '#') {
+function runEklaimProcessWithTracking($nomorSep, $claimData, $diagnosa, $procedure = '#')
+{
     $results = [];
-    
+
     try {
         // Method 02: Set Claim Data
         $results['set_claim_data'] = setClaimData($nomorSep, $claimData);
-        
+
         // Method 03: Set IDRG Diagnosa
         $results['idrg_diagnosa_set'] = setIdrgDiagnosa($nomorSep, $diagnosa);
-        
+
         // Method 05: Set IDRG Procedure
         $results['idrg_procedure_set'] = setIdrgProcedure($nomorSep, $procedure);
-        
+
         // Method 07: Grouping IDRG
         $results['grouping_idrg'] = groupIdrg($nomorSep);
-        
+
         // Method 08: Final IDRG
         $results['final_idrg'] = finalizeIdrg($nomorSep);
-        
+
         return [
             'success' => true,
             'message' => 'Semua method berhasil dijalankan',
             'results' => $results
         ];
-        
+
     } catch (Exception $e) {
         return [
             'success' => false,
@@ -1518,22 +1644,23 @@ function runEklaimProcessWithTracking($nomorSep, $claimData, $diagnosa, $procedu
  * @param string $nomorSep Nomor SEP
  * @return array Hasil resume process
  */
-function resumeEklaimProcess($nomorSep) {
+function resumeEklaimProcess($nomorSep)
+{
     // Get status tracking
     $status = getEklaimMethodStatus($nomorSep);
-    
+
     if (!$status['success']) {
         return [
             'success' => false,
             'error' => 'Gagal mendapatkan status tracking: ' . $status['error']
         ];
     }
-    
+
     // Cari method yang gagal atau pending
-    $pendingMethods = array_filter($status['methods'], function($method) {
+    $pendingMethods = array_filter($status['methods'], function ($method) {
         return in_array($method['status'], ['pending', 'error']);
     });
-    
+
     if (empty($pendingMethods)) {
         return [
             'success' => true,
@@ -1541,7 +1668,7 @@ function resumeEklaimProcess($nomorSep) {
             'status' => $status
         ];
     }
-    
+
     // Jalankan method yang pending/error
     $results = [];
     foreach ($pendingMethods as $method) {
@@ -1582,7 +1709,7 @@ function resumeEklaimProcess($nomorSep) {
             ];
         }
     }
-    
+
     return [
         'success' => true,
         'message' => 'Resume process selesai',
@@ -1595,7 +1722,8 @@ function resumeEklaimProcess($nomorSep) {
  * @param string $nomorSep Nomor SEP
  * @return array Claim data
  */
-function getClaimDataFromDatabase($nomorSep) {
+function getClaimDataFromDatabase($nomorSep)
+{
     // Implementasi untuk mendapatkan claim data dari database
     // Return array dengan data yang diperlukan
     return [];
@@ -1606,7 +1734,8 @@ function getClaimDataFromDatabase($nomorSep) {
  * @param string $nomorSep Nomor SEP
  * @return string Diagnosa string
  */
-function getDiagnosaFromDatabase($nomorSep) {
+function getDiagnosaFromDatabase($nomorSep)
+{
     // Implementasi untuk mendapatkan diagnosa dari database
     // Return string diagnosa
     return '';
@@ -1617,7 +1746,8 @@ function getDiagnosaFromDatabase($nomorSep) {
  * @param string $nomorSep Nomor SEP
  * @return string Prosedur string
  */
-function getProcedureFromDatabase($nomorSep) {
+function getProcedureFromDatabase($nomorSep)
+{
     // Implementasi untuk mendapatkan prosedur dari database
     // Return string prosedur
     return '#';
