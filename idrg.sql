@@ -1,6 +1,6 @@
 /*
-SQLyog Community v13.2.1 (64 bit)
-MySQL - 10.11.11-MariaDB : Database - idrg
+SQLyog Ultimate v12.5.1 (64 bit)
+MySQL - 5.7.33-log : Database - idrg
 *********************************************************************
 */
 
@@ -12,22 +12,18 @@ MySQL - 10.11.11-MariaDB : Database - idrg
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`idrg` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci */;
-
 USE `idrg`;
 
 /*Table structure for table `cob` */
 
-DROP TABLE IF EXISTS `cob`;
-
 CREATE TABLE `cob` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cob_cd` varchar(10) NOT NULL COMMENT 'Kode COB',
-  `cob_nm` varchar(255) NOT NULL COMMENT 'Nama COB',
-  `description` text DEFAULT NULL COMMENT 'Deskripsi COB',
-  `status` enum('active','inactive') DEFAULT 'active' COMMENT 'Status COB',
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `cob_cd` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Kode COB',
+  `cob_nm` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Nama COB',
+  `description` text COLLATE utf8mb4_unicode_ci COMMENT 'Deskripsi COB',
+  `status` enum('active','inactive') COLLATE utf8mb4_unicode_ci DEFAULT 'active' COMMENT 'Status COB',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `cob_cd` (`cob_cd`),
   KEY `idx_cob_cd` (`cob_cd`)
@@ -41,44 +37,41 @@ insert  into `cob`(`id`,`cob_cd`,`cob_nm`,`description`,`status`,`created_at`,`u
 
 /*Table structure for table `detail_tarif` */
 
-DROP TABLE IF EXISTS `detail_tarif`;
-
 CREATE TABLE `detail_tarif` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kunjungan_id` int(11) NOT NULL,
-  `prosedur_non_bedah` decimal(15,2) DEFAULT 0.00 COMMENT 'Prosedur Non Bedah',
-  `prosedur_bedah` decimal(15,2) DEFAULT 0.00 COMMENT 'Prosedur Bedah',
-  `konsultasi` decimal(15,2) DEFAULT 0.00 COMMENT 'Konsultasi',
-  `tenaga_ahli` decimal(15,2) DEFAULT 0.00 COMMENT 'Tenaga Ahli',
-  `keperawatan` decimal(15,2) DEFAULT 0.00 COMMENT 'Keperawatan',
-  `penunjang` decimal(15,2) DEFAULT 0.00 COMMENT 'Penunjang',
-  `radiologi` decimal(15,2) DEFAULT 0.00 COMMENT 'Radiologi',
-  `laboratorium` decimal(15,2) DEFAULT 0.00 COMMENT 'Laboratorium',
-  `pelayanan_darah` decimal(15,2) DEFAULT 0.00 COMMENT 'Pelayanan Darah',
-  `rehabilitasi` decimal(15,2) DEFAULT 0.00 COMMENT 'Rehabilitasi',
-  `kamar` decimal(15,2) DEFAULT 0.00 COMMENT 'Kamar',
-  `rawat_intensif` decimal(15,2) DEFAULT 0.00 COMMENT 'Rawat Intensif',
-  `obat` decimal(15,2) DEFAULT 0.00 COMMENT 'Obat',
-  `obat_kronis` decimal(15,2) DEFAULT 0.00 COMMENT 'Obat Kronis',
-  `obat_kemoterapi` decimal(15,2) DEFAULT 0.00 COMMENT 'Obat Kemoterapi',
-  `alkes` decimal(15,2) DEFAULT 0.00 COMMENT 'Alat Kesehatan',
-  `bmhp` decimal(15,2) DEFAULT 0.00 COMMENT 'BMHP',
-  `sewa_alat` decimal(15,2) DEFAULT 0.00 COMMENT 'Sewa Alat',
-  `total_tarif` decimal(15,2) DEFAULT 0.00 COMMENT 'Total Tarif RS',
-  `kategori_tarif` varchar(50) DEFAULT NULL COMMENT 'Kategori Tarif',
-  `nama_layanan` varchar(100) DEFAULT NULL COMMENT 'Nama Layanan',
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `prosedur_non_bedah` decimal(15,2) DEFAULT '0.00' COMMENT 'Prosedur Non Bedah',
+  `prosedur_bedah` decimal(15,2) DEFAULT '0.00' COMMENT 'Prosedur Bedah',
+  `konsultasi` decimal(15,2) DEFAULT '0.00' COMMENT 'Konsultasi',
+  `tenaga_ahli` decimal(15,2) DEFAULT '0.00' COMMENT 'Tenaga Ahli',
+  `keperawatan` decimal(15,2) DEFAULT '0.00' COMMENT 'Keperawatan',
+  `penunjang` decimal(15,2) DEFAULT '0.00' COMMENT 'Penunjang',
+  `radiologi` decimal(15,2) DEFAULT '0.00' COMMENT 'Radiologi',
+  `laboratorium` decimal(15,2) DEFAULT '0.00' COMMENT 'Laboratorium',
+  `pelayanan_darah` decimal(15,2) DEFAULT '0.00' COMMENT 'Pelayanan Darah',
+  `rehabilitasi` decimal(15,2) DEFAULT '0.00' COMMENT 'Rehabilitasi',
+  `kamar` decimal(15,2) DEFAULT '0.00' COMMENT 'Kamar',
+  `rawat_intensif` decimal(15,2) DEFAULT '0.00' COMMENT 'Rawat Intensif',
+  `obat` decimal(15,2) DEFAULT '0.00' COMMENT 'Obat',
+  `obat_kronis` decimal(15,2) DEFAULT '0.00' COMMENT 'Obat Kronis',
+  `obat_kemoterapi` decimal(15,2) DEFAULT '0.00' COMMENT 'Obat Kemoterapi',
+  `alkes` decimal(15,2) DEFAULT '0.00' COMMENT 'Alat Kesehatan',
+  `bmhp` decimal(15,2) DEFAULT '0.00' COMMENT 'BMHP',
+  `sewa_alat` decimal(15,2) DEFAULT '0.00' COMMENT 'Sewa Alat',
+  `total_tarif` decimal(15,2) DEFAULT '0.00' COMMENT 'Total Tarif RS',
+  `kategori_tarif` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Kategori Tarif',
+  `nama_layanan` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Nama Layanan',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_kunjungan_id` (`kunjungan_id`),
   KEY `idx_kategori_tarif` (`kategori_tarif`),
   CONSTRAINT `detail_tarif_ibfk_1` FOREIGN KEY (`kunjungan_id`) REFERENCES `kunjungan_pasien` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=290 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=294 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `detail_tarif` */
 
 insert  into `detail_tarif`(`id`,`kunjungan_id`,`prosedur_non_bedah`,`prosedur_bedah`,`konsultasi`,`tenaga_ahli`,`keperawatan`,`penunjang`,`radiologi`,`laboratorium`,`pelayanan_darah`,`rehabilitasi`,`kamar`,`rawat_intensif`,`obat`,`obat_kronis`,`obat_kemoterapi`,`alkes`,`bmhp`,`sewa_alat`,`total_tarif`,`kategori_tarif`,`nama_layanan`,`created_at`,`updated_at`) values 
-(61,1,2000000.00,8000000.00,500000.00,1500000.00,800000.00,500000.00,300000.00,400000.00,0.00,200000.00,1000000.00,0.00,500000.00,0.00,0.00,300000.00,200000.00,0.00,15000000.00,'Bedah Umum','Kolesistektomi','2025-08-25 23:49:23','2025-08-25 23:49:23'),
 (62,2,0.00,0.00,300000.00,100000.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,100000.00,0.00,500000.00,'Konsultasi','Poli Penyakit Dalam','2025-08-25 23:49:23','2025-08-25 23:49:23'),
 (63,3,0.00,0.00,500000.00,2000000.00,1500000.00,800000.00,500000.00,600000.00,0.00,300000.00,2000000.00,8000000.00,1000000.00,0.00,0.00,500000.00,400000.00,0.00,25000000.00,'ICU','Perawatan Intensif','2025-08-25 23:49:23','2025-08-25 23:49:23'),
 (64,4,0.00,0.00,400000.00,1500000.00,1200000.00,600000.00,400000.00,500000.00,0.00,200000.00,1500000.00,0.00,800000.00,0.00,0.00,400000.00,300000.00,0.00,18000000.00,'COVID-19','Perawatan COVID-19','2025-08-25 23:49:23','2025-08-25 23:49:23'),
@@ -97,26 +90,25 @@ insert  into `detail_tarif`(`id`,`kunjungan_id`,`prosedur_non_bedah`,`prosedur_b
 (230,9,3000000.00,20000000.00,800000.00,3000000.00,2000000.00,1000000.00,800000.00,1000000.00,0.00,500000.00,2500000.00,2000000.00,1500000.00,0.00,0.00,800000.00,600000.00,0.00,35000000.00,'TARIF RS KELAS A PEMERINTAH','Layanan Medis','2025-09-12 21:15:45','2025-09-12 21:15:45'),
 (254,17,2000000.00,16000000.00,500000.00,2000000.00,1200000.00,600000.00,400000.00,500000.00,0.00,300000.00,1400000.00,0.00,900000.00,0.00,0.00,450000.00,350000.00,0.00,28000000.00,'TARIF RS KELAS A PEMERINTAH','Layanan Medis','2025-09-13 13:43:45','2025-09-13 13:43:45'),
 (256,14,0.00,0.00,200000.00,800000.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,1500000.00,0.00,2500000.00,'TARIF RS KELAS A PEMERINTAH','Layanan Medis','2025-09-13 14:38:40','2025-09-13 14:38:40'),
-(289,19,1000000.00,12000000.00,300000.00,1800000.00,800500.00,400000.00,300000.00,400000.00,100000.00,200000.00,1200000.00,0.00,500000.00,0.00,0.00,250000.00,150000.00,0.00,19400500.00,'TARIF RS KELAS A PEMERINTAH','Layanan Medis','2025-09-17 21:32:42','2025-09-17 21:32:42');
+(289,19,1000000.00,12000000.00,300000.00,1800000.00,800500.00,400000.00,300000.00,400000.00,100000.00,200000.00,1200000.00,0.00,500000.00,0.00,0.00,250000.00,150000.00,0.00,19400500.00,'TARIF RS KELAS A PEMERINTAH','Layanan Medis','2025-09-17 21:32:42','2025-09-17 21:32:42'),
+(293,1,2000000.00,8000000.00,500000.00,1500000.00,800000.00,500000.00,300000.00,400000.00,0.00,200000.00,1000000.00,0.00,500000.00,0.00,0.00,300000.00,200000.00,0.00,15000000.00,'TARIF RS KELAS A PEMERINTAH','Layanan Medis','2026-06-13 13:52:13','2026-06-13 13:52:13');
 
 /*Table structure for table `diagnosis_details` */
-
-DROP TABLE IF EXISTS `diagnosis_details`;
 
 CREATE TABLE `diagnosis_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kunjungan_id` int(11) NOT NULL COMMENT 'ID Kunjungan Pasien',
   `icd_code_id` int(11) NOT NULL COMMENT 'ID dari tabel idr_codes',
   `diagnosis_order` int(11) NOT NULL COMMENT 'Urutan Diagnosa (1=Primary, 2=Secondary, dst)',
-  `diagnosis_type` enum('primary','secondary') NOT NULL DEFAULT 'secondary' COMMENT 'Jenis Diagnosa',
-  `icd_code` varchar(20) NOT NULL COMMENT 'Kode ICD-10',
-  `icd_description` text NOT NULL COMMENT 'Deskripsi ICD-10',
-  `validcode` tinyint(1) DEFAULT 1 COMMENT 'Status Valid Kode',
-  `accpdx` char(1) DEFAULT 'Y' COMMENT 'Status ACCPDX (Y/N)',
-  `asterisk` tinyint(1) DEFAULT 0 COMMENT 'Status Asterisk',
-  `im` tinyint(1) DEFAULT 0 COMMENT 'Status IM',
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `diagnosis_type` enum('primary','secondary') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'secondary' COMMENT 'Jenis Diagnosa',
+  `icd_code` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Kode ICD-10',
+  `icd_description` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Deskripsi ICD-10',
+  `validcode` tinyint(1) DEFAULT '1' COMMENT 'Status Valid Kode',
+  `accpdx` char(1) COLLATE utf8mb4_unicode_ci DEFAULT 'Y' COMMENT 'Status ACCPDX (Y/N)',
+  `asterisk` tinyint(1) DEFAULT '0' COMMENT 'Status Asterisk',
+  `im` tinyint(1) DEFAULT '0' COMMENT 'Status IM',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_kunjungan_id` (`kunjungan_id`),
   KEY `idx_icd_code_id` (`icd_code_id`),
@@ -125,7 +117,7 @@ CREATE TABLE `diagnosis_details` (
   KEY `idx_icd_code` (`icd_code`),
   CONSTRAINT `diagnosis_details_ibfk_1` FOREIGN KEY (`kunjungan_id`) REFERENCES `kunjungan_pasien` (`id`) ON DELETE CASCADE,
   CONSTRAINT `diagnosis_details_ibfk_2` FOREIGN KEY (`icd_code_id`) REFERENCES `idr_codes` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=197 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=201 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `diagnosis_details` */
 
@@ -138,19 +130,18 @@ insert  into `diagnosis_details`(`id`,`kunjungan_id`,`icd_code_id`,`diagnosis_or
 (135,14,19749,1,'primary','S71.0','Open wound of hip',1,'Y',0,0,'2025-09-13 14:38:39','2025-09-13 14:38:39'),
 (136,14,5300,2,'secondary','A00.1','Cholera due to vibrio cholerae 01, biovar eltor',1,'Y',0,0,'2025-09-13 14:38:40','2025-09-13 14:38:40'),
 (195,19,19749,1,'primary','S71.0','Open wound of hip',1,'Y',0,0,'2025-09-17 21:32:41','2025-09-17 21:32:41'),
-(196,19,5300,2,'secondary','A00.1','Cholera due to vibrio cholerae 01, biovar eltor',1,'Y',0,0,'2025-09-17 21:32:41','2025-09-17 21:32:41');
+(196,19,5300,2,'secondary','A00.1','Cholera due to vibrio cholerae 01, biovar eltor',1,'Y',0,0,'2025-09-17 21:32:41','2025-09-17 21:32:41'),
+(200,1,7240,1,'primary','D56.1','Beta thalassaemia',1,'Y',0,0,'2026-06-13 13:52:13','2026-06-13 13:52:13');
 
 /*Table structure for table `eklaim_method_mapping` */
 
-DROP TABLE IF EXISTS `eklaim_method_mapping`;
-
 CREATE TABLE `eklaim_method_mapping` (
-  `method_code` varchar(10) NOT NULL COMMENT 'Kode Method (01-21)',
-  `method_name` varchar(100) NOT NULL COMMENT 'Nama Method',
-  `method_description` text DEFAULT NULL COMMENT 'Deskripsi Method',
-  `is_required` tinyint(1) DEFAULT 1 COMMENT 'Apakah method wajib',
+  `method_code` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Kode Method (01-21)',
+  `method_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Nama Method',
+  `method_description` text COLLATE utf8mb4_unicode_ci COMMENT 'Deskripsi Method',
+  `is_required` tinyint(1) DEFAULT '1' COMMENT 'Apakah method wajib',
   `stage_order` int(11) NOT NULL COMMENT 'Urutan Stage',
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`method_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -173,29 +164,28 @@ insert  into `eklaim_method_mapping`(`method_code`,`method_name`,`method_descrip
 ('14','final_inacbg','Finalisasi INACBG Grouping',1,14,'2025-09-13 11:30:12'),
 ('15','claim_final','claim_final',0,15,'2025-09-07 18:25:49'),
 ('16','reedit_claim','reedit_claim',0,16,'2025-09-07 18:25:49'),
-('17','send_claim_individual','send_claim_individual',0,17,'2025-09-07 18:25:49');
+('17','send_claim_individual','send_claim_individual',0,17,'2025-09-07 18:25:49'),
+('18','grouper_idrg_stage2','iDRG Grouping Stage 2',0,8,'2026-06-13 13:50:54');
 
 /*Table structure for table `eklaim_method_tracking` */
 
-DROP TABLE IF EXISTS `eklaim_method_tracking`;
-
 CREATE TABLE `eklaim_method_tracking` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nomor_sep` varchar(30) NOT NULL COMMENT 'Nomor SEP',
-  `method_code` varchar(10) NOT NULL COMMENT 'Kode Method (01-21)',
-  `method_name` varchar(100) NOT NULL COMMENT 'Nama Method',
-  `request_data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT 'Data Request dalam format JSON' CHECK (json_valid(`request_data`)),
-  `response_data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT 'Data Response dalam format JSON' CHECK (json_valid(`response_data`)),
-  `status` enum('pending','success','error','skipped') DEFAULT 'pending' COMMENT 'Status Method',
-  `error_code` varchar(10) DEFAULT NULL COMMENT 'Kode Error jika ada',
-  `error_message` text DEFAULT NULL COMMENT 'Pesan Error jika ada',
+  `nomor_sep` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Nomor SEP',
+  `method_code` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Kode Method (01-21)',
+  `method_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Nama Method',
+  `request_data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin COMMENT 'Data Request dalam format JSON',
+  `response_data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin COMMENT 'Data Response dalam format JSON',
+  `status` enum('pending','success','error','skipped') COLLATE utf8mb4_unicode_ci DEFAULT 'pending' COMMENT 'Status Method',
+  `error_code` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Kode Error jika ada',
+  `error_message` text COLLATE utf8mb4_unicode_ci COMMENT 'Pesan Error jika ada',
   `execution_time_ms` int(11) DEFAULT NULL COMMENT 'Waktu Eksekusi dalam milidetik',
-  `retry_count` int(11) DEFAULT 0 COMMENT 'Jumlah Retry',
+  `retry_count` int(11) DEFAULT '0' COMMENT 'Jumlah Retry',
   `first_attempt_at` timestamp NULL DEFAULT NULL COMMENT 'Waktu Attempt Pertama',
   `last_attempt_at` timestamp NULL DEFAULT NULL COMMENT 'Waktu Attempt Terakhir',
   `completed_at` timestamp NULL DEFAULT NULL COMMENT 'Waktu Selesai',
-  `created_at` timestamp NULL DEFAULT current_timestamp() COMMENT 'Waktu Dibuat',
-  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT 'Waktu Update',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Waktu Dibuat',
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Waktu Update',
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_nomor_sep_method` (`nomor_sep`,`method_code`),
   KEY `idx_nomor_sep` (`nomor_sep`),
@@ -203,7 +193,7 @@ CREATE TABLE `eklaim_method_tracking` (
   KEY `idx_status` (`status`),
   KEY `idx_created_at` (`created_at`),
   KEY `idx_last_attempt_at` (`last_attempt_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `eklaim_method_tracking` */
 
@@ -240,22 +230,29 @@ insert  into `eklaim_method_tracking`(`id`,`nomor_sep`,`method_code`,`method_nam
 (48,'0001R0016120507440','10','idrg_to_inacbg_import','{\"nomor_sep\":\"0001R0016120507440\",\"stage\":\"1\",\"grouper\":\"inacbg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_inacbg\":{\"cbg\":{\"code\":\"M-1-04-II\",\"description\":\"PROSEDUR PADA SENDI TUNGKAI BAWAH (SEDANG)\"},\"base_tariff\":\"38971000\",\"tariff\":\"38971000\",\"kelas\":\"kelas_3\",\"inacbg_version\":\"5.10.4.202508270937.dev\"},\"special_cmg_option\":[{\"code\":\"RR04Hip\",\"description\":\"Hip Implant\",\"type\":\"Special Prosthesis\"},{\"code\":\"RR04Knee\",\"description\":\"Knee Implant\",\"type\":\"Special Prosthesis\"},{\"code\":\"YY01\",\"description\":\"Hip Replacement \\/ Knee Replacement\",\"type\":\"Special Procedure\"}]},\"http_code\":200}','success',NULL,NULL,7848,0,'2025-09-13 16:47:54','2025-09-17 21:32:52','2025-09-17 21:32:52','2025-09-13 16:47:54','2025-09-17 21:32:52'),
 (49,'0001R0016120507440','13','grouper_inacbg_stage2','{\"nomor_sep\":\"0001R0016120507440\",\"stage\":\"2\",\"grouper\":\"inacbg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_inacbg\":{\"cbg\":{\"code\":\"M-1-04-II\",\"description\":\"PROSEDUR PADA SENDI TUNGKAI BAWAH (SEDANG)\"},\"base_tariff\":\"38971000\",\"tariff\":\"65070000\",\"special_cmg\":[{\"code\":\"YY-01-II\",\"description\":\"HIP REPLACEMENT \\/ KNEE REPLACEMENT\",\"tariff\":13099000,\"type\":\"Special Procedure\"},{\"code\":\"RR-04-III-Knee\",\"description\":\"\",\"tariff\":13000000,\"type\":\"Special Prosthesis\"}],\"kelas\":\"kelas_3\",\"inacbg_version\":\"5.10.4.202508270937.dev\"},\"special_cmg_option\":[{\"code\":\"RR04Hip\",\"description\":\"Hip Implant\",\"type\":\"Special Prosthesis\"},{\"code\":\"RR04Knee\",\"description\":\"Knee Implant\",\"type\":\"Special Prosthesis\"},{\"code\":\"YY01\",\"description\":\"Hip Replacement \\/ Knee Replacement\",\"type\":\"Special Procedure\"}]},\"http_code\":200}','success',NULL,NULL,3258,0,'2025-09-13 17:04:57','2025-09-17 21:33:07','2025-09-17 21:33:07','2025-09-13 17:04:57','2025-09-17 21:33:07'),
 (53,'0001R0016120507440','14','final_inacbg','{\"nomor_sep\":\"0001R0016120507440\",\"action\":\"final_inacbg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"}},\"http_code\":200}','success',NULL,NULL,NULL,0,'2025-09-16 20:00:44','2025-09-17 21:33:34','2025-09-17 21:33:34','2025-09-16 20:00:44','2025-09-17 21:33:34'),
-(55,'0001R0016120507440','08','final_idrg','{\"metadata\":{\"method\":\"idrg_grouper_final\"},\"data\":{\"nomor_sep\":\"0001R0016120507440\"}}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"}},\"http_code\":200}','error','UNKNOWN','Unknown error',3816,1,'2025-09-17 21:21:06','2025-09-17 21:21:09',NULL,'2025-09-17 21:21:06','2025-09-17 21:21:09');
+(55,'0001R0016120507440','08','final_idrg','{\"metadata\":{\"method\":\"idrg_grouper_final\"},\"data\":{\"nomor_sep\":\"0001R0016120507440\"}}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"}},\"http_code\":200}','error','UNKNOWN','Unknown error',3816,1,'2025-09-17 21:21:06','2025-09-17 21:21:09',NULL,'2025-09-17 21:21:06','2025-09-17 21:21:09'),
+(56,'0001R0016120507422','02','set_claim_data','{\"metadata\":{\"method\":\"set_claim_data\",\"nomor_sep\":\"0001R0016120507422\"},\"data\":{\"nomor_sep\":\"0001R0016120507422\",\"nomor_kartu\":\"0000668870001\",\"tgl_masuk\":\"2024-01-15 08:00:00\",\"tgl_pulang\":\"2024-01-20 14:00:00\",\"cara_masuk\":\"gp\",\"jenis_rawat\":\"1\",\"kelas_rawat\":\"2\",\"discharge_status\":\"1\",\"adl_sub_acute\":\"0\",\"adl_chronic\":\"0\",\"icu_indikator\":\"0\",\"icu_los\":\"0\",\"upgrade_class_ind\":\"0\",\"add_payment_pct\":\"0\",\"birth_weight\":\"0\",\"sistole\":\"110\",\"diastole\":\"60\",\"coder_nik\":\"123123123123\",\"payor_id\":\"3\",\"payor_cd\":\"JKN\",\"nama_dokter\":\"Dr. Ahmad Bedah\",\"tarif_poli_eks\":\"0\",\"kode_tarif\":\"AP\",\"cob_cd\":\"#\",\"tarif_rs\":{\"prosedur_non_bedah\":\"2000000\",\"prosedur_bedah\":\"8000000\",\"konsultasi\":\"500000\",\"tenaga_ahli\":\"1500000\",\"keperawatan\":\"800000\",\"penunjang\":\"500000\",\"radiologi\":\"300000\",\"laboratorium\":\"400000\",\"pelayanan_darah\":\"0\",\"rehabilitasi\":\"200000\",\"kamar\":\"1000000\",\"rawat_intensif\":\"0\",\"obat\":\"500000\",\"obat_kronis\":\"0\",\"obat_kemoterapi\":\"0\",\"alkes\":\"300000\",\"bmhp\":\"200000\",\"sewa_alat\":\"0\"}}}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"}},\"http_code\":200}','error','UNKNOWN','Unknown error',2188,2,'2026-06-13 13:36:44','2026-06-13 13:51:34',NULL,'2026-06-13 13:36:44','2026-06-13 13:51:34'),
+(57,'0001R0016120507422','03','idrg_diagnosa_set','{\"metadata\":{\"method\":\"idrg_diagnosa_set\",\"nomor_sep\":\"0001R0016120507422\"},\"data\":{\"diagnosa\":\"D56.1\"}}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\",\"method\":\"idrg_diagnosa_set\"},\"data\":{\"string\":\"D56.1\",\"expanded\":[{\"code\":\"D56.1\",\"display\":\"Beta thalassaemia\",\"no\":\"1\",\"validcode\":\"1\",\"metadata\":{\"code\":\"200\",\"message\":\"Ok\"}}]}},\"http_code\":200}','error','UNKNOWN','Unknown error',1074,2,'2026-06-13 13:36:45','2026-06-13 13:51:35',NULL,'2026-06-13 13:36:45','2026-06-13 13:51:35'),
+(58,'0001R0016120507422','05','idrg_procedure_set','{\"metadata\":{\"method\":\"idrg_procedure_set\",\"nomor_sep\":\"0001R0016120507422\"},\"data\":{\"procedure\":\"#\"}}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\",\"method\":\"idrg_procedure_set\"},\"data\":{\"string\":\"\",\"expanded\":[]}},\"http_code\":200}','error','UNKNOWN','Unknown error',736,2,'2026-06-13 13:36:46','2026-06-13 13:51:36',NULL,'2026-06-13 13:36:46','2026-06-13 13:51:36'),
+(59,'0001R0016120507422','07','grouping_idrg','{\"nomor_sep\":\"0001R0016120507422\",\"stage\":\"1\",\"grouper\":\"idrg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_idrg\":{\"mdc_number\":\"26\",\"mdc_description\":\"Diseases and Disorders of the Blood and Blood Forming Organs and Immunological Disorders\",\"drg_code\":\"2661219\",\"drg_description\":\"Red Blood Cell Disorders\",\"script_version\":\"1.0.32\",\"logic_version\":\"0.2.1808.202604081038\",\"cost_weight\":\"0.52\",\"sub_acute_weight\":\"0.00\",\"chronic_weight\":\"0.00\",\"nbr\":\"8037060\",\"total_cost_weight\":\"0.52\",\"total_tarif\":\"4179271\",\"topup_options\":[{\"code\":\"10021\",\"description\":\"Deferiprone\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"},{\"code\":\"10031\",\"description\":\"Deferoksamin\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"},{\"code\":\"10041\",\"description\":\"Deferasirox\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"}],\"status_cd\":\"normal\"}},\"http_code\":200}','success',NULL,NULL,1115,2,'2026-06-13 13:36:47','2026-06-13 13:51:37','2026-06-13 13:51:37','2026-06-13 13:36:47','2026-06-13 13:51:37'),
+(60,'0001R0016120507422','09','re_edit_idrg','{\"nomor_sep\":\"0001R0016120507422\",\"stage\":\"1\",\"grouper\":\"idrg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_idrg\":{\"mdc_number\":\"26\",\"mdc_description\":\"Diseases and Disorders of the Blood and Blood Forming Organs and Immunological Disorders\",\"drg_code\":\"2661219\",\"drg_description\":\"Red Blood Cell Disorders\",\"script_version\":\"1.0.32\",\"logic_version\":\"0.2.1808.202604081038\",\"cost_weight\":\"0.52\",\"sub_acute_weight\":\"0.00\",\"chronic_weight\":\"0.00\",\"nbr\":\"8037060\",\"total_cost_weight\":\"0.52\",\"total_tarif\":\"4179271\",\"topup_options\":[{\"code\":\"10021\",\"description\":\"Deferiprone\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"},{\"code\":\"10031\",\"description\":\"Deferoksamin\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"},{\"code\":\"10041\",\"description\":\"Deferasirox\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"}],\"status_cd\":\"normal\"}},\"http_code\":200}','success',NULL,NULL,1182,0,'2026-06-13 13:36:48','2026-06-13 13:36:48','2026-06-13 13:36:48','2026-06-13 13:36:48','2026-06-13 13:36:48'),
+(61,'0001R0016120507422','18','grouper_idrg_stage2','{\"nomor_sep\":\"0001R0016120507422\",\"stage\":\"2\",\"grouper\":\"idrg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_idrg\":{\"mdc_number\":\"26\",\"mdc_description\":\"Diseases and Disorders of the Blood and Blood Forming Organs and Immunological Disorders\",\"drg_code\":\"2661219\",\"drg_description\":\"Red Blood Cell Disorders\",\"script_version\":\"1.0.32\",\"logic_version\":\"0.2.1808.202604081038\",\"cost_weight\":\"0.52\",\"sub_acute_weight\":\"0.00\",\"chronic_weight\":\"0.00\",\"nbr\":\"8037060\",\"topup\":[{\"code\":\"10021\",\"description\":\"Deferiprone\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"}],\"total_cost_weight\":\"1.27795826\",\"total_tarif\":\"10271027\",\"topup_options\":[{\"code\":\"10021\",\"description\":\"Deferiprone\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"},{\"code\":\"10031\",\"description\":\"Deferoksamin\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"},{\"code\":\"10041\",\"description\":\"Deferasirox\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"}],\"status_cd\":\"normal\"}},\"http_code\":200}','success',NULL,NULL,733,1,'2026-06-13 13:51:41','2026-06-13 13:51:42','2026-06-13 13:51:42','2026-06-13 13:51:41','2026-06-13 13:51:42'),
+(63,'0001R0016120507422','10','idrg_to_inacbg_import','{\"nomor_sep\":\"0001R0016120507422\",\"stage\":\"1\",\"grouper\":\"inacbg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_inacbg\":{\"cbg\":{\"code\":\"D-4-13-I\",\"description\":\"GANGGUAN SEL DARAH MERAH SELAIN KRISIS ANEMIA SEL SICKLE (RINGAN)\"},\"base_tariff\":\"5081900\",\"tariff\":\"5081900\",\"kelas\":\"kelas_2\",\"inacbg_version\":\"5.10.7.202603311031\",\"status_cd\":\"normal\"},\"special_cmg_option\":[{\"code\":\"DD02\",\"description\":\"Deferiprone (IP)\",\"type\":\"Special Drug\"},{\"code\":\"DD03\",\"description\":\"Deferoksamin (IP)\",\"type\":\"Special Drug\"},{\"code\":\"DD04\",\"description\":\"Deferasirox (IP)\",\"type\":\"Special Drug\"}]},\"http_code\":200}','success',NULL,NULL,1365,0,'2026-06-13 13:52:01','2026-06-13 13:52:16','2026-06-13 13:52:16','2026-06-13 13:52:01','2026-06-13 13:52:16'),
+(64,'0001R0016120507422','13','grouper_inacbg_stage2','{\"nomor_sep\":\"0001R0016120507422\",\"stage\":\"2\",\"grouper\":\"inacbg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_inacbg\":{\"cbg\":{\"code\":\"D-4-13-I\",\"description\":\"GANGGUAN SEL DARAH MERAH SELAIN KRISIS ANEMIA SEL SICKLE (RINGAN)\"},\"base_tariff\":\"5081900\",\"tariff\":\"11043900\",\"special_cmg\":[{\"code\":\"DD-03-II\",\"description\":\"DEFEROKSAMIN (IP)\",\"tariff\":5962000,\"type\":\"Special Drug\"}],\"kelas\":\"kelas_2\",\"inacbg_version\":\"5.10.7.202603311031\",\"status_cd\":\"normal\"},\"special_cmg_option\":[{\"code\":\"DD02\",\"description\":\"Deferiprone (IP)\",\"type\":\"Special Drug\"},{\"code\":\"DD03\",\"description\":\"Deferoksamin (IP)\",\"type\":\"Special Drug\"},{\"code\":\"DD04\",\"description\":\"Deferasirox (IP)\",\"type\":\"Special Drug\"}]},\"http_code\":200}','success',NULL,NULL,1531,0,'2026-06-13 13:52:22','2026-06-13 13:52:22','2026-06-13 13:52:22','2026-06-13 13:52:22','2026-06-13 13:52:22'),
+(65,'0001R0016120507422','11','grouper_inacbg_stage1','{\"metadata\":{\"method\":\"idrg_grouper_reedit\"},\"data\":{\"nomor_sep\":\"0001R0016120507422\"}}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"}},\"http_code\":200}','error','UNKNOWN','Unknown error',1150,1,'2026-06-13 13:52:41','2026-06-13 13:52:42',NULL,'2026-06-13 13:52:41','2026-06-13 13:52:42');
 
 /*Table structure for table `encryption_keys` */
 
-DROP TABLE IF EXISTS `encryption_keys`;
-
 CREATE TABLE `encryption_keys` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `key_name` varchar(100) NOT NULL COMMENT 'Nama Key',
-  `key_value` text NOT NULL COMMENT 'Nilai Key (Hex)',
-  `key_type` enum('simrs','bpjs','kemkes') DEFAULT 'simrs' COMMENT 'Tipe Key',
-  `description` text DEFAULT NULL COMMENT 'Deskripsi Key',
-  `is_active` tinyint(1) DEFAULT 1 COMMENT 'Status Aktif',
+  `key_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Nama Key',
+  `key_value` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Nilai Key (Hex)',
+  `key_type` enum('simrs','bpjs','kemkes') COLLATE utf8mb4_unicode_ci DEFAULT 'simrs' COMMENT 'Tipe Key',
+  `description` text COLLATE utf8mb4_unicode_ci COMMENT 'Deskripsi Key',
+  `is_active` tinyint(1) DEFAULT '1' COMMENT 'Status Aktif',
   `expires_at` datetime DEFAULT NULL COMMENT 'Waktu Kadaluarsa',
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `key_name` (`key_name`),
   KEY `idx_key_name` (`key_name`),
@@ -270,21 +267,19 @@ insert  into `encryption_keys`(`id`,`key_name`,`key_value`,`key_type`,`descripti
 
 /*Table structure for table `file_pendukung` */
 
-DROP TABLE IF EXISTS `file_pendukung`;
-
 CREATE TABLE `file_pendukung` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kunjungan_id` int(11) NOT NULL,
   `file_id` int(11) NOT NULL COMMENT 'ID File Urut',
-  `file_name` varchar(255) NOT NULL COMMENT 'Nama File',
-  `file_type` varchar(100) DEFAULT NULL COMMENT 'MIME Type',
+  `file_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Nama File',
+  `file_type` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'MIME Type',
   `file_size` bigint(20) DEFAULT NULL COMMENT 'Ukuran File (bytes)',
-  `file_class` enum('resume_medis','ruang_rawat','laboratorium','radiologi','penunjang_lain','resep_obat','tagihan','kartu_identitas','dokumen_kipi','bebas_biaya','surat_kematian','lain_lain') NOT NULL COMMENT 'Klasifikasi File',
-  `file_data` longtext DEFAULT NULL COMMENT 'File dalam Base64',
-  `upload_dc_bpjs` tinyint(1) DEFAULT 0 COMMENT 'Status Upload ke DC BPJS',
-  `upload_dc_bpjs_response` text DEFAULT NULL COMMENT 'Response Upload BPJS',
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `file_class` enum('resume_medis','ruang_rawat','laboratorium','radiologi','penunjang_lain','resep_obat','tagihan','kartu_identitas','dokumen_kipi','bebas_biaya','surat_kematian','lain_lain') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Klasifikasi File',
+  `file_data` longtext COLLATE utf8mb4_unicode_ci COMMENT 'File dalam Base64',
+  `upload_dc_bpjs` tinyint(1) DEFAULT '0' COMMENT 'Status Upload ke DC BPJS',
+  `upload_dc_bpjs_response` text COLLATE utf8mb4_unicode_ci COMMENT 'Response Upload BPJS',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_kunjungan_id` (`kunjungan_id`),
   KEY `idx_file_id` (`file_id`),
@@ -296,34 +291,32 @@ CREATE TABLE `file_pendukung` (
 
 /*Table structure for table `grouping_result` */
 
-DROP TABLE IF EXISTS `grouping_result`;
-
 CREATE TABLE `grouping_result` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kunjungan_id` int(11) NOT NULL,
   `stage` int(11) NOT NULL COMMENT 'Stage Grouping (1 atau 2)',
-  `cbg_code` varchar(20) DEFAULT NULL COMMENT 'Kode CBG',
-  `cbg_description` text DEFAULT NULL COMMENT 'Deskripsi CBG',
-  `cbg_tariff` decimal(15,2) DEFAULT 0.00 COMMENT 'Tarif CBG',
-  `sub_acute_code` varchar(20) DEFAULT NULL COMMENT 'Kode Sub Acute',
-  `sub_acute_description` text DEFAULT NULL COMMENT 'Deskripsi Sub Acute',
-  `sub_acute_tariff` decimal(15,2) DEFAULT 0.00 COMMENT 'Tarif Sub Acute',
-  `chronic_code` varchar(20) DEFAULT NULL COMMENT 'Kode Chronic',
-  `chronic_description` text DEFAULT NULL COMMENT 'Deskripsi Chronic',
-  `chronic_tariff` decimal(15,2) DEFAULT 0.00 COMMENT 'Tarif Chronic',
-  `kelas` varchar(20) DEFAULT NULL COMMENT 'Kelas Rawat',
-  `add_payment_amt` decimal(15,2) DEFAULT 0.00 COMMENT 'Tambahan Biaya',
-  `inacbg_version` varchar(50) DEFAULT NULL COMMENT 'Versi INA-CBG',
-  `special_cmg` text DEFAULT NULL COMMENT 'Special CMG (delimiter #)',
-  `mdc_number` varchar(10) DEFAULT NULL COMMENT 'MDC Number',
-  `mdc_description` text DEFAULT NULL COMMENT 'MDC Description',
-  `drg_code` varchar(20) DEFAULT NULL COMMENT 'DRG Code',
-  `drg_description` text DEFAULT NULL COMMENT 'DRG Description',
-  `tarif_kelas_1` decimal(15,2) DEFAULT 0.00 COMMENT 'Tarif Kelas 1',
-  `tarif_kelas_2` decimal(15,2) DEFAULT 0.00 COMMENT 'Tarif Kelas 2',
-  `tarif_kelas_3` decimal(15,2) DEFAULT 0.00 COMMENT 'Tarif Kelas 3',
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `cbg_code` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Kode CBG',
+  `cbg_description` text COLLATE utf8mb4_unicode_ci COMMENT 'Deskripsi CBG',
+  `cbg_tariff` decimal(15,2) DEFAULT '0.00' COMMENT 'Tarif CBG',
+  `sub_acute_code` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Kode Sub Acute',
+  `sub_acute_description` text COLLATE utf8mb4_unicode_ci COMMENT 'Deskripsi Sub Acute',
+  `sub_acute_tariff` decimal(15,2) DEFAULT '0.00' COMMENT 'Tarif Sub Acute',
+  `chronic_code` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Kode Chronic',
+  `chronic_description` text COLLATE utf8mb4_unicode_ci COMMENT 'Deskripsi Chronic',
+  `chronic_tariff` decimal(15,2) DEFAULT '0.00' COMMENT 'Tarif Chronic',
+  `kelas` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Kelas Rawat',
+  `add_payment_amt` decimal(15,2) DEFAULT '0.00' COMMENT 'Tambahan Biaya',
+  `inacbg_version` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Versi INA-CBG',
+  `special_cmg` text COLLATE utf8mb4_unicode_ci COMMENT 'Special CMG (delimiter #)',
+  `mdc_number` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'MDC Number',
+  `mdc_description` text COLLATE utf8mb4_unicode_ci COMMENT 'MDC Description',
+  `drg_code` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'DRG Code',
+  `drg_description` text COLLATE utf8mb4_unicode_ci COMMENT 'DRG Description',
+  `tarif_kelas_1` decimal(15,2) DEFAULT '0.00' COMMENT 'Tarif Kelas 1',
+  `tarif_kelas_2` decimal(15,2) DEFAULT '0.00' COMMENT 'Tarif Kelas 2',
+  `tarif_kelas_3` decimal(15,2) DEFAULT '0.00' COMMENT 'Tarif Kelas 3',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_kunjungan_id` (`kunjungan_id`),
   KEY `idx_stage` (`stage`),
@@ -335,20 +328,18 @@ CREATE TABLE `grouping_result` (
 
 /*Table structure for table `idr_codes` */
 
-DROP TABLE IF EXISTS `idr_codes`;
-
 CREATE TABLE `idr_codes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(20) NOT NULL,
   `code2` varchar(20) NOT NULL,
-  `description` text DEFAULT NULL,
+  `description` text,
   `system` varchar(50) DEFAULT NULL,
   `validcode` tinyint(1) DEFAULT NULL,
   `accpdx` char(1) DEFAULT NULL,
   `asterisk` tinyint(1) DEFAULT NULL,
   `im` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=47421 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=47421 DEFAULT CHARSET=latin1;
 
 /*Data for the table `idr_codes` */
 
@@ -47776,23 +47767,21 @@ insert  into `idr_codes`(`id`,`code`,`code2`,`description`,`system`,`validcode`,
 
 /*Table structure for table `import_coding_diagnosis` */
 
-DROP TABLE IF EXISTS `import_coding_diagnosis`;
-
 CREATE TABLE `import_coding_diagnosis` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `import_log_id` int(11) NOT NULL,
-  `nomor_sep` varchar(50) NOT NULL,
-  `diagnosis_type` varchar(10) NOT NULL COMMENT '1=Primary, 2=Secondary, 3=Comorbid',
-  `icd_code` varchar(20) NOT NULL,
-  `icd_description` text NOT NULL,
-  `is_primary` tinyint(1) DEFAULT 0 COMMENT '0=No, 1=Yes',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `nomor_sep` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `diagnosis_type` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '1=Primary, 2=Secondary, 3=Comorbid',
+  `icd_code` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `icd_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_primary` tinyint(1) DEFAULT '0' COMMENT '0=No, 1=Yes',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_import_log_id` (`import_log_id`),
   KEY `idx_nomor_sep` (`nomor_sep`),
   KEY `idx_icd_code` (`icd_code`),
   CONSTRAINT `fk_import_diagnosis_log` FOREIGN KEY (`import_log_id`) REFERENCES `import_coding_log` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=227 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=232 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `import_coding_diagnosis` */
 
@@ -47802,49 +47791,47 @@ insert  into `import_coding_diagnosis`(`id`,`import_log_id`,`nomor_sep`,`diagnos
 (162,128,'0001R0016120507438','1','S71.0','Open wound of hip',1,'2025-09-13 13:43:45'),
 (163,128,'0001R0016120507438','1','A00.1','Cholera due to vibrio cholerae 01, biovar eltor',0,'2025-09-13 13:43:45'),
 (225,165,'0001R0016120507440','1','S71.0','Open wound of hip',1,'2025-09-17 21:32:44'),
-(226,165,'0001R0016120507440','1','A00.1','Cholera due to vibrio cholerae 01, biovar eltor',0,'2025-09-17 21:32:44');
+(226,165,'0001R0016120507440','1','A00.1','Cholera due to vibrio cholerae 01, biovar eltor',0,'2025-09-17 21:32:44'),
+(231,170,'0001R0016120507422','1','D56.1','Beta thalassaemia',1,'2026-06-13 13:52:14');
 
 /*Table structure for table `import_coding_log` */
 
-DROP TABLE IF EXISTS `import_coding_log`;
-
 CREATE TABLE `import_coding_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nomor_sep` varchar(50) NOT NULL,
-  `import_date` datetime NOT NULL DEFAULT current_timestamp(),
-  `status` enum('success','failed','partial') NOT NULL DEFAULT 'success',
-  `total_diagnosis` int(11) DEFAULT 0,
-  `total_procedure` int(11) DEFAULT 0,
-  `response_message` text DEFAULT NULL,
-  `metadata` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`metadata`)),
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `nomor_sep` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `import_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` enum('success','failed','partial') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'success',
+  `total_diagnosis` int(11) DEFAULT '0',
+  `total_procedure` int(11) DEFAULT '0',
+  `response_message` text COLLATE utf8mb4_unicode_ci,
+  `metadata` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_nomor_sep` (`nomor_sep`),
   KEY `idx_import_date` (`import_date`)
-) ENGINE=InnoDB AUTO_INCREMENT=166 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=171 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `import_coding_log` */
 
 insert  into `import_coding_log`(`id`,`nomor_sep`,`import_date`,`status`,`total_diagnosis`,`total_procedure`,`response_message`,`metadata`,`created_at`,`updated_at`) values 
 (86,'0001R0016120507436','2025-09-12 19:45:31','success',2,2,'Data INACBG disimpan dari grouping process','{\"source\":\"inacbg_grouping\",\"method\":\"manual_input\"}','2025-09-12 19:45:31','2025-09-12 19:45:31'),
 (128,'0001R0016120507438','2025-09-13 13:43:45','success',2,2,'Data INACBG disimpan dari grouping process','{\"source\":\"inacbg_grouping\",\"method\":\"manual_input\"}','2025-09-13 13:43:45','2025-09-13 13:43:45'),
-(165,'0001R0016120507440','2025-09-17 21:32:44','success',2,3,'Data INACBG disimpan dari grouping process','{\"source\":\"inacbg_grouping\",\"method\":\"manual_input\"}','2025-09-17 21:32:44','2025-09-17 21:32:44');
+(165,'0001R0016120507440','2025-09-17 21:32:44','success',2,3,'Data INACBG disimpan dari grouping process','{\"source\":\"inacbg_grouping\",\"method\":\"manual_input\"}','2025-09-17 21:32:44','2025-09-17 21:32:44'),
+(170,'0001R0016120507422','2026-06-13 13:52:14','partial',1,0,'Data INACBG disimpan dari grouping process','{\"source\":\"inacbg_grouping\",\"method\":\"manual_input\"}','2026-06-13 13:52:14','2026-06-13 13:52:14');
 
 /*Table structure for table `import_coding_procedure` */
-
-DROP TABLE IF EXISTS `import_coding_procedure`;
 
 CREATE TABLE `import_coding_procedure` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `import_log_id` int(11) NOT NULL,
-  `nomor_sep` varchar(50) NOT NULL,
-  `procedure_type` varchar(10) NOT NULL COMMENT '1=Primary, 2=Secondary, 3=Additional',
-  `icd_code` varchar(20) NOT NULL,
-  `icd_description` text NOT NULL,
-  `quantity` int(11) DEFAULT 1,
-  `is_primary` tinyint(1) DEFAULT 0 COMMENT '0=No, 1=Yes',
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `nomor_sep` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `procedure_type` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '1=Primary, 2=Secondary, 3=Additional',
+  `icd_code` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `icd_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quantity` int(11) DEFAULT '1',
+  `is_primary` tinyint(1) DEFAULT '0' COMMENT '0=No, 1=Yes',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_import_log_id` (`import_log_id`),
   KEY `idx_nomor_sep` (`nomor_sep`),
@@ -47865,17 +47852,15 @@ insert  into `import_coding_procedure`(`id`,`import_log_id`,`nomor_sep`,`procedu
 
 /*Table structure for table `inacbg_codes` */
 
-DROP TABLE IF EXISTS `inacbg_codes`;
-
 CREATE TABLE `inacbg_codes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(50) NOT NULL,
   `code2` varchar(50) NOT NULL,
-  `description` text DEFAULT NULL,
+  `description` text,
   `system` varchar(100) DEFAULT NULL,
   `validcode` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23171 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23171 DEFAULT CHARSET=latin1;
 
 /*Data for the table `inacbg_codes` */
 
@@ -71053,119 +71038,117 @@ insert  into `inacbg_codes`(`id`,`code`,`code2`,`description`,`system`,`validcod
 
 /*Table structure for table `kunjungan_pasien` */
 
-DROP TABLE IF EXISTS `kunjungan_pasien`;
-
 CREATE TABLE `kunjungan_pasien` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nomor_kartu` varchar(20) NOT NULL COMMENT 'Nomor Kartu Peserta JKN',
-  `nomor_sep` varchar(30) NOT NULL COMMENT 'Nomor SEP',
-  `nomor_rm` varchar(20) NOT NULL COMMENT 'Nomor Rekam Medis',
-  `nama_pasien` varchar(255) NOT NULL COMMENT 'Nama Lengkap Pasien',
+  `nomor_kartu` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Nomor Kartu Peserta JKN',
+  `nomor_sep` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Nomor SEP',
+  `nomor_rm` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Nomor Rekam Medis',
+  `nama_pasien` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Nama Lengkap Pasien',
   `tgl_lahir` datetime NOT NULL COMMENT 'Tanggal Lahir',
-  `gender` enum('1','2') NOT NULL COMMENT '1=Laki-laki, 2=Perempuan',
-  `jaminan_cara_bayar` enum('JKN','BPJS','UMUM','ASURANSI') DEFAULT 'JKN',
-  `payor_id` varchar(10) DEFAULT '3' COMMENT 'ID Jaminan dari E-Klaim',
-  `payor_cd` varchar(10) DEFAULT 'JKN' COMMENT 'Kode Jaminan',
-  `cob_cd` varchar(10) DEFAULT NULL COMMENT 'Coordination of Benefit',
-  `jenis_rawat` enum('1','2','3') DEFAULT '1' COMMENT '1=Inap, 2=Jalan, 3=IGD',
-  `kelas_rawat` enum('1','2','3') DEFAULT '3' COMMENT '1=Kelas 1, 2=Kelas 2, 3=Kelas 3',
+  `gender` enum('1','2') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '1=Laki-laki, 2=Perempuan',
+  `jaminan_cara_bayar` enum('JKN','BPJS','UMUM','ASURANSI') COLLATE utf8mb4_unicode_ci DEFAULT 'JKN',
+  `payor_id` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT '3' COMMENT 'ID Jaminan dari E-Klaim',
+  `payor_cd` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT 'JKN' COMMENT 'Kode Jaminan',
+  `cob_cd` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Coordination of Benefit',
+  `jenis_rawat` enum('1','2','3') COLLATE utf8mb4_unicode_ci DEFAULT '1' COMMENT '1=Inap, 2=Jalan, 3=IGD',
+  `kelas_rawat` enum('1','2','3') COLLATE utf8mb4_unicode_ci DEFAULT '3' COMMENT '1=Kelas 1, 2=Kelas 2, 3=Kelas 3',
   `tgl_masuk` datetime NOT NULL COMMENT 'Tanggal Masuk',
   `tgl_pulang` datetime DEFAULT NULL COMMENT 'Tanggal Pulang',
-  `los_hari` int(11) DEFAULT 0 COMMENT 'Length of Stay (hari)',
-  `los_jam` varchar(10) DEFAULT '0' COMMENT 'Length of Stay (jam)',
-  `adl_sub_acute` int(11) DEFAULT 0 COMMENT 'ADL Score Sub Acute (12-60)',
-  `adl_chronic` int(11) DEFAULT 0 COMMENT 'ADL Score Chronic (12-60)',
-  `icu_indikator` tinyint(1) DEFAULT 0 COMMENT 'Indikator ICU',
-  `icu_los` int(11) DEFAULT 0 COMMENT 'Lama Rawat ICU (hari)',
-  `ventilator_hour` int(11) DEFAULT 0 COMMENT 'Jam Pemakaian Ventilator',
-  `ventilator_use_ind` tinyint(1) DEFAULT 0 COMMENT 'Indikator Penggunaan Ventilator',
+  `los_hari` int(11) DEFAULT '0' COMMENT 'Length of Stay (hari)',
+  `los_jam` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT '0' COMMENT 'Length of Stay (jam)',
+  `adl_sub_acute` int(11) DEFAULT '0' COMMENT 'ADL Score Sub Acute (12-60)',
+  `adl_chronic` int(11) DEFAULT '0' COMMENT 'ADL Score Chronic (12-60)',
+  `icu_indikator` tinyint(1) DEFAULT '0' COMMENT 'Indikator ICU',
+  `icu_los` int(11) DEFAULT '0' COMMENT 'Lama Rawat ICU (hari)',
+  `ventilator_hour` int(11) DEFAULT '0' COMMENT 'Jam Pemakaian Ventilator',
+  `ventilator_use_ind` tinyint(1) DEFAULT '0' COMMENT 'Indikator Penggunaan Ventilator',
   `ventilator_start_dttm` datetime DEFAULT NULL COMMENT 'Waktu Mulai Ventilator',
   `ventilator_stop_dttm` datetime DEFAULT NULL COMMENT 'Waktu Selesai Ventilator',
-  `upgrade_class_ind` tinyint(1) DEFAULT 0 COMMENT 'Indikator Naik Kelas',
-  `upgrade_class_class` enum('kelas_1','kelas_2','vip','vvip') DEFAULT NULL COMMENT 'Kelas Tujuan',
-  `upgrade_class_los` int(11) DEFAULT 0 COMMENT 'Lama Rawat Naik Kelas',
-  `upgrade_class_payor` enum('peserta','pemberi_kerja','asuransi_tambahan') DEFAULT NULL COMMENT 'Pembayar Naik Kelas',
-  `add_payment_pct` decimal(5,2) DEFAULT 0.00 COMMENT 'Persentase Tambahan Biaya',
-  `diagnosa` text DEFAULT NULL COMMENT 'Kode Diagnosa ICD-10 (delimiter #)',
-  `procedures` text DEFAULT NULL COMMENT 'Kode Prosedur ICD-9-CM (delimiter #)',
-  `diagnosa_inagrouper` text DEFAULT NULL COMMENT 'Kode Diagnosa INA Grouper',
-  `procedure_inagrouper` text DEFAULT NULL COMMENT 'Kode Prosedur INA Grouper',
-  `berat_lahir_gram` int(11) DEFAULT 0 COMMENT 'Berat Lahir (gram)',
-  `sistole` int(11) DEFAULT 0 COMMENT 'Tekanan Darah Sistole',
-  `diastole` int(11) DEFAULT 0 COMMENT 'Tekanan Darah Diastole',
-  `discharge_status` enum('1','2','3','4','5') DEFAULT '1' COMMENT '1=Dokter, 2=Dirujuk, 3=Sendiri, 4=Meninggal, 5=Lain-lain',
-  `covid19_status_cd` enum('1','2','3','4','5') DEFAULT NULL COMMENT '1=ODP, 2=PDP, 3=Terkonfirmasi, 4=Suspek, 5=Probabel',
-  `covid19_cc_ind` tinyint(1) DEFAULT 0 COMMENT 'Indikator Comorbidity/Complexity',
-  `covid19_rs_darurat_ind` tinyint(1) DEFAULT 0 COMMENT 'Indikator RS Darurat/Lapangan',
-  `covid19_co_insidense_ind` tinyint(1) DEFAULT 0 COMMENT 'Indikator Co-Insidense',
-  `covid19_no_sep` varchar(30) DEFAULT NULL COMMENT 'Nomor SEP COVID-19 untuk Co-Insidense',
-  `lab_asam_laktat` tinyint(1) DEFAULT 1 COMMENT 'Lab Asam Laktat',
-  `lab_procalcitonin` tinyint(1) DEFAULT 1 COMMENT 'Lab Procalcitonin',
-  `lab_crp` tinyint(1) DEFAULT 1 COMMENT 'Lab CRP',
-  `lab_kultur` tinyint(1) DEFAULT 1 COMMENT 'Lab Kultur MO',
-  `lab_d_dimer` tinyint(1) DEFAULT 1 COMMENT 'Lab D Dimer',
-  `lab_pt` tinyint(1) DEFAULT 1 COMMENT 'Lab PT',
-  `lab_aptt` tinyint(1) DEFAULT 1 COMMENT 'Lab APTT',
-  `lab_waktu_pendarahan` tinyint(1) DEFAULT 1 COMMENT 'Lab Waktu Pendarahan',
-  `lab_anti_hiv` tinyint(1) DEFAULT 1 COMMENT 'Lab Anti HIV',
-  `lab_analisa_gas` tinyint(1) DEFAULT 1 COMMENT 'Lab Analisa Gas',
-  `lab_albumin` tinyint(1) DEFAULT 1 COMMENT 'Lab Albumin',
-  `rad_thorax_ap_pa` tinyint(1) DEFAULT 1 COMMENT 'Radiologi Thorax AP/PA',
-  `terapi_konvalesen` decimal(15,2) DEFAULT 0.00 COMMENT 'Terapi Plasma Konvalesen',
-  `akses_naat` enum('A','B','C') DEFAULT NULL COMMENT 'Kategori Akses NAAT',
-  `isoman_ind` tinyint(1) DEFAULT 0 COMMENT 'Indikator Isolasi Mandiri',
-  `bayi_lahir_status_cd` enum('1','2') DEFAULT NULL COMMENT '1=Tanpa Kelainan, 2=Dengan Kelainan',
-  `apgar_menit_1_appearance` tinyint(4) DEFAULT 0 COMMENT 'APGAR 1 menit - Appearance',
-  `apgar_menit_1_pulse` tinyint(4) DEFAULT 0 COMMENT 'APGAR 1 menit - Pulse',
-  `apgar_menit_1_grimace` tinyint(4) DEFAULT 0 COMMENT 'APGAR 1 menit - Grimace',
-  `apgar_menit_1_activity` tinyint(4) DEFAULT 0 COMMENT 'APGAR 1 menit - Activity',
-  `apgar_menit_1_respiration` tinyint(4) DEFAULT 0 COMMENT 'APGAR 1 menit - Respiration',
-  `apgar_menit_5_appearance` tinyint(4) DEFAULT 0 COMMENT 'APGAR 5 menit - Appearance',
-  `apgar_menit_5_pulse` tinyint(4) DEFAULT 0 COMMENT 'APGAR 5 menit - Pulse',
-  `apgar_menit_5_grimace` tinyint(4) DEFAULT 0 COMMENT 'APGAR 5 menit - Grimace',
-  `apgar_menit_5_activity` tinyint(4) DEFAULT 0 COMMENT 'APGAR 5 menit - Activity',
-  `apgar_menit_5_respiration` tinyint(4) DEFAULT 0 COMMENT 'APGAR 5 menit - Respiration',
-  `usia_kehamilan` int(11) DEFAULT 0 COMMENT 'Usia Kehamilan (minggu)',
-  `gravida` int(11) DEFAULT 0 COMMENT 'Jumlah Kehamilan',
-  `partus` int(11) DEFAULT 0 COMMENT 'Jumlah Kelahiran',
-  `abortus` int(11) DEFAULT 0 COMMENT 'Jumlah Keguguran',
-  `onset_kontraksi` enum('spontan','induksi','non_spontan_non_induksi') DEFAULT NULL COMMENT 'Onset Kontraksi',
-  `pemulasaraan_jenazah` tinyint(1) DEFAULT 0 COMMENT 'Pemulasaraan Jenazah',
-  `kantong_jenazah` tinyint(1) DEFAULT 0 COMMENT 'Kantong Jenazah',
-  `peti_jenazah` tinyint(1) DEFAULT 0 COMMENT 'Peti Jenazah',
-  `plastik_erat` tinyint(1) DEFAULT 0 COMMENT 'Plastik Erat',
-  `desinfektan_jenazah` tinyint(1) DEFAULT 0 COMMENT 'Desinfektan Jenazah',
-  `mobil_jenazah` tinyint(1) DEFAULT 0 COMMENT 'Mobil Jenazah',
-  `desinfektan_mobil_jenazah` tinyint(1) DEFAULT 0 COMMENT 'Desinfektan Mobil Jenazah',
-  `dializer_single_use` tinyint(1) DEFAULT 0 COMMENT 'Dializer Single Use',
-  `kantong_darah` int(11) DEFAULT 0 COMMENT 'Jumlah Kantong Darah',
-  `alteplase_ind` tinyint(1) DEFAULT 0 COMMENT 'Indikator Alteplase',
-  `tarif_poli_eks` decimal(15,2) DEFAULT 0.00 COMMENT 'Tarif Poli Eksekutif',
-  `nama_dokter` varchar(255) DEFAULT NULL COMMENT 'Nama DPJP',
-  `kode_tarif` varchar(10) DEFAULT 'AP' COMMENT 'Kode Tarif RS',
-  `coder_nik` varchar(20) NOT NULL COMMENT 'NIK Coder',
-  `episodes` text DEFAULT NULL COMMENT 'Episode Ruangan Rawat (format: 1;12#2;3#6;5)',
-  `klaim_status` enum('draft','grouped','final','sent','processed') DEFAULT 'draft',
-  `eklaim_status` enum('pending','created','error','final') DEFAULT 'pending' COMMENT 'Status klaim di E-Klaim: pending=belum dibuat, created=berhasil dibuat, error=gagal dibuat, final=sudah final',
-  `eklaim_patient_id` varchar(50) DEFAULT NULL,
+  `upgrade_class_ind` tinyint(1) DEFAULT '0' COMMENT 'Indikator Naik Kelas',
+  `upgrade_class_class` enum('kelas_1','kelas_2','vip','vvip') COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Kelas Tujuan',
+  `upgrade_class_los` int(11) DEFAULT '0' COMMENT 'Lama Rawat Naik Kelas',
+  `upgrade_class_payor` enum('peserta','pemberi_kerja','asuransi_tambahan') COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Pembayar Naik Kelas',
+  `add_payment_pct` decimal(5,2) DEFAULT '0.00' COMMENT 'Persentase Tambahan Biaya',
+  `diagnosa` text COLLATE utf8mb4_unicode_ci COMMENT 'Kode Diagnosa ICD-10 (delimiter #)',
+  `procedures` text COLLATE utf8mb4_unicode_ci COMMENT 'Kode Prosedur ICD-9-CM (delimiter #)',
+  `diagnosa_inagrouper` text COLLATE utf8mb4_unicode_ci COMMENT 'Kode Diagnosa INA Grouper',
+  `procedure_inagrouper` text COLLATE utf8mb4_unicode_ci COMMENT 'Kode Prosedur INA Grouper',
+  `berat_lahir_gram` int(11) DEFAULT '0' COMMENT 'Berat Lahir (gram)',
+  `sistole` int(11) DEFAULT '0' COMMENT 'Tekanan Darah Sistole',
+  `diastole` int(11) DEFAULT '0' COMMENT 'Tekanan Darah Diastole',
+  `discharge_status` enum('1','2','3','4','5') COLLATE utf8mb4_unicode_ci DEFAULT '1' COMMENT '1=Dokter, 2=Dirujuk, 3=Sendiri, 4=Meninggal, 5=Lain-lain',
+  `covid19_status_cd` enum('1','2','3','4','5') COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '1=ODP, 2=PDP, 3=Terkonfirmasi, 4=Suspek, 5=Probabel',
+  `covid19_cc_ind` tinyint(1) DEFAULT '0' COMMENT 'Indikator Comorbidity/Complexity',
+  `covid19_rs_darurat_ind` tinyint(1) DEFAULT '0' COMMENT 'Indikator RS Darurat/Lapangan',
+  `covid19_co_insidense_ind` tinyint(1) DEFAULT '0' COMMENT 'Indikator Co-Insidense',
+  `covid19_no_sep` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Nomor SEP COVID-19 untuk Co-Insidense',
+  `lab_asam_laktat` tinyint(1) DEFAULT '1' COMMENT 'Lab Asam Laktat',
+  `lab_procalcitonin` tinyint(1) DEFAULT '1' COMMENT 'Lab Procalcitonin',
+  `lab_crp` tinyint(1) DEFAULT '1' COMMENT 'Lab CRP',
+  `lab_kultur` tinyint(1) DEFAULT '1' COMMENT 'Lab Kultur MO',
+  `lab_d_dimer` tinyint(1) DEFAULT '1' COMMENT 'Lab D Dimer',
+  `lab_pt` tinyint(1) DEFAULT '1' COMMENT 'Lab PT',
+  `lab_aptt` tinyint(1) DEFAULT '1' COMMENT 'Lab APTT',
+  `lab_waktu_pendarahan` tinyint(1) DEFAULT '1' COMMENT 'Lab Waktu Pendarahan',
+  `lab_anti_hiv` tinyint(1) DEFAULT '1' COMMENT 'Lab Anti HIV',
+  `lab_analisa_gas` tinyint(1) DEFAULT '1' COMMENT 'Lab Analisa Gas',
+  `lab_albumin` tinyint(1) DEFAULT '1' COMMENT 'Lab Albumin',
+  `rad_thorax_ap_pa` tinyint(1) DEFAULT '1' COMMENT 'Radiologi Thorax AP/PA',
+  `terapi_konvalesen` decimal(15,2) DEFAULT '0.00' COMMENT 'Terapi Plasma Konvalesen',
+  `akses_naat` enum('A','B','C') COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Kategori Akses NAAT',
+  `isoman_ind` tinyint(1) DEFAULT '0' COMMENT 'Indikator Isolasi Mandiri',
+  `bayi_lahir_status_cd` enum('1','2') COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '1=Tanpa Kelainan, 2=Dengan Kelainan',
+  `apgar_menit_1_appearance` tinyint(4) DEFAULT '0' COMMENT 'APGAR 1 menit - Appearance',
+  `apgar_menit_1_pulse` tinyint(4) DEFAULT '0' COMMENT 'APGAR 1 menit - Pulse',
+  `apgar_menit_1_grimace` tinyint(4) DEFAULT '0' COMMENT 'APGAR 1 menit - Grimace',
+  `apgar_menit_1_activity` tinyint(4) DEFAULT '0' COMMENT 'APGAR 1 menit - Activity',
+  `apgar_menit_1_respiration` tinyint(4) DEFAULT '0' COMMENT 'APGAR 1 menit - Respiration',
+  `apgar_menit_5_appearance` tinyint(4) DEFAULT '0' COMMENT 'APGAR 5 menit - Appearance',
+  `apgar_menit_5_pulse` tinyint(4) DEFAULT '0' COMMENT 'APGAR 5 menit - Pulse',
+  `apgar_menit_5_grimace` tinyint(4) DEFAULT '0' COMMENT 'APGAR 5 menit - Grimace',
+  `apgar_menit_5_activity` tinyint(4) DEFAULT '0' COMMENT 'APGAR 5 menit - Activity',
+  `apgar_menit_5_respiration` tinyint(4) DEFAULT '0' COMMENT 'APGAR 5 menit - Respiration',
+  `usia_kehamilan` int(11) DEFAULT '0' COMMENT 'Usia Kehamilan (minggu)',
+  `gravida` int(11) DEFAULT '0' COMMENT 'Jumlah Kehamilan',
+  `partus` int(11) DEFAULT '0' COMMENT 'Jumlah Kelahiran',
+  `abortus` int(11) DEFAULT '0' COMMENT 'Jumlah Keguguran',
+  `onset_kontraksi` enum('spontan','induksi','non_spontan_non_induksi') COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Onset Kontraksi',
+  `pemulasaraan_jenazah` tinyint(1) DEFAULT '0' COMMENT 'Pemulasaraan Jenazah',
+  `kantong_jenazah` tinyint(1) DEFAULT '0' COMMENT 'Kantong Jenazah',
+  `peti_jenazah` tinyint(1) DEFAULT '0' COMMENT 'Peti Jenazah',
+  `plastik_erat` tinyint(1) DEFAULT '0' COMMENT 'Plastik Erat',
+  `desinfektan_jenazah` tinyint(1) DEFAULT '0' COMMENT 'Desinfektan Jenazah',
+  `mobil_jenazah` tinyint(1) DEFAULT '0' COMMENT 'Mobil Jenazah',
+  `desinfektan_mobil_jenazah` tinyint(1) DEFAULT '0' COMMENT 'Desinfektan Mobil Jenazah',
+  `dializer_single_use` tinyint(1) DEFAULT '0' COMMENT 'Dializer Single Use',
+  `kantong_darah` int(11) DEFAULT '0' COMMENT 'Jumlah Kantong Darah',
+  `alteplase_ind` tinyint(1) DEFAULT '0' COMMENT 'Indikator Alteplase',
+  `tarif_poli_eks` decimal(15,2) DEFAULT '0.00' COMMENT 'Tarif Poli Eksekutif',
+  `nama_dokter` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Nama DPJP',
+  `kode_tarif` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT 'AP' COMMENT 'Kode Tarif RS',
+  `coder_nik` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'NIK Coder',
+  `episodes` text COLLATE utf8mb4_unicode_ci COMMENT 'Episode Ruangan Rawat (format: 1;12#2;3#6;5)',
+  `klaim_status` enum('draft','grouped','final','sent','processed') COLLATE utf8mb4_unicode_ci DEFAULT 'draft',
+  `eklaim_status` enum('pending','created','error','final') COLLATE utf8mb4_unicode_ci DEFAULT 'pending' COMMENT 'Status klaim di E-Klaim: pending=belum dibuat, created=berhasil dibuat, error=gagal dibuat, final=sudah final',
+  `eklaim_patient_id` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `eklaim_admission_id` int(11) DEFAULT NULL,
   `eklaim_hospital_admission_id` int(11) DEFAULT NULL,
-  `eklaim_error_message` text DEFAULT NULL,
+  `eklaim_error_message` text COLLATE utf8mb4_unicode_ci,
   `eklaim_created_at` timestamp NULL DEFAULT NULL,
   `eklaim_updated_at` timestamp NULL DEFAULT NULL,
-  `bpjs_klaim_status_cd` varchar(10) DEFAULT '40' COMMENT 'Status Klaim BPJS',
-  `bpjs_klaim_status_nm` varchar(100) DEFAULT '40_Proses_Cabang' COMMENT 'Nama Status Klaim BPJS',
-  `kemenkes_dc_status_cd` enum('unsent','sent','processed') DEFAULT 'unsent',
+  `bpjs_klaim_status_cd` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT '40' COMMENT 'Status Klaim BPJS',
+  `bpjs_klaim_status_nm` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT '40_Proses_Cabang' COMMENT 'Nama Status Klaim BPJS',
+  `kemenkes_dc_status_cd` enum('unsent','sent','processed') COLLATE utf8mb4_unicode_ci DEFAULT 'unsent',
   `kemenkes_dc_sent_dttm` datetime DEFAULT NULL COMMENT 'Waktu Kirim ke DC Kemenkes',
-  `bpjs_dc_status_cd` enum('unsent','sent','processed') DEFAULT 'unsent',
+  `bpjs_dc_status_cd` enum('unsent','sent','processed') COLLATE utf8mb4_unicode_ci DEFAULT 'unsent',
   `bpjs_dc_sent_dttm` datetime DEFAULT NULL COMMENT 'Waktu Kirim ke DC BPJS',
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `cara_masuk` enum('gp','hosp-trans','mp','outp','inp','emd','born','nursing','psych','rehab','other') DEFAULT 'gp' COMMENT 'Cara masuk pasien sesuai mapping E-Klaim',
-  `grouping_status` enum('pending','success','error') DEFAULT 'pending' COMMENT 'Status Grouping IDRG',
-  `grouping_result` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT 'Hasil Grouping dalam format JSON' CHECK (json_valid(`grouping_result`)),
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `cara_masuk` enum('gp','hosp-trans','mp','outp','inp','emd','born','nursing','psych','rehab','other') COLLATE utf8mb4_unicode_ci DEFAULT 'gp' COMMENT 'Cara masuk pasien sesuai mapping E-Klaim',
+  `grouping_status` enum('pending','success','error') COLLATE utf8mb4_unicode_ci DEFAULT 'pending' COMMENT 'Status Grouping IDRG',
+  `grouping_result` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin COMMENT 'Hasil Grouping dalam format JSON',
   `grouped_at` timestamp NULL DEFAULT NULL COMMENT 'Waktu terakhir di-grouping',
-  `grouping_error_message` text DEFAULT NULL COMMENT 'Pesan error jika grouping gagal',
+  `grouping_error_message` text COLLATE utf8mb4_unicode_ci COMMENT 'Pesan error jika grouping gagal',
   PRIMARY KEY (`id`),
   UNIQUE KEY `nomor_sep` (`nomor_sep`),
   KEY `idx_nomor_sep` (`nomor_sep`),
@@ -71187,7 +71170,7 @@ CREATE TABLE `kunjungan_pasien` (
 /*Data for the table `kunjungan_pasien` */
 
 insert  into `kunjungan_pasien`(`id`,`nomor_kartu`,`nomor_sep`,`nomor_rm`,`nama_pasien`,`tgl_lahir`,`gender`,`jaminan_cara_bayar`,`payor_id`,`payor_cd`,`cob_cd`,`jenis_rawat`,`kelas_rawat`,`tgl_masuk`,`tgl_pulang`,`los_hari`,`los_jam`,`adl_sub_acute`,`adl_chronic`,`icu_indikator`,`icu_los`,`ventilator_hour`,`ventilator_use_ind`,`ventilator_start_dttm`,`ventilator_stop_dttm`,`upgrade_class_ind`,`upgrade_class_class`,`upgrade_class_los`,`upgrade_class_payor`,`add_payment_pct`,`diagnosa`,`procedures`,`diagnosa_inagrouper`,`procedure_inagrouper`,`berat_lahir_gram`,`sistole`,`diastole`,`discharge_status`,`covid19_status_cd`,`covid19_cc_ind`,`covid19_rs_darurat_ind`,`covid19_co_insidense_ind`,`covid19_no_sep`,`lab_asam_laktat`,`lab_procalcitonin`,`lab_crp`,`lab_kultur`,`lab_d_dimer`,`lab_pt`,`lab_aptt`,`lab_waktu_pendarahan`,`lab_anti_hiv`,`lab_analisa_gas`,`lab_albumin`,`rad_thorax_ap_pa`,`terapi_konvalesen`,`akses_naat`,`isoman_ind`,`bayi_lahir_status_cd`,`apgar_menit_1_appearance`,`apgar_menit_1_pulse`,`apgar_menit_1_grimace`,`apgar_menit_1_activity`,`apgar_menit_1_respiration`,`apgar_menit_5_appearance`,`apgar_menit_5_pulse`,`apgar_menit_5_grimace`,`apgar_menit_5_activity`,`apgar_menit_5_respiration`,`usia_kehamilan`,`gravida`,`partus`,`abortus`,`onset_kontraksi`,`pemulasaraan_jenazah`,`kantong_jenazah`,`peti_jenazah`,`plastik_erat`,`desinfektan_jenazah`,`mobil_jenazah`,`desinfektan_mobil_jenazah`,`dializer_single_use`,`kantong_darah`,`alteplase_ind`,`tarif_poli_eks`,`nama_dokter`,`kode_tarif`,`coder_nik`,`episodes`,`klaim_status`,`eklaim_status`,`eklaim_patient_id`,`eklaim_admission_id`,`eklaim_hospital_admission_id`,`eklaim_error_message`,`eklaim_created_at`,`eklaim_updated_at`,`bpjs_klaim_status_cd`,`bpjs_klaim_status_nm`,`kemenkes_dc_status_cd`,`kemenkes_dc_sent_dttm`,`bpjs_dc_status_cd`,`bpjs_dc_sent_dttm`,`created_at`,`updated_at`,`cara_masuk`,`grouping_status`,`grouping_result`,`grouped_at`,`grouping_error_message`) values 
-(1,'0000668870001','0001R0016120507422','123-45-67','NAMA TEST PASIEN 1','1940-01-01 02:00:00','2','JKN','3','JKN',NULL,'1','2','2024-01-15 08:00:00','2024-01-20 14:00:00',5,'0',20,0,0,0,0,0,NULL,NULL,0,NULL,0,NULL,0.00,'K80.3#K80.1#E11.9','47.01#47.11',NULL,NULL,0,0,0,'1',NULL,0,0,0,NULL,1,1,1,1,1,1,1,1,1,1,1,1,0.00,NULL,0,NULL,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NULL,0,0,0,0,0,0,0,0,0,0,0.00,'Dr. Ahmad Bedah','AP','CR001',NULL,'draft','created','17219',1,74019,NULL,NULL,NULL,'40','40_Proses_Cabang','unsent',NULL,'unsent',NULL,'2025-08-25 23:49:07','2025-09-07 09:20:46','gp','pending',NULL,NULL,NULL),
+(1,'0000668870001','0001R0016120507422','123-45-67','NAMA TEST PASIEN 1','1940-01-01 02:00:00','2','JKN','3','JKN',NULL,'1','2','2024-01-15 08:00:00','2024-01-20 14:00:00',5,'0',0,0,0,0,0,0,NULL,NULL,0,NULL,0,NULL,0.00,'K80.3#K80.1#E11.9','47.01#47.11',NULL,NULL,0,0,0,'1','',0,0,0,NULL,1,1,1,1,1,1,1,1,1,1,1,1,0.00,NULL,0,NULL,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NULL,0,0,0,0,0,0,0,0,0,0,0.00,'Dr. Ahmad Bedah','AP','CR001',NULL,'draft','created','17219',1,74019,NULL,NULL,NULL,'40','40_Proses_Cabang','unsent',NULL,'unsent',NULL,'2025-08-25 23:49:07','2026-06-13 13:52:22','gp','success','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_inacbg\":{\"cbg\":{\"code\":\"D-4-13-I\",\"description\":\"GANGGUAN SEL DARAH MERAH SELAIN KRISIS ANEMIA SEL SICKLE (RINGAN)\"},\"base_tariff\":\"5081900\",\"tariff\":\"11043900\",\"special_cmg\":[{\"code\":\"DD-03-II\",\"description\":\"DEFEROKSAMIN (IP)\",\"tariff\":5962000,\"type\":\"Special Drug\"}],\"kelas\":\"kelas_2\",\"inacbg_version\":\"5.10.7.202603311031\",\"status_cd\":\"normal\"},\"special_cmg_option\":[{\"code\":\"DD02\",\"description\":\"Deferiprone (IP)\",\"type\":\"Special Drug\"},{\"code\":\"DD03\",\"description\":\"Deferoksamin (IP)\",\"type\":\"Special Drug\"},{\"code\":\"DD04\",\"description\":\"Deferasirox (IP)\",\"type\":\"Special Drug\"}]},\"http_code\":200}','2026-06-13 13:52:22',NULL),
 (2,'0000668870002','0001R0016120507423','123-45-68','NAMA TEST PASIEN 2','1985-05-15 00:00:00','1','JKN','3','JKN',NULL,'2','1','2024-01-16 09:00:00','2024-01-16 11:00:00',0,'0',0,0,0,0,0,0,NULL,NULL,0,NULL,0,NULL,0.00,'I10#E11.9',NULL,NULL,NULL,0,0,0,'1',NULL,0,0,0,NULL,1,1,1,1,1,1,1,1,1,1,1,1,0.00,NULL,0,NULL,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NULL,0,0,0,0,0,0,0,0,0,0,0.00,'Dr. Siti Penyakit Dalam','AP','CR001',NULL,'draft','pending',NULL,NULL,NULL,NULL,NULL,NULL,'40','40_Proses_Cabang','unsent',NULL,'unsent',NULL,'2025-08-25 23:49:07','2025-08-25 23:49:07','gp','pending',NULL,NULL,NULL),
 (3,'0000668870003','0001R0016120507424','123-45-69','NAMA TEST PASIEN 3','1970-12-20 00:00:00','1','JKN','3','JKN',NULL,'1','3','2024-01-17 10:00:00','2024-01-25 16:00:00',8,'0',10,0,0,8,120,0,NULL,NULL,0,NULL,0,NULL,0.00,'J18.9#I50.9#E87.1','96.72',NULL,NULL,0,0,0,'1',NULL,0,0,0,NULL,1,1,1,1,1,1,1,1,1,1,1,1,0.00,NULL,0,NULL,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NULL,0,0,0,0,0,0,0,0,0,0,0.00,'Dr. Budi ICU','AP','CR001',NULL,'draft','error',NULL,NULL,NULL,'Duplikasi nomor SEP',NULL,NULL,'40','40_Proses_Cabang','unsent',NULL,'unsent',NULL,'2025-08-25 23:49:07','2025-09-07 22:18:10','gp','pending',NULL,NULL,NULL),
 (4,'0000668870004','0001R0016120507425','123-45-70','NAMA TEST PASIEN 4','1990-08-10 00:00:00','2','JKN','3','JKN',NULL,'1','1','2024-01-18 11:00:00','2024-01-28 12:00:00',10,'0',15,0,0,0,0,0,NULL,NULL,0,NULL,0,NULL,0.00,'U07.1#J18.9#D65','96.72',NULL,NULL,0,0,0,'1',NULL,0,0,0,NULL,1,1,1,1,1,1,1,1,1,1,1,1,0.00,NULL,0,NULL,0,0,0,0,0,0,0,0,0,0,0,0,0,0,NULL,0,0,0,0,0,0,0,0,0,0,0.00,'Dr. Rina COVID','AP','CR001',NULL,'draft','pending',NULL,NULL,NULL,NULL,NULL,NULL,'40','40_Proses_Cabang','unsent',NULL,'unsent',NULL,'2025-08-25 23:49:07','2025-09-07 09:17:44','gp','pending',NULL,NULL,NULL),
@@ -71210,17 +71193,15 @@ insert  into `kunjungan_pasien`(`id`,`nomor_kartu`,`nomor_sep`,`nomor_rm`,`nama_
 
 /*Table structure for table `payor` */
 
-DROP TABLE IF EXISTS `payor`;
-
 CREATE TABLE `payor` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `payor_id` varchar(10) NOT NULL COMMENT 'ID Jaminan',
-  `payor_cd` varchar(10) NOT NULL COMMENT 'Kode Jaminan',
-  `payor_nm` varchar(255) NOT NULL COMMENT 'Nama Jaminan',
-  `description` text DEFAULT NULL COMMENT 'Deskripsi Jaminan',
-  `status` enum('active','inactive') DEFAULT 'active' COMMENT 'Status Jaminan',
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `payor_id` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'ID Jaminan',
+  `payor_cd` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Kode Jaminan',
+  `payor_nm` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Nama Jaminan',
+  `description` text COLLATE utf8mb4_unicode_ci COMMENT 'Deskripsi Jaminan',
+  `status` enum('active','inactive') COLLATE utf8mb4_unicode_ci DEFAULT 'active' COMMENT 'Status Jaminan',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `payor_id` (`payor_id`),
   KEY `idx_payor_id` (`payor_id`),
@@ -71239,17 +71220,15 @@ insert  into `payor`(`id`,`payor_id`,`payor_cd`,`payor_nm`,`description`,`status
 
 /*Table structure for table `personnel` */
 
-DROP TABLE IF EXISTS `personnel`;
-
 CREATE TABLE `personnel` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nik` varchar(20) NOT NULL COMMENT 'NIK Coder',
-  `nama` varchar(255) NOT NULL COMMENT 'Nama Coder',
-  `email` varchar(255) DEFAULT NULL COMMENT 'Email Coder',
-  `phone` varchar(20) DEFAULT NULL COMMENT 'Telepon Coder',
-  `status` enum('active','inactive') DEFAULT 'active' COMMENT 'Status Coder',
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `nik` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'NIK Coder',
+  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Nama Coder',
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Email Coder',
+  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Telepon Coder',
+  `status` enum('active','inactive') COLLATE utf8mb4_unicode_ci DEFAULT 'active' COMMENT 'Status Coder',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nik` (`nik`),
   KEY `idx_nik` (`nik`),
@@ -71264,23 +71243,21 @@ insert  into `personnel`(`id`,`nik`,`nama`,`email`,`phone`,`status`,`created_at`
 
 /*Table structure for table `procedure_details` */
 
-DROP TABLE IF EXISTS `procedure_details`;
-
 CREATE TABLE `procedure_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kunjungan_id` int(11) NOT NULL COMMENT 'ID Kunjungan Pasien',
   `icd_code_id` int(11) NOT NULL COMMENT 'ID dari tabel idr_codes',
   `procedure_order` int(11) NOT NULL COMMENT 'Urutan Prosedur (1=Primary, 2=Secondary, dst)',
-  `procedure_type` enum('primary','secondary') NOT NULL DEFAULT 'secondary' COMMENT 'Jenis Prosedur',
-  `icd_code` varchar(20) NOT NULL COMMENT 'Kode ICD-9-CM',
-  `icd_description` text NOT NULL COMMENT 'Deskripsi ICD-9-CM',
-  `quantity` int(11) NOT NULL DEFAULT 1 COMMENT 'Jumlah Prosedur',
-  `validcode` tinyint(1) DEFAULT 1 COMMENT 'Status Valid Kode',
-  `accpdx` char(1) DEFAULT 'Y' COMMENT 'Status ACCPDX (Y/N)',
-  `asterisk` tinyint(1) DEFAULT 0 COMMENT 'Status Asterisk',
-  `im` tinyint(1) DEFAULT 0 COMMENT 'Status IM',
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `procedure_type` enum('primary','secondary') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'secondary' COMMENT 'Jenis Prosedur',
+  `icd_code` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Kode ICD-9-CM',
+  `icd_description` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Deskripsi ICD-9-CM',
+  `quantity` int(11) NOT NULL DEFAULT '1' COMMENT 'Jumlah Prosedur',
+  `validcode` tinyint(1) DEFAULT '1' COMMENT 'Status Valid Kode',
+  `accpdx` char(1) COLLATE utf8mb4_unicode_ci DEFAULT 'Y' COMMENT 'Status ACCPDX (Y/N)',
+  `asterisk` tinyint(1) DEFAULT '0' COMMENT 'Status Asterisk',
+  `im` tinyint(1) DEFAULT '0' COMMENT 'Status IM',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_kunjungan_id` (`kunjungan_id`),
   KEY `idx_icd_code_id` (`icd_code_id`),
@@ -71289,7 +71266,7 @@ CREATE TABLE `procedure_details` (
   KEY `idx_icd_code` (`icd_code`),
   CONSTRAINT `procedure_details_ibfk_1` FOREIGN KEY (`kunjungan_id`) REFERENCES `kunjungan_pasien` (`id`) ON DELETE CASCADE,
   CONSTRAINT `procedure_details_ibfk_2` FOREIGN KEY (`icd_code_id`) REFERENCES `idr_codes` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=538 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=542 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `procedure_details` */
 
@@ -71309,31 +71286,30 @@ insert  into `procedure_details`(`id`,`kunjungan_id`,`icd_code_id`,`procedure_or
 (534,19,3607,1,'primary','81.52','Partial hip replacement',1,1,'Y',0,0,'2025-09-17 21:32:41','2025-09-17 21:32:41'),
 (535,19,3945,2,'secondary','86.22','Excisional debridement of wound, infection, or burn',2,1,'Y',0,0,'2025-09-17 21:32:42','2025-09-17 21:32:42'),
 (536,19,3945,3,'secondary','86.22','Excisional debridement of wound, infection, or burn',1,1,'Y',0,0,'2025-09-17 21:32:42','2025-09-17 21:32:42'),
-(537,19,4113,4,'secondary','88.38','Other computerized axial tomography',1,1,'Y',0,0,'2025-09-17 21:32:42','2025-09-17 21:32:42');
+(537,19,4113,4,'secondary','88.38','Other computerized axial tomography',1,1,'Y',0,0,'2025-09-17 21:32:42','2025-09-17 21:32:42'),
+(541,1,1,1,'primary','','',1,1,'Y',0,0,'2026-06-13 13:52:13','2026-06-13 13:52:13');
 
 /*Table structure for table `web_service_logs` */
 
-DROP TABLE IF EXISTS `web_service_logs`;
-
 CREATE TABLE `web_service_logs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `method` varchar(100) NOT NULL COMMENT 'Method Web Service',
-  `nomor_sep` varchar(30) DEFAULT NULL COMMENT 'Nomor SEP',
-  `request_data` text DEFAULT NULL COMMENT 'Data Request',
-  `response_data` text DEFAULT NULL COMMENT 'Data Response',
-  `status` enum('success','error') NOT NULL COMMENT 'Status Response',
-  `error_code` varchar(10) DEFAULT NULL COMMENT 'Kode Error',
-  `error_message` text DEFAULT NULL COMMENT 'Pesan Error',
+  `method` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Method Web Service',
+  `nomor_sep` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Nomor SEP',
+  `request_data` text COLLATE utf8mb4_unicode_ci COMMENT 'Data Request',
+  `response_data` text COLLATE utf8mb4_unicode_ci COMMENT 'Data Response',
+  `status` enum('success','error') COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Status Response',
+  `error_code` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Kode Error',
+  `error_message` text COLLATE utf8mb4_unicode_ci COMMENT 'Pesan Error',
   `execution_time_ms` int(11) DEFAULT NULL COMMENT 'Waktu Eksekusi (ms)',
-  `ip_address` varchar(45) DEFAULT NULL COMMENT 'IP Address Client',
-  `user_agent` text DEFAULT NULL COMMENT 'User Agent Client',
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'IP Address Client',
+  `user_agent` text COLLATE utf8mb4_unicode_ci COMMENT 'User Agent Client',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_method` (`method`),
   KEY `idx_nomor_sep` (`nomor_sep`),
   KEY `idx_status` (`status`),
   KEY `idx_created_at` (`created_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=1039 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1066 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*Data for the table `web_service_logs` */
 
@@ -72375,11 +72351,36 @@ insert  into `web_service_logs`(`id`,`method`,`nomor_sep`,`request_data`,`respon
 (1035,'Import Coding Save','0001R0016120507440','{\"nomor_sep\":\"0001R0016120507440\",\"status\":\"success\"}','{\"import_log_id\":\"165\",\"saved_diagnosis\":2,\"saved_procedure\":3}','success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36','2025-09-17 21:32:44'),
 (1036,'grouper','0001R0016120507440','{\"nomor_sep\":\"0001R0016120507440\",\"stage\":\"1\",\"grouper\":\"inacbg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_inacbg\":{\"cbg\":{\"code\":\"M-1-04-II\",\"description\":\"PROSEDUR PADA SENDI TUNGKAI BAWAH (SEDANG)\"},\"base_tariff\":\"38971000\",\"tariff\":\"38971000\",\"kelas\":\"kelas_3\",\"inacbg_version\":\"5.10.4.202508270937.dev\"},\"special_cmg_option\":[{\"code\":\"RR04Hip\",\"description\":\"Hip Implant\",\"type\":\"Special Prosthesis\"},{\"code\":\"RR04Knee\",\"description\":\"Knee Implant\",\"type\":\"Special Prosthesis\"},{\"code\":\"YY01\",\"description\":\"Hip Replacement / Knee Replacement\",\"type\":\"Special Procedure\"}]},\"http_code\":200}','success',NULL,NULL,7848,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36','2025-09-17 21:32:52'),
 (1037,'grouper','0001R0016120507440','{\"nomor_sep\":\"0001R0016120507440\",\"stage\":\"2\",\"grouper\":\"inacbg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_inacbg\":{\"cbg\":{\"code\":\"M-1-04-II\",\"description\":\"PROSEDUR PADA SENDI TUNGKAI BAWAH (SEDANG)\"},\"base_tariff\":\"38971000\",\"tariff\":\"52070000\",\"special_cmg\":[{\"code\":\"YY-01-II\",\"description\":\"HIP REPLACEMENT / KNEE REPLACEMENT\",\"tariff\":13099000,\"type\":\"Special Procedure\"}],\"kelas\":\"kelas_3\",\"inacbg_version\":\"5.10.4.202508270937.dev\"},\"special_cmg_option\":[{\"code\":\"RR04Hip\",\"description\":\"Hip Implant\",\"type\":\"Special Prosthesis\"},{\"code\":\"RR04Knee\",\"description\":\"Knee Implant\",\"type\":\"Special Prosthesis\"},{\"code\":\"YY01\",\"description\":\"Hip Replacement / Knee Replacement\",\"type\":\"Special Procedure\"}]},\"http_code\":200}','success',NULL,NULL,3177,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36','2025-09-17 21:33:00'),
-(1038,'grouper','0001R0016120507440','{\"nomor_sep\":\"0001R0016120507440\",\"stage\":\"2\",\"grouper\":\"inacbg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_inacbg\":{\"cbg\":{\"code\":\"M-1-04-II\",\"description\":\"PROSEDUR PADA SENDI TUNGKAI BAWAH (SEDANG)\"},\"base_tariff\":\"38971000\",\"tariff\":\"65070000\",\"special_cmg\":[{\"code\":\"YY-01-II\",\"description\":\"HIP REPLACEMENT / KNEE REPLACEMENT\",\"tariff\":13099000,\"type\":\"Special Procedure\"},{\"code\":\"RR-04-III-Knee\",\"description\":\"\",\"tariff\":13000000,\"type\":\"Special Prosthesis\"}],\"kelas\":\"kelas_3\",\"inacbg_version\":\"5.10.4.202508270937.dev\"},\"special_cmg_option\":[{\"code\":\"RR04Hip\",\"description\":\"Hip Implant\",\"type\":\"Special Prosthesis\"},{\"code\":\"RR04Knee\",\"description\":\"Knee Implant\",\"type\":\"Special Prosthesis\"},{\"code\":\"YY01\",\"description\":\"Hip Replacement / Knee Replacement\",\"type\":\"Special Procedure\"}]},\"http_code\":200}','success',NULL,NULL,3258,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36','2025-09-17 21:33:07');
+(1038,'grouper','0001R0016120507440','{\"nomor_sep\":\"0001R0016120507440\",\"stage\":\"2\",\"grouper\":\"inacbg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_inacbg\":{\"cbg\":{\"code\":\"M-1-04-II\",\"description\":\"PROSEDUR PADA SENDI TUNGKAI BAWAH (SEDANG)\"},\"base_tariff\":\"38971000\",\"tariff\":\"65070000\",\"special_cmg\":[{\"code\":\"YY-01-II\",\"description\":\"HIP REPLACEMENT / KNEE REPLACEMENT\",\"tariff\":13099000,\"type\":\"Special Procedure\"},{\"code\":\"RR-04-III-Knee\",\"description\":\"\",\"tariff\":13000000,\"type\":\"Special Prosthesis\"}],\"kelas\":\"kelas_3\",\"inacbg_version\":\"5.10.4.202508270937.dev\"},\"special_cmg_option\":[{\"code\":\"RR04Hip\",\"description\":\"Hip Implant\",\"type\":\"Special Prosthesis\"},{\"code\":\"RR04Knee\",\"description\":\"Knee Implant\",\"type\":\"Special Prosthesis\"},{\"code\":\"YY01\",\"description\":\"Hip Replacement / Knee Replacement\",\"type\":\"Special Procedure\"}]},\"http_code\":200}','success',NULL,NULL,3258,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36','2025-09-17 21:33:07'),
+(1039,'Get Latest Import Data for INACBG','0001R0016120507440','{\"nomor_sep\":\"0001R0016120507440\",\"import_log_id\":\"165\",\"diagnosis_count\":2,\"procedure_count\":3}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:35:28'),
+(1040,'grouper','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"stage\":\"1\",\"grouper\":\"idrg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_idrg\":{\"mdc_number\":\"26\",\"mdc_description\":\"Diseases and Disorders of the Blood and Blood Forming Organs and Immunological Disorders\",\"drg_code\":\"2661219\",\"drg_description\":\"Red Blood Cell Disorders\",\"script_version\":\"1.0.32\",\"logic_version\":\"0.2.1808.202604081038\",\"cost_weight\":\"0.52\",\"sub_acute_weight\":\"0.00\",\"chronic_weight\":\"0.00\",\"nbr\":\"8037060\",\"total_cost_weight\":\"0.52\",\"total_tarif\":\"4179271\",\"topup_options\":[{\"code\":\"10021\",\"description\":\"Deferiprone\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"},{\"code\":\"10031\",\"description\":\"Deferoksamin\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"},{\"code\":\"10041\",\"description\":\"Deferasirox\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"}],\"status_cd\":\"normal\"}},\"http_code\":200}','success',NULL,NULL,1182,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:36:48'),
+(1041,'grouper','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"stage\":\"1\",\"grouper\":\"idrg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_idrg\":{\"mdc_number\":\"26\",\"mdc_description\":\"Diseases and Disorders of the Blood and Blood Forming Organs and Immunological Disorders\",\"drg_code\":\"2661219\",\"drg_description\":\"Red Blood Cell Disorders\",\"script_version\":\"1.0.32\",\"logic_version\":\"0.2.1808.202604081038\",\"cost_weight\":\"0.52\",\"sub_acute_weight\":\"0.00\",\"chronic_weight\":\"0.00\",\"nbr\":\"8037060\",\"total_cost_weight\":\"0.52\",\"total_tarif\":\"4179271\",\"topup_options\":[{\"code\":\"10021\",\"description\":\"Deferiprone\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"},{\"code\":\"10031\",\"description\":\"Deferoksamin\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"},{\"code\":\"10041\",\"description\":\"Deferasirox\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"}],\"status_cd\":\"normal\"}},\"http_code\":200}','success',NULL,NULL,1115,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:51:37'),
+(1042,'grouper','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"stage\":\"2\",\"grouper\":\"idrg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_idrg\":{\"mdc_number\":\"26\",\"mdc_description\":\"Diseases and Disorders of the Blood and Blood Forming Organs and Immunological Disorders\",\"drg_code\":\"2661219\",\"drg_description\":\"Red Blood Cell Disorders\",\"script_version\":\"1.0.32\",\"logic_version\":\"0.2.1808.202604081038\",\"cost_weight\":\"0.52\",\"sub_acute_weight\":\"0.00\",\"chronic_weight\":\"0.00\",\"nbr\":\"8037060\",\"topup\":[{\"code\":\"10021\",\"description\":\"Deferiprone\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"}],\"total_cost_weight\":\"1.27795826\",\"total_tarif\":\"10271027\",\"topup_options\":[{\"code\":\"10021\",\"description\":\"Deferiprone\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"},{\"code\":\"10031\",\"description\":\"Deferoksamin\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"},{\"code\":\"10041\",\"description\":\"Deferasirox\",\"type\":\"drug\",\"cost_weight\":\"0.75795826\"}],\"status_cd\":\"normal\"}},\"http_code\":200}','success',NULL,NULL,733,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:51:41'),
+(1043,'Import Coding Delete','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"deleted_logs\":0,\"deleted_diagnosis\":0,\"deleted_procedure\":0}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:00'),
+(1044,'Import Coding Log','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"status\":\"partial\",\"import_log_id\":\"166\"}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:01'),
+(1045,'Import Diagnosis',NULL,'{\"import_log_id\":\"166\",\"saved_count\":1,\"total_count\":1}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:01'),
+(1046,'Import Coding Save','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"status\":\"partial\"}','{\"import_log_id\":\"166\",\"saved_diagnosis\":1,\"saved_procedure\":0}','success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:01'),
+(1047,'Import Coding Delete','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"deleted_logs\":1,\"deleted_diagnosis\":1,\"deleted_procedure\":0}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:03'),
+(1048,'Import Coding Log','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"status\":\"partial\",\"import_log_id\":\"167\"}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:03'),
+(1049,'Import Diagnosis',NULL,'{\"import_log_id\":\"167\",\"saved_count\":1,\"total_count\":1}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:03'),
+(1050,'Import Coding Save','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"status\":\"partial\"}','{\"import_log_id\":\"167\",\"saved_diagnosis\":1,\"saved_procedure\":0}','success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:03'),
+(1051,'Import Coding Delete','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"deleted_logs\":1,\"deleted_diagnosis\":1,\"deleted_procedure\":0}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:04'),
+(1052,'Import Coding Log','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"status\":\"partial\",\"import_log_id\":\"168\"}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:04'),
+(1053,'Import Diagnosis',NULL,'{\"import_log_id\":\"168\",\"saved_count\":1,\"total_count\":1}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:04'),
+(1054,'Import Coding Save','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"status\":\"partial\"}','{\"import_log_id\":\"168\",\"saved_diagnosis\":1,\"saved_procedure\":0}','success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:04'),
+(1055,'grouper','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"stage\":\"1\",\"grouper\":\"inacbg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_inacbg\":{\"cbg\":{\"code\":\"D-4-13-I\",\"description\":\"GANGGUAN SEL DARAH MERAH SELAIN KRISIS ANEMIA SEL SICKLE (RINGAN)\"},\"base_tariff\":\"5081900\",\"tariff\":\"5081900\",\"kelas\":\"kelas_2\",\"inacbg_version\":\"5.10.7.202603311031\",\"status_cd\":\"normal\"},\"special_cmg_option\":[{\"code\":\"DD02\",\"description\":\"Deferiprone (IP)\",\"type\":\"Special Drug\"},{\"code\":\"DD03\",\"description\":\"Deferoksamin (IP)\",\"type\":\"Special Drug\"},{\"code\":\"DD04\",\"description\":\"Deferasirox (IP)\",\"type\":\"Special Drug\"}]},\"http_code\":200}','success',NULL,NULL,8606,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:13'),
+(1056,'Import Coding Delete','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"deleted_logs\":1,\"deleted_diagnosis\":1,\"deleted_procedure\":0}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:13'),
+(1057,'Import Coding Log','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"status\":\"partial\",\"import_log_id\":\"169\"}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:14'),
+(1058,'Import Diagnosis',NULL,'{\"import_log_id\":\"169\",\"saved_count\":1,\"total_count\":1}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:14'),
+(1059,'Import Coding Save','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"status\":\"partial\"}','{\"import_log_id\":\"169\",\"saved_diagnosis\":1,\"saved_procedure\":0}','success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:14'),
+(1060,'Import Coding Delete','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"deleted_logs\":1,\"deleted_diagnosis\":1,\"deleted_procedure\":0}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:14'),
+(1061,'Import Coding Log','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"status\":\"partial\",\"import_log_id\":\"170\"}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:14'),
+(1062,'Import Diagnosis',NULL,'{\"import_log_id\":\"170\",\"saved_count\":1,\"total_count\":1}',NULL,'success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:14'),
+(1063,'Import Coding Save','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"status\":\"partial\"}','{\"import_log_id\":\"170\",\"saved_diagnosis\":1,\"saved_procedure\":0}','success',NULL,NULL,NULL,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:14'),
+(1064,'grouper','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"stage\":\"1\",\"grouper\":\"inacbg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_inacbg\":{\"cbg\":{\"code\":\"D-4-13-I\",\"description\":\"GANGGUAN SEL DARAH MERAH SELAIN KRISIS ANEMIA SEL SICKLE (RINGAN)\"},\"base_tariff\":\"5081900\",\"tariff\":\"5081900\",\"kelas\":\"kelas_2\",\"inacbg_version\":\"5.10.7.202603311031\",\"status_cd\":\"normal\"},\"special_cmg_option\":[{\"code\":\"DD02\",\"description\":\"Deferiprone (IP)\",\"type\":\"Special Drug\"},{\"code\":\"DD03\",\"description\":\"Deferoksamin (IP)\",\"type\":\"Special Drug\"},{\"code\":\"DD04\",\"description\":\"Deferasirox (IP)\",\"type\":\"Special Drug\"}]},\"http_code\":200}','success',NULL,NULL,1365,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:16'),
+(1065,'grouper','0001R0016120507422','{\"nomor_sep\":\"0001R0016120507422\",\"stage\":\"2\",\"grouper\":\"inacbg\"}','{\"success\":true,\"data\":{\"metadata\":{\"code\":200,\"message\":\"Ok\"},\"response_inacbg\":{\"cbg\":{\"code\":\"D-4-13-I\",\"description\":\"GANGGUAN SEL DARAH MERAH SELAIN KRISIS ANEMIA SEL SICKLE (RINGAN)\"},\"base_tariff\":\"5081900\",\"tariff\":\"11043900\",\"special_cmg\":[{\"code\":\"DD-03-II\",\"description\":\"DEFEROKSAMIN (IP)\",\"tariff\":5962000,\"type\":\"Special Drug\"}],\"kelas\":\"kelas_2\",\"inacbg_version\":\"5.10.7.202603311031\",\"status_cd\":\"normal\"},\"special_cmg_option\":[{\"code\":\"DD02\",\"description\":\"Deferiprone (IP)\",\"type\":\"Special Drug\"},{\"code\":\"DD03\",\"description\":\"Deferoksamin (IP)\",\"type\":\"Special Drug\"},{\"code\":\"DD04\",\"description\":\"Deferasirox (IP)\",\"type\":\"Special Drug\"}]},\"http_code\":200}','success',NULL,NULL,1531,'::1','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36','2026-06-13 13:52:22');
 
 /* Procedure structure for procedure `HitungTotalTarif` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `HitungTotalTarif` */;
 
 DELIMITER $$
 
@@ -72416,8 +72417,6 @@ DELIMITER ;
 
 /* Procedure structure for procedure `UpdateKlaimStatus` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `UpdateKlaimStatus` */;
-
 DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateKlaimStatus`(
@@ -72440,9 +72439,6 @@ DELIMITER ;
 
 DROP TABLE IF EXISTS `v_diagnosis_complete`;
 
-/*!50001 DROP VIEW IF EXISTS `v_diagnosis_complete` */;
-/*!50001 DROP TABLE IF EXISTS `v_diagnosis_complete` */;
-
 /*!50001 CREATE TABLE  `v_diagnosis_complete`(
  `id` int(11) ,
  `kunjungan_id` int(11) ,
@@ -72463,9 +72459,6 @@ DROP TABLE IF EXISTS `v_diagnosis_complete`;
 /*Table structure for table `v_eklaim_method_detail` */
 
 DROP TABLE IF EXISTS `v_eklaim_method_detail`;
-
-/*!50001 DROP VIEW IF EXISTS `v_eklaim_method_detail` */;
-/*!50001 DROP TABLE IF EXISTS `v_eklaim_method_detail` */;
 
 /*!50001 CREATE TABLE  `v_eklaim_method_detail`(
  `nomor_sep` varchar(30) ,
@@ -72490,9 +72483,6 @@ DROP TABLE IF EXISTS `v_eklaim_method_detail`;
 
 DROP TABLE IF EXISTS `v_eklaim_progress`;
 
-/*!50001 DROP VIEW IF EXISTS `v_eklaim_progress` */;
-/*!50001 DROP TABLE IF EXISTS `v_eklaim_progress` */;
-
 /*!50001 CREATE TABLE  `v_eklaim_progress`(
  `nomor_sep` varchar(30) ,
  `total_methods` bigint(21) ,
@@ -72502,15 +72492,12 @@ DROP TABLE IF EXISTS `v_eklaim_progress`;
  `skipped_methods` bigint(21) ,
  `last_activity` timestamp ,
  `next_stage_order` bigint(11) ,
- `error_methods` mediumtext 
+ `error_methods` text 
 )*/;
 
 /*Table structure for table `v_procedure_complete` */
 
 DROP TABLE IF EXISTS `v_procedure_complete`;
-
-/*!50001 DROP VIEW IF EXISTS `v_procedure_complete` */;
-/*!50001 DROP TABLE IF EXISTS `v_procedure_complete` */;
 
 /*!50001 CREATE TABLE  `v_procedure_complete`(
  `id` int(11) ,
@@ -72533,29 +72520,21 @@ DROP TABLE IF EXISTS `v_procedure_complete`;
 /*View structure for view v_diagnosis_complete */
 
 /*!50001 DROP TABLE IF EXISTS `v_diagnosis_complete` */;
-/*!50001 DROP VIEW IF EXISTS `v_diagnosis_complete` */;
-
 /*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_diagnosis_complete` AS select `diagnosis_details`.`id` AS `id`,`diagnosis_details`.`kunjungan_id` AS `kunjungan_id`,`diagnosis_details`.`icd_code_id` AS `icd_code_id`,`diagnosis_details`.`diagnosis_order` AS `diagnosis_order`,`diagnosis_details`.`diagnosis_type` AS `diagnosis_type`,`diagnosis_details`.`icd_code` AS `icd_code`,`diagnosis_details`.`icd_description` AS `icd_description`,`diagnosis_details`.`validcode` AS `validcode`,`diagnosis_details`.`accpdx` AS `accpdx`,`diagnosis_details`.`asterisk` AS `asterisk`,`diagnosis_details`.`im` AS `im`,`diagnosis_details`.`created_at` AS `created_at`,`diagnosis_details`.`updated_at` AS `updated_at`,'ICD_10_2010_IM' AS `system` from `diagnosis_details` */;
 
 /*View structure for view v_eklaim_method_detail */
 
 /*!50001 DROP TABLE IF EXISTS `v_eklaim_method_detail` */;
-/*!50001 DROP VIEW IF EXISTS `v_eklaim_method_detail` */;
-
-/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_eklaim_method_detail` AS select `t`.`nomor_sep` AS `nomor_sep`,`t`.`method_code` AS `method_code`,`m`.`method_name` AS `method_name`,`m`.`method_description` AS `method_description`,`m`.`is_required` AS `is_required`,`m`.`stage_order` AS `stage_order`,`t`.`status` AS `status`,`t`.`error_code` AS `error_code`,`t`.`error_message` AS `error_message`,`t`.`execution_time_ms` AS `execution_time_ms`,`t`.`retry_count` AS `retry_count`,`t`.`first_attempt_at` AS `first_attempt_at`,`t`.`last_attempt_at` AS `last_attempt_at`,`t`.`completed_at` AS `completed_at`,`t`.`created_at` AS `created_at`,`t`.`updated_at` AS `updated_at` from (`eklaim_method_tracking` `t` join `eklaim_method_mapping` `m` on(`t`.`method_code` = `m`.`method_code`)) order by `t`.`nomor_sep`,`m`.`stage_order` */;
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_eklaim_method_detail` AS select `t`.`nomor_sep` AS `nomor_sep`,`t`.`method_code` AS `method_code`,`m`.`method_name` AS `method_name`,`m`.`method_description` AS `method_description`,`m`.`is_required` AS `is_required`,`m`.`stage_order` AS `stage_order`,`t`.`status` AS `status`,`t`.`error_code` AS `error_code`,`t`.`error_message` AS `error_message`,`t`.`execution_time_ms` AS `execution_time_ms`,`t`.`retry_count` AS `retry_count`,`t`.`first_attempt_at` AS `first_attempt_at`,`t`.`last_attempt_at` AS `last_attempt_at`,`t`.`completed_at` AS `completed_at`,`t`.`created_at` AS `created_at`,`t`.`updated_at` AS `updated_at` from (`eklaim_method_tracking` `t` join `eklaim_method_mapping` `m` on((`t`.`method_code` = `m`.`method_code`))) order by `t`.`nomor_sep`,`m`.`stage_order` */;
 
 /*View structure for view v_eklaim_progress */
 
 /*!50001 DROP TABLE IF EXISTS `v_eklaim_progress` */;
-/*!50001 DROP VIEW IF EXISTS `v_eklaim_progress` */;
-
-/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_eklaim_progress` AS select `t`.`nomor_sep` AS `nomor_sep`,count(0) AS `total_methods`,count(case when `t`.`status` = 'success' then 1 end) AS `completed_methods`,count(case when `t`.`status` = 'error' then 1 end) AS `failed_methods`,count(case when `t`.`status` = 'pending' then 1 end) AS `pending_methods`,count(case when `t`.`status` = 'skipped' then 1 end) AS `skipped_methods`,max(`t`.`last_attempt_at`) AS `last_activity`,min(case when `t`.`status` = 'pending' then `m`.`stage_order` end) AS `next_stage_order`,group_concat(case when `t`.`status` = 'error' then concat(`m`.`method_name`,' (',`t`.`error_code`,')') end separator ', ') AS `error_methods` from (`eklaim_method_tracking` `t` join `eklaim_method_mapping` `m` on(`t`.`method_code` = `m`.`method_code`)) group by `t`.`nomor_sep` */;
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_eklaim_progress` AS select `t`.`nomor_sep` AS `nomor_sep`,count(0) AS `total_methods`,count((case when (`t`.`status` = 'success') then 1 end)) AS `completed_methods`,count((case when (`t`.`status` = 'error') then 1 end)) AS `failed_methods`,count((case when (`t`.`status` = 'pending') then 1 end)) AS `pending_methods`,count((case when (`t`.`status` = 'skipped') then 1 end)) AS `skipped_methods`,max(`t`.`last_attempt_at`) AS `last_activity`,min((case when (`t`.`status` = 'pending') then `m`.`stage_order` end)) AS `next_stage_order`,group_concat((case when (`t`.`status` = 'error') then concat(`m`.`method_name`,' (',`t`.`error_code`,')') end) separator ', ') AS `error_methods` from (`eklaim_method_tracking` `t` join `eklaim_method_mapping` `m` on((`t`.`method_code` = `m`.`method_code`))) group by `t`.`nomor_sep` */;
 
 /*View structure for view v_procedure_complete */
 
 /*!50001 DROP TABLE IF EXISTS `v_procedure_complete` */;
-/*!50001 DROP VIEW IF EXISTS `v_procedure_complete` */;
-
 /*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_procedure_complete` AS select `procedure_details`.`id` AS `id`,`procedure_details`.`kunjungan_id` AS `kunjungan_id`,`procedure_details`.`icd_code_id` AS `icd_code_id`,`procedure_details`.`procedure_order` AS `procedure_order`,`procedure_details`.`procedure_type` AS `procedure_type`,`procedure_details`.`icd_code` AS `icd_code`,`procedure_details`.`icd_description` AS `icd_description`,`procedure_details`.`quantity` AS `quantity`,`procedure_details`.`validcode` AS `validcode`,`procedure_details`.`accpdx` AS `accpdx`,`procedure_details`.`asterisk` AS `asterisk`,`procedure_details`.`im` AS `im`,`procedure_details`.`created_at` AS `created_at`,`procedure_details`.`updated_at` AS `updated_at`,'ICD_9CM_2010_IM' AS `system` from `procedure_details` */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
